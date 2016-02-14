@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20" scriptletClass="net.sf.jasperreports.engine.JRDefaultScriptlet">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1013"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<subDataset name="dataset1"/>
+	<parameter name="LOGO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\Mis Documentos\\Documents\\Proyectos\\workspace\\ReportGenerator\\resources\\icono.png"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="NCONTRATO" class="java.lang.String"/>
+	<field name="ARRENDATARIO1" class="java.lang.String"/>
+	<field name="TIPO_DOC_ARR1" class="java.lang.String"/>
+	<field name="DOC_ARR1" class="java.lang.String"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="URBANIZACION" class="java.lang.String"/>
+	<field name="BARRIO" class="java.lang.String"/>
+	<field name="CANON" class="java.lang.String"/>
+	<field name="FECHA_INI" class="java.lang.String"/>
+	<field name="DIAPAGO" class="java.lang.String"/>
+	<field name="DEUDOR1" class="java.lang.String"/>
+	<field name="TIPO_DOC_DEU1" class="java.lang.String"/>
+	<field name="DOC_DEU1" class="java.lang.String"/>
+	<field name="DEUDOR2" class="java.lang.String"/>
+	<field name="TIPO_DOC_DEU2" class="java.lang.String"/>
+	<field name="DOC_DEU2" class="java.lang.String"/>
+	<field name="DIR_DEU1" class="java.lang.String"/>
+	<field name="DIR_DEU2" class="java.lang.String"/>
+	<field name="MUNI_DEU1" class="java.lang.String"/>
+	<field name="MUNI_DEU2" class="java.lang.String"/>
+	<field name="DIR_NOT_DEU1" class="java.lang.String"/>
+	<field name="DIR_NOT_DEU2" class="java.lang.String"/>
+	<field name="NUM_PUERTA" class="java.lang.String"/>
+	<field name="NOMENCLATURA" class="java.lang.String"/>
+	<field name="MATR_INMOB_SIGLA" class="java.lang.String"/>
+	<field name="MATR_INMOB" class="java.lang.String"/>
+	<field name="PARQUEADERO" class="java.lang.String"/>
+	<field name="CANON_LETRAS" class="java.lang.String"/>
+	<field name="FECHA_PAGO" class="java.lang.String"/>
+	<field name="MAIL_ARR1" class="java.lang.String"/>
+	<field name="TEL_ARR1" class="java.lang.String"/>
+	<field name="CEL_ARR1" class="java.lang.String"/>
+	<field name="VIGENCIA" class="java.lang.String"/>
+	<field name="DIR_NOT_ARR1" class="java.lang.String"/>
+	<field name="TEL_DEU1" class="java.lang.String"/>
+	<field name="CEL_DEU1" class="java.lang.String"/>
+	<field name="MAIL_DEU1" class="java.lang.String"/>
+	<field name="TEL_DEU2" class="java.lang.String"/>
+	<field name="CEL_DEU2" class="java.lang.String"/>
+	<field name="MAIL_DEU2" class="java.lang.String"/>
+	<field name="ELABORADO_POR" class="java.lang.String"/>
+	<field name="UTIL" class="java.lang.String"/>
+	<field name="MATR_INMOB_PARQ" class="java.lang.String"/>
+	<field name="FECHA_INI_LARGA" class="java.lang.String"/>
+	<field name="FECHA_FIN" class="java.lang.String"/>
+	<field name="DIA_LETRAS" class="java.lang.String"/>
+	<field name="MUNICIPIO" class="java.lang.String"/>
+	<field name="FI_DIA" class="java.lang.String"/>
+	<field name="FI_MES" class="java.lang.String"/>
+	<field name="FI_ANO" class="java.lang.String"/>
+	<field name="NUM_APTO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="121" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="415" y="0" width="80" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="66" width="161" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[NIT No. 900.336.513-4
+M.A.V.U.00011/08 SGM
+]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="346" y="12" width="148" height="34"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="0" y="12" width="162" height="54"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="347" y="12" width="80" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  CONTRATO N°  ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="320">
+			<textField>
+				<reportElement style="SubTitle" x="0" y="0" width="495" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONTRATO DE ARRENDAMIENTO DE VIVIENDA URBANA"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement mode="Transparent" x="0" y="18" width="495" height="302"/>
+				<rectangle>
+					<reportElement x="0" y="0" width="495" height="300"/>
+				</rectangle>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="0" width="298" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S."]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="198" y="66" width="297" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["URBANIZACION: "+$F{URBANIZACION}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="1" y="145" width="197" height="24" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DEUDORES SOLIDARIOS"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="198" y="118" width="297" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["FECHA DE INICIO: DIA:"+$F{FI_DIA}+" MES:"+$F{FI_MES}+" AÑO:"+$F{FI_ANO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="13" width="298" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NIT No. 900.336.513-4"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="1" y="26" width="197" height="27" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["ARRENDATARIOS (S)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="131" width="297" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["FECHA DE PAGO: "+$F{DIAPAGO}+ " DE CADA MES"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="196" y="40" width="299" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1} + " No. "+$F{DOC_ARR1}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement x="198" y="223" width="295" height="78">
+						<printWhenExpression><![CDATA[!$F{DEUDOR2}.equals( null )]]></printWhenExpression>
+					</reportElement>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="0" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase( )]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="13" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU2} + " No. "+$F{DOC_DEU2}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="26" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="39" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{DIR_DEU2}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="52" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{MUNI_DEU2}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="62" width="295" height="13" forecolor="#000000">
+							<printWhenExpression><![CDATA[!$F{MAIL_DEU2}.equals( null )]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{MAIL_DEU2}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<textField>
+					<reportElement style="SubTitle" x="196" y="27" width="299" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ARRENDATARIO1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="92" width="297" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["MUNICIPIO: "+$F{MUNICIPIO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="198" y="53" width="297" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement x="198" y="145" width="295" height="78">
+						<printWhenExpression><![CDATA[!$F{DEUDOR1}.equals( null )]]></printWhenExpression>
+					</reportElement>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="0" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase( )]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="13" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU1} + " No. "+$F{DOC_DEU1}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="26" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="52" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{MUNI_DEU1}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="39" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{DIR_DEU1}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="65" width="295" height="13" forecolor="#000000">
+							<printWhenExpression><![CDATA[!$F{MAIL_DEU1}.equals( null )]]></printWhenExpression>
+						</reportElement>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{MAIL_DEU1}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="197" y="0" width="1" height="300"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement style="SubTitle" x="198" y="79" width="297" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["BARRIO: "+$F{BARRIO}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="144" width="495" height="1"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement style="SubTitle" x="0" y="54" width="197" height="24" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["OBJETO DEL CONTRATO"]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="26" width="495" height="1"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="53" width="495" height="1"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement style="SubTitle" x="0" y="0" width="197" height="26" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["ARRENDADOR"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="196" y="105" width="297" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CANON: "+$F{CANON} + " MENSUAL"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="300">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="300"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="10" width="494" height="280" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Entre los suscritos a saber, FLOR VIVIANA CASTAÑO BETANCUR, mayor de edad, domiciliada en la ciudad de Medellín identificada con la cédula de ciudadanía número 43.568.821, actuando en calidad de representante Legal de PORTADA INMOBILIARIA S.A.S., identificada con el Nit No. 900.336.5134, entidad con matrícula de arrendador No. 00011/08, expedida por la Secretaría de Gobierno y Derechos Humanos de la Ciudad de Medellín, y quien en adelante se denominará LA ARRENDADORA, y "+$F{ARRENDATARIO1} +" identificado(a) con "+$F{TIPO_DOC_ARR1}+" número "+$F{DOC_ARR1} +" quien(es) en adelante se denominaran (EL) (LOS) (LA) ARRENDATARIA(O)(S), hemos convenido en celebrar el presente contrato, el cual se regirá por las normas consagradas en el Código Civil colombiano, por la Ley 820 de 2003 y demás normas legales aplicables a la materia y en especial por las siguientes cláusulas: <br/><br/>PRIMERA.OBJETO: Mediante la suscripción del presente contrato LA ARRENDADORA  entrega a (EL) (LOS) (LA) ARRENDATARIA(O) (OS) el uso y goce a titulo de arrendamiento del inmueble ubicado en la "+$F{DIRECCION}+","+
+( $F{PARQUEADERO} != null ? "PARQUEADERO "+$F{PARQUEADERO}+"," : "" )+" "+( $F{UTIL} != null ? "CUARTO UTIL "+$F{UTIL}+"," : "" )+" URBANIZACION "+$F{URBANIZACION} +" barrio "+$F{BARRIO} +" de la Ciudad de "+$F{MUNICIPIO}+", cuya descripción particular es como a continuación se indica: con todas sus mejoras, anexidades y dependencias. Distinguido en su puerta de entrada con el número "+$F{NUM_PUERTA} +" de la "+$F{NOMENCLATURA} +" actual nomenclatura de la ciudad de MEDELLIN. Este inmueble está identificado con MATRICULA INMOBILIARIA No.  "+$F{MATR_INMOB}+", "+( $F{NUM_APTO} != null? "(APT) No. "+$F{NUM_APTO}+",":"") +" "+( $F{PARQUEADERO} != null? "(PARQ) No. "+$F{PARQUEADERO}+",":"")+" de la Oficina de Registro de Instrumentos Públicos de la ciudad de MEDELLIN. PARÁGRAFO. AUTORIZACIÓN ESPECIAL. El arrendatario faculta expresamente al arrendador para modificar en este contrato, los linderos o nomenclatura en caso de haberse presentado error, al digitar los mismos o cuando se deba a cambios en su nomenclatura.<br/><br/>"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["SEGUNDA. DURACIÓN: Las partes acuerdan como plazo de duración del presente contrato, un período de "+$F{VIGENCIA} +" contados a partir de "+$F{FECHA_INI} +" y "+$F{FECHA_FIN} +".<br/><br/>No obstante lo anterior, el término del presente contrato de arrendamiento se prorrogará automáticamente por periodos consecutivos iguales al inicial, si ninguna de las partes informa a la otra  su decisión de terminar este Contrato con una antelación no inferior a (3) MESES a la fecha del vencimiento del periodo inicial o de cualquiera de sus prorrogas.<br/><br/>TERCERA. VALOR Y FORMA DE PAGO: Para efectos legales y fiscales el valor del presente canon de arrendamiento se fija en la suma de "+$F{CANON_LETRAS} +" PESOS M.L. ( \$ "+$F{CANON} +"), valor que será cancelado por parte de (EL) (LOS) (LA) ARRENDATARIA(O)(S) el día "+$F{DIA_LETRAS} +" "+($F{DIAPAGO}) +" de cada mes, por anticipado durante la vigencia del contrato, realizando los pagos por medio de la página virtual de BANCOLOMBIA por el modulo de pagos a terceros o en nuestra oficina principal por PAC electrónico BANCOLOMBIA  a nombre de Portada Inmobiliaria S.A.S.<br/><br/>PARÁGRAFO PRIMERO: La mera tolerancia de LA ARRENDADORA  en recibir el pago del canon de arrendamiento con posterioridad al plazo indicado para ello en esta Cláusula, no se entenderá, en ningún caso, como ánimo de LA ARRENDADORA  de modificar el término establecido en este Contrato para el pago del canon (periodo regulador de pagos).<br/><br/>PARAGRAFO SEGUNDO: En caso de mora, o aun de simple retardo en el pago de los cánones de arrendamiento establecidos en la presente cláusula, LA ARRENDATARIA, cancelará intereses moratorios a la tasa máxima legal vigente, establecida por la Superintendencia Financiera desde el momento de presentarse la mora y hasta el momento en que se efectué el pago total de la obligación, sin perjuicio de las acciones judiciales que pueda emprender LA ARRENDADORA , para dar por terminado el contrato de arrendamiento, con fundamento en esta causa legal de terminación.<br/><br/>PARAGRAFO TERCERO: Así mismo es convenido que en caso de mora, o aun de simple retardo en el pago de los cánones de arrendamiento establecidos en la presente cláusula, LA ARRENDATARIA, se obliga a cancelar los gastos de cobranza que su retardo genere, tales como gastos de envío de correspondencia, bloqueo y desbloqueo de centrales de riesgo y bases de datos, y honorarios de abogado, sin perjuicio de las acciones judiciales que pueda emprender LA ARRENDADORA , para dar por terminado el contrato de arrendamiento, con fundamento en esta causa legal de terminación.<br/><br/>CUARTA. AJUSTE DEL CANON: Las partes acuerdan reajustar automáticamente el precio del arrendamiento, a partir del día siguiente al vencimiento del primer año de ejecución, en un porcentaje equivalente a la variación del Índice de Precios al Consumidor decretado por el DANE (del año inmediatamente anterior) durante el término de duración del contrato. <br/><br/>QUINTA. SERVICIOS PUBLICOS Y ADMINISTRACION: El arrendamiento incluye el uso de los siguientes servicios públicos: servicios básicos instalados actualmente ACUEDUCTO, SANEAMIENTO, ENERGIA Y GAS, así que los que se instalen a futuro por cuenta del ARRENDATARIO, para uso del inmueble, serán cancelados única y exclusivamente por los ARRENDATARIOS tan pronto lleguen las cuentas de cobro respectivas, el inmueble NO TIENE LINEA TELEFONICA <br/><br/>PARAGRAFO PRIMERO: El pago de las expensas comunes o cuotas de Administración estarán a cargo de LA ARRENDADORA, quien se obliga a realizar dichos pagos de manera oportuna, pero no obstante lo anterior, las sanciones o multas que imponga la administración de la copropiedad, atribuibles a comportamientos, actuaciones u omisiones de (EL) (LOS) (LA) ARRENDATARIA(O)(S), deberán ser canceladas por éste inmediatamente A LA ARRENDADORA incluyendo los cobros adicionales que la administración realice por el uso de parqueadero de visitantes en horario no permitido y le informe el valor adeudado. "]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PARÁGRAFO SEGUNDO: si (EL) (LOS) (LA) ARRENDATARIA(O)(S) no cancelan en su oportunidad las expensas y los servicios aquí señalados este hecho se tendrá como incumplimiento del contrato y LA ARRENDADORA  podrá exigir la restitución del inmueble. En todo caso, LOS ARRENDATARIOS pagarán a LA ARRENDADORA  el valor de la cláusula penal, las multas, valor del servicio o expensa no cancelado, el de la reconexión, reinstalaciones, sanciones, costas y multas etc., sumas que se podrán exigir ejecutivamente y será prueba suficiente para su cobro el presente contrato y las facturas o recibos de liquidación expedidas por las correspondientes Empresas de servicios Públicos o por el administrador de la copropiedad tratándose de multas o expensas que le correspondan al arrendatario, debidamente canceladas por LA ARRENDADORA. Son de cargo de (EL) (LOS) (LA) ARRENDATARIA(O)(S) los reclamos que por daños y perjuicios puedan hacer las Empresas Públicas en cualquier tiempo, por infracciones a su reglamento ocurridas por culpa LOS ARRENDATARIOS y los gastos que por esta causa se ocasionaren. <br/><br/>PARÁGRAFO TERCERO: Si en el desarrollo del presente contrato, las empresas prestadoras de los servicios públicos detectan que los sellos han sido violados o los contadores alterados, las multas, cargos, sanciones o reconexiones por esta causa serán a cargo de (EL) (LOS) (LA) ARRENDATARIA(O)(S). <br/><br/>SEXTA.–RECIBO Y ESTADO: LA ARRENDADORA  hará la entrega material del inmueble el día de iniciación del presente contrato, en el estado en que actualmente se encuentra (conforme al inventario anexo, que hace parte integral de este contrato), el cual es de pleno conocimiento de (EL) (LOS) (LA) ARRENDATARIA(O)(S), con los servicios públicos de los cuales esta dotado y en los que se encuentran a paz y salvo, igualmente con las cosas, usos y anexidades convenidos, así como de una copia del presente contrato. (EL) (LOS)(LA) ARRENDATARIA (O) (S) se obligan a restituir el inmueble en el mismo estado en que le fue entregado, salvo el deterioro proveniente del uso normal.<br/><br/>SÉPTIMA. REPARACIONES Y MEJORAS: (EL) (LOS) (LA) ARRENDATARIA(O)(S) se obligan a mantener el inmueble en el estado en que lo recibieron, las reparaciones, reformas o mejoras de cualquier clase que quisiere hacer (EL) (LOS) (LA) ARRENDATARIA(O)(S) serán por cuenta de estos y para efectuarlas se requiere permiso o autorización escrita DE LA ARRENDADORA , siendo entendido que en ningún caso LA ARRENDADORA  quedará obligada a pagar tales mejoras y reformas o a indemnizar en forma alguna a (EL) (LOS) (LA) ARRENDATARIA(O)(S), quien tampoco podrá separar o llevarse los materiales utilizados en dichas mejoras, aún en los casos en que LA ARRENDADORA  las haya autorizado expresamente. Queda expresamente estipulado que cualquier cerradura o implementos adicionales que (EL) (LOS) (LA) ARRENDATARIA(O)(S) instale en las puertas y ventanas interiores o exteriores del inmueble, no las podrá retirar y quedarán de propiedad DE LA ARRENDADORA  sin que haya lugar a reconocimiento de suma alguna por este concepto. No obstante lo dispuesto en esta cláusula, (EL) (LOS) (LA) ARRENDATARIA(O)(S) están obligado a efectuar en el inmueble las reparaciones locativas o sustituciones necesarias a que haya lugar, según lo previsto en el numeral 2 del articulo 9 de la Ley 820 de 2003.  La violación de esta cláusula dará derecho A LA ARRENDADORA  a solicitar la terminación unilateral del presente contrato con la consecuente indemnización de perjuicios a cargo de (EL) (LOS) (LA) ARRENDATARIA(O)(S) y a favor DE LA ARRENDADORA, en ningún caso tendrán (EL) (LOS) (LA) ARRENDATARIA(O)(S)  derecho de retención del inmueble por razón de las mejoras ni derecho a indemnización alguna.<br/><br/>PARAGRAFO PRIMERO: Las partes convienen expresamente que solo en los casos en que LA ARRENDADORA , haya autorizado la realización de mejoras o modificaciones al inmueble y que autorice por escrito, el retiro de elementos que (EL) (LOS) (LA) ARRENDATARIA(O)(S), haya utilizado en dichas mejoras o modificaciones, el ARRENDATARIO podrá hacerlo a su costa, dejando el inmueble en el mismo buen estado en que lo recibió de LA ARRENDADORA , salvo el deterioro natural generado por el uso legítimo.<br/><br/>PARAGRAFO SEGUNDO: Para todos los efectos relacionados con la autorización que deberá expedir LA ARRENDADORA , para mejoras o modificaciones al inmueble dado en arrendamiento, se establece que solo serán validas las autorizaciones escritas que lleven impuesta la firma original del representante legal de PORTADA INMOBILIARIA SAS."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["OCTAVA. OBLIGACIONES ESPECIALES DE LAS PARTES: Además de las obligaciones generales de las partes, contempladas en la Ley para esta clase de contrato y que las mismas se comprometen a cumplir, se establecen las siguientes: <br/><br/>Para LA ARRENDADORA: <br/><br/>1.	Hacer la entrega material del inmueble el día de iniciación del contrato<br/>2.	Atender las peticiones de (EL) (LOS) (LA) ARRENDATARIA(O)(S) respecto del mantenimiento físico del inmueble cuando éste así lo requiera, siempre y cuando se trate de reparaciones necesarias para mantener en buen estado del inmueble; <br/>3.	Efectuar las reparaciones locativas solicitadas por (EL) (LOS) (LA) ARRENDATARIA(O)(S), cuando los deterioros que las hagan necesarias provengan de fuerza mayor o caso fortuito. <br/>4.	Elaborar y suscribir el acta de entrega del inmueble con el correspondiente inventario de los bienes.<br/>5.	Dar respuesta a las peticiones realizadas por (EL) (LOS) (LA) ARRENDATARIA(O)(S) en el término de 15 días hábiles, contados a partir de la fecha de recibo de las mismas. en los términos consagrados en el Artículo 23 de la C.N.<br/>6.	Las demás consagradas para LA ARRENDADORA  en el Capítulo II, Título XXVI, Libro IV del Código Civil y en la Ley 820 de 2003. <br/><br/>Para LOS ARRENDATARIOS: <br/><br/>1.	Cancelar mensualmente el "+$F{DIA_LETRAS} +" ("+$F{DIAPAGO} +") de cada mes el precio total del canon de arrendamiento establecido en la CLÁUSULA TERCERA del presente contrato.<br/>2.	Recibir el inmueble de que trata el presente documento junto con el correspondiente inventario de bienes y suscribir el acta de entrega y recibo del mismo; <br/>3.	Restituir a LA ARRENDADORA  el inmueble arrendado a la terminación del plazo pactado o cuando lo requiera LA ARRENDADORA , en el mismo estado en que fue entregado por ésta, salvo por el deterioro normal causado por el uso y goce legítimo del bien; es de aclarar que el inmueble debe estar totalmente desocupado y en buenas condiciones de funcionamiento y de aseo, sin clavos, ni chazos, resanado y pintado donde estaban los mismos  <br/>4.	Cancelar oportunamente los gastos que se generen por servicios públicos, (energía, agua, teléfono, gas natural, larga distancia, recolección de basuras, servicio de televisión por cable y antena parabólica, Internet, o los que tenga en servicio el bien inmueble o que hayan sido instalados por su cuenta y riesgo), servicios de vigilancia etc.; <br/>5.	Conservar la integridad interior del inmueble paredes, techos, cocina, calentador, clóset , muebles de empotrar, cañerías etc.; <br/>6.	Realizar las reparaciones locativas a su cargo (cristales, cerraduras, puertas, desgaste de pintura, llaves etc.)<br/>7.	Cumplir las normas consagradas en el reglamento de propiedad horizontal y en el código de convivencia ciudadana de la ciudad.<br/>8.	Constituir la póliza de arrendamiento de que trata la Ley 820 de 2003 y mantenerla vigente durante todo el termino de ejecución del contrato; <br/>9.	 Cambiar por su cuenta y riesgo, las guardas  de seguridad del portón principal del inmueble y de cualquier otro acceso que lo considere.<br/>10	Hacer llegar de forma física a las oficinas de LA ARRENDADORA, la primera cuenta de servicios públicos domiciliarios. De omitir el envío de estas, se hará responsable del pago de intereses o sanciones pecuniarias impuestas por las empresas prestadoras de los servicios públicos. <br/>11	Las demás consagradas para (EL) (LOS) (LA) ARRENDATARIA(O)(S) en el Capítulo III, Título XXVI, Libro IV del Código Civil, en la Ley 820 de 2003 y demás normas que lo regulen."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NOVENA. TERMINACION DEL CONTRATO: Son causales de terminación unilateral del contrato las de Ley y especialmente las siguientes: <br/>Por parte de LA ARRENDADORA: <br/>1.	La no cancelación por parte de (EL) (LOS) (LA) ARRENDATARIA(O)(S) de los cánones de arrendamiento y reajustes dentro del término estipulado en el contrato. <br/>2.	La no cancelación de los servicios públicos que causen la desconexión o pérdida del servicio, o el pago de las expensas comunes o cuotas de contrato de mandato cuando su pago este a cargo del arrendatario.<br/>3.	El subarriendo total o parcial del inmueble, <br/>4.	La cesión del contrato o del goce del inmueble.<br/>5.	El cambio de destinación del mismo por parte del arrendatario, sin expresa autorización de LA ARRENDADORA.<br/>6.	La incursión de (EL) (LOS) (LA) ARRENDATARIA(O)(S) en actividades que afecten la tranquilidad de los vecinos.<br/>7.	La destinación del inmueble para actos delictivos o que impliquen contravención debidamente comprobados ante la autoridad policiva.<br/>8.	La violación a las normas de convivencia y/o a las normas contenidas en el reglamento de propiedad horizontal, (si el inmueble estuviese sometido a este régimen)<br/>9.	La violación a las normas de convivencia, contenidas en el código de convivencia ciudadana de la ciudad.<br/>10.	La realización de mejoras, cambios o ampliaciones del inmueble sin expresa autorización escrita de LA ARRENDADORA  o la destrucción total o parcial del inmueble o área arrendada por parte de (EL) (LOS) (LA) ARRENDATARIA(O)(S). <br/>Cumplidas cualquiera de estas condiciones (EL) (LOS) (LA) ARRENDATARIA(O)(S) está obligado a restituir de forma inmediata el inmueble.<br/>Por parte de (EL) (LOS) (LA) ARRENDATARIA(O) (S): <br/>1.	La suspensión de la prestación de los servicios públicos al inmueble, por acción premeditada de LA ARRENDADORA  o porque incurra en mora en pagos que estuvieren a su cargo.<br/>2.	La incursión reiterada de LA ARRENDADORA  en procederes que afecten gravemente el disfrute cabal por el arrendatario del inmueble arrendado, debidamente comprobada ante la autoridad policiva.<br/>3.	El no pago de las cuotas de administración a la copropiedad donde se encuentra ubicado el inmueble, que cause perjuicios a (EL) (LOS) (LA) ARRENDATARIA(O)(S).<br/>4.	El desconocimiento por parte de LA ARRENDADORA  de derechos reconocidos al arrendatario por la Ley o contractualmente.<br/>Cumplidas estas condiciones LA ARRENDADORA  estará obligada a recibir el inmueble; si no lo hiciere, el arrendatario podrá hacer entrega provisional mediante la intervención de la autoridad competente, sin prejuicio de acudir a la acción judicial correspondiente. <br/>PARÁGRAFO. Las partes en cualquier tiempo y de común acuerdo podrán dar por terminado el presente contrato. <br/>DECIMA. INSPECCIÓN: LA ARRENDADORA podrá por si o por medio de sus empleados visitar en cualquier tiempo el inmueble arrendado, con el fin de comprobar el cumplimiento de todas y cada una de las obligaciones estipuladas a cargo (EL) (LOS) (LA) ARRENDATARIA(O)(S). <br/>DECIMA PRIMERA. SUBARRIENDO, Y CESION POR PARTE DE (EL) (LOS) (LA) ARRENDATARIA(O) (S): (EL) (LOS) (LA) ARRENDATARIA(O)(S), no podrán ceder total o parcialmente el presente contrato, el incumplimiento de esta obligación dará derecho A LA ARRENDADORA  para dar por terminado el contrato y exigir la entrega del inmueble. Bajo ningún pretexto (EL) (LOS) (LA) ARRENDATARIA(O) (S) podrá subarrendar en todo o en parte el inmueble objeto del presente contrato. La violación a la presente prohibición constituirá justa causa de terminación del contrato por parte de LA ARRENDADORA , el incumplimiento de esta cláusula dará derecho A LA ARRENDADORA, en caso de cesión o subarriendo abusivos, a celebrar un nuevo contrato con los usuarios reales, caso en el cual el contrato anterior se entenderá como incumplido, situación que se comunicará por escrito a (EL) (LOS) (LA) ARRENDATARIA(O)(S) quienes estarán obligados a cancelar los canones de arrendamiento faltantes para la terminación de dicho contrato y a pagar la cláusula penal contenida en la CLAUSULA DECIMO OCTAVA, del presente contrato. <br/>DECIMA SEGUNDA: CESION DE DERECHOS DE LA ARRENDADORA, VENTA DEL INMUEBLE; LA ARRENDADORA  en cualquier tiempo podrá transferir sus derechos a terceras personas. "]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["(EL)(LOS)(LA) ARRENDATARIA (O) (S) se obligan a cumplir sus obligaciones con el cesionario desde la fecha en que tal acto se les comunique por correo certificado al inmueble materia del presente contrato con una antelación de treinta (30) días. Cumplida de esa forma la notificación, se entenderá que lo ha sido personalmente a las partes y no habrá necesidad de realizar otras diligencias para esa misma finalidad. Así mismo (EL) (LOS) (LA) ARRENDATARIA(O)(S), expresa que conoce que el inmueble objeto del presente contrato de arrendamiento, se está administrado por LA ARRENDADORA, y que por lo tanto, en desarrollo de su objeto social puede proceder a su venta y comercialización durante la vigencia del contrato, y desde ya manifiesta que acepta tal condición y se sujeta a las instrucciones que para tal efecto imparta LA ARRENDADORA.<br/><br/>DECIMA TERCERA. ABANDONO DEL INMUEBLE. Si es del caso que (EL) (LOS) (LA) ARRENDATARIA(O)(S) abandonaren el inmueble arrendado o le estén generando un grave deterioro, desde ya autoriza A LA ARRENDADORA para solicitar su restitución provisional, de conformidad con lo establecido en el Artículo 36 de la Ley 820 de 2003, a fin de salvaguardar su integridad y/o evitar la subcontratación o deterioro del mismo. DÉCIMA CUARTA. RESTITUCIÓN ESPECIAL DEL INMUEBLE: LA ARRENDADORA  podrá solicitar (EL) (LOS) (LA) ARRENDATARIA(O)(S) la restitución del inmueble arrendado de conformidad con lo previsto en el artículo 22 de la Ley 820 de 2003. <br/><br/>DÉCIMA QUINTA. DESTINACIÓN: (EL) (LOS) (LA) ARRENDATARIA(O)(S) se comprometen a destinar el inmueble objeto de este contrato exclusivamente para VIVIENDA FAMILIAR. En todo caso, en el inmueble objeto del presente contrato solamente podrán desarrollarse actividades lícitas.<br/><br/>DÉCIMA SEXTA.  INCUMPLIMIENTO Y/O MORA: El incumplimiento, mora o violación de cualquiera de las obligaciones por parte de (EL) (LOS) (LA) ARRENDATARIA(O)(S), dará derecho A LA ARRENDADORA  para terminar el contrato y exigir la entrega inmediata del inmueble, sin necesidad de desahucio ni de los requerimientos previstos en la Ley, para lo cual (EL) (LOS) (LA) ARRENDATARIA(O)(S) renuncian expresamente a los requerimientos de que tratan los artículos 2007 del Código Civil y 424 del Código de Procedimiento Civil y demás normas concordantes, como también al derecho de oponerse a la cesación del arrendamiento y a la restitución del inmueble. <br/><br/>DÉCIMA SÉPTIMA. REPORTES EN BANCO DE DATOS: (EL) (LOS) (LA) ARRENDATARIA(O)(S) y los DEUDORES SOLIDARIOS autorizan expresamente a la ARRENDADORA para que los datos personales contenidos en el presente contrato y en los soportes aportados sean utilizados y conocidos por LA ARRENDADORA, LA ASEGURADORA O AFIANZADORA, para los siguientes fines: a)el desarrollo de las actividades inherentes a la evaluación del riesgo, actualización, consulta y reporte en centrales de información, b) los servicios de asesoría y cobranza que se llegasen a ejecutar c) campañas comerciales y de mercadeo sobre productos o servicios afines, d)medir el nivel de satisfacción respecto de los productos y servicios, e) realizar investigaciones de mercado, f)análisis de información tendiente al control y prevención del fraude, g)el envío de mensajes de texto o correos electrónicos relativos al estado de mis obligaciones. Así mismo admiten que conocen sus derechos sobre el manejo de sus datos personales incluidos en la ley 1581 de 2012 y el decreto 1377 de 2013, los cuales podrán ser protegidos y exigidos a través del siguiente medio: correo físico dirigido a la CARRERA 80 AA Nº 36  57 BARRIO LAURELES, MEDELLIN. <br/><br/>La presente autorización tendrá la misma duración que en su momento tenga el contrato de arrendamiento y/o 10 años más.<br/><br/>PARÁGRAFO 1: Además de lo anterior, (EL) (LOS) (LA) ARRENDATARIA(O)(S) y SU (S) DEUDOR (ES) SOLIDARIO (S) declaran que:<br/><br/>a.	Conocen y aceptan el seguro o fianza que LA ARRENDADORA llegase a suscribir con una ASEGURADORA O AFIANZADORA para que asegure o afiance las obligaciones dinerarias surgidas del presente contrato de arrendamiento."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["b.	Aceptan los efectos de la subrogación que operaría en favor de LA ASEGURADORA O AFIANZADORA cuando ésta pague los saldos insolutos de sus obligaciones dinerarias, así como cualquier cesión que se produzca a favor de LA ASEGURADORA O LA AFIANZADORA del Contrato de Arrendamiento celebrado, quedando LA ASEGURADORA O LA AFIANZADORA con el derecho de obtener la recuperación de las sumas pagadas, más los intereses causados a la tasa más alta permitida por la ley y los gastos de cobranza respectivos.<br/><br/>c.	Que conocen y aceptan que el pago que realiza LA ASEGURADORA O AFIANZADORA  a la ARRENDADORA no extingue total ni parcialmente las obligaciones dinerarias surgidas a su cargo del Contrato de Arrendamiento. <br/><br/>DÉCIMA OCTAVA. CLAUSULA PENAL MORATORIA: Las partes establecen como sanción pecuniaria a favor de la parte cumplida o que se allanare a cumplir, y a cargo de la parte incumplida, en caso de presentarse incumplimiento en cualquiera de las obligaciones consagradas en el presente contrato, en una suma equivalente a TRES (3) cánones de arrendamiento mensuales vigentes, sin perjuicio de la mayor indemnización a que hubiere lugar en razón de dicho incumplimiento. Si la parte incumplida fuere el (EL) (LOS) (LA) ARRENDATARIA(O)(S) y el incumplimiento se relaciona con la mora o aun el mero retardo en el pago de los cánones de arrendamiento a su cargo, este contrato y la manifestación de LA ARRENDADORA, de haber presentado retardo en el cumplimiento de las obligaciones que del mismo se derivan, será prueba suficiente para el cobro de esta pena y (EL) (LOS) (LA) ARRENDATARIA(O) (S) renuncian expresamente a cualquier requerimiento privado o judicial para constituirlo en mora del pago de esta o cualquier otra obligación derivada del contrato. <br/><br/>DÉCIMA NOVENA. TITULO EJECUTIVO: Las partes acuerdan que el presente contrato presta mérito ejecutivo en los términos del artículo 488 del Código de Procedimiento Civil, en caso de mora en el pago del canon LA ARRENDADORA  podrá cobrar los cánones pendientes, los servicios dejados de pagar y la indemnización de los perjuicios causados bastando la sola afirmación y la presentación del contrato, para lo cual (EL) (LOS) (LA) ARRENDATARIA(O)(S) renuncian a su derecho de ser requeridos para constituirlos en mora.<br/><br/>VIGESIMA. PERFECCIONAMIENTO Y EJECUCIÓN: LEGALIZACIÓN Y EJECUCIÓN: el presente contrato se entiende perfeccionado con el acuerdo de voluntades sobre el precio y el bien entregado en arrendamiento, según lo establece el Código Civil Colombiano, sin embargo para su legalización se requiere, la firma de las partes que en él intervienen y para su ejecución se requiere de la aprobación de la póliza por parte de LA ARRENDADORA, además de la suscripción por ambas partes de la respectiva acta de entrega del bien inmueble.<br/><br/>VIGÉSIMA PRIMERA. SUPERVISIÓN: La Supervisión del presente contrato la ejercerá LA ARRENDADORA es decir, la empresa PORTADA INMOBILIARIA S.A.S a través de sus dependientes.<br/><br/>VIGÉSIMA SEGUNDA.OBLIGACION DE INFORMAR DAÑOS Y DESPERFECTOS. (EL) (LOS)(LA)  ARRENDATARIA (O)(S) declaran que es de su conocimiento el estado en el que se encuentra el inmueble, que en caso de presentarse en el inmueble algún daño material o desperfecto (no atribuible al uso que (EL) (LOS) (LA) ARRENDATARIA(O)(S) hayan hecho al mismo) que afecte las normales condiciones de vida de quienes ocupen el mismo, deberá informarlo A LA ARRENDADORA, por escrito a más tardar dentro de los cinco (5) días siguientes a que conoció tal circunstancia para que ésta proceda a realizar las reparaciones a que haya lugar, previa inspección y valoración del daño presentado.  Pero no obstante lo anterior, ello no será causal legal de terminación del referido contrato, a menos que LA ARRENDADORA, después de efectuar la valoración de dicho daño determine que es necesaria la desocupación del inmueble para realizar la reparación del mismo.<br/><br/>VIGÉSIMA TERCERA.DEUDORES SOLIDARIOS. Los DEUDORES SOLIDARIOS de este contrato se hacen responsables solidariamente de todas y cada una de las obligaciones derivadas del mismo y que se encuentren a cargo de (EL) (LOS) (LA) ARRENDATARIA (OS), incluyendo las indemnizaciones a que hubiere lugar por el incumplimiento de los dispuesto en este contrato."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["VIGÉSIMA CUARTA. ORIGEN DE FONDOS: (EL) (LOS) (LA) ARRENDATARIA(O)(S), declaran que los fondos con que dará cumplimiento a las obligaciones dinerarias que se desprenden del presente contrato, tienen procedencia lícita. VIGÉSIMA QUINTA. DOMICILIO: Para todos los efectos contractuales el domicilio será la ciudad de Medellín.<br/><br/>VIGESIMA SEXTA. GASTOS DEL PRESENTE CONTRATO: Correrán a cargo de (EL) (LOS) (LA) ARRENDATARIA(O) (S) los gastos que ocasione el presente contrato y la correspondencia que se derive por estado de cuenta morosa.<br/><br/>VIGESIMA SEPTIMA. COPIAS: El presente contrato se firma en TRES (3) originales, los cuales serán distribuidos de la siguiente manera: uno (1) para (EL) (LOS) (LA) ARRENDATARIA (OS), uno (1) para los Deudores Solidarios y uno (1) para LA ARRENDADORA y LA ASEGURADORA O AFIANZADORA. (EL) (LOS)(LA) ARRENDATARIA(OS) y los DEUDORES SOLIDARIOS manifiestan expresamente haber recibido un ejemplar del presente contrato.<br/><br/>VIGÉSIMA OCTAVA. NORMATIVIDAD APLICABLE: Este contrato se rige y se interpretara conforme a la Ley Colombiana especialmente a lo establecido el Código Civil Colombiano y la Ley 820 de 2003. <br/><br/>VIGÉSIMA NOVENA. NOTIFICACIONES: Toda comunicación en relación con este contrato deberá hacerse por escrito, no obstante los contratantes indican los siguientes correos electrónicos a los que también pueden remitirse las comunicaciones, diferentes de aquellos que por expreso mandato de la ley deban realizarse con una formalidad especial, los correos electrónicos y las direcciones son los siguientes: A LA ARRENDADORA: MAIL: info@portadainmobiliaria.com en Y/O la CARRERA 80 AA Nº 36 – 57  de Medellín Teléfono 448 77 71.<br/><br/>A (EL) (LOS) (LA) ARRENDATARIA(O)(S): en la "+$F{DIRECCION} +" de "+ $F{MUNICIPIO} + " Y/O "+$F{DIR_NOT_ARR1} +" MAIL: "+$F{MAIL_ARR1} +", TEL: "+$F{TEL_ARR1} +" CEL: "+$F{CEL_ARR1} +". <br/><br/><br/><br/>DEUDORES SOLIDARIOS: "+$F{DIR_DEU1} +", "+$F{DIR_DEU1} +", TEL: "+$F{TEL_DEU1} +", CEL: "+$F{CEL_DEU1} +", MAIL: "+$F{MAIL_DEU1}  +". <br/><br/><br/><br/>APROBACION Y CONSENTIMIENTO: Presentes los señores "+$F{ARRENDATARIO1} +" Y  "+$F{DEUDOR1} +" manifiestan: 1) Que han leído y comprendido la totalidad de las clausulas que rigen el presente contrato. 2) Que las inquietudes que el presente contrato les hubiese podido generar le fueron aclaradas y oportunamente resueltas por la arrendadora. 3) que aprueba íntegramente las declaraciones contenidas en el presente contrato. 4) que en señal de aprobación y aceptación de lo aquí contenido, proceden a suscribir el presente contrato junto con la representante legal de PORTADA INMOBILIARIA S.A.S en la ciudad de Medellín, el día "+$F{FECHA_INI}+"." ]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="1" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="1" y="17" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["LA ARRENDADORA:"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="133" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["FLOR VIVIANA CASTAÑO BETANCUR"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="145" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["C.C. No. 43.568.821"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="157" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="169" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Nit Nº 900.336.513-4"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="181" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Representante Legal "]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="226" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["ARRENDATARIO(S):"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="374" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DEUDORES SOLIDARIO(S):"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="320" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ARRENDATARIO1}.toUpperCase()]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="320" width="197" height="1"/>
+				</line>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="1" y="332" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1}+ " No. "+ $F{DOC_ARR1}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="372" y="251" width="70" height="70"/>
+				</rectangle>
+				<line>
+					<reportElement x="0" y="132" width="197" height="1"/>
+				</line>
+				<frame>
+					<reportElement mode="Transparent" x="1" y="510" width="493" height="106">
+						<printWhenExpression><![CDATA[!$F{DEUDOR2}.equals( null )]]></printWhenExpression>
+					</reportElement>
+					<rectangle>
+						<reportElement mode="Opaque" x="371" y="12" width="70" height="70"/>
+					</rectangle>
+					<textField isBlankWhenNull="false">
+						<reportElement stretchType="RelativeToTallestObject" x="0" y="82" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{DEUDOR2}.toUpperCase()]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="false">
+						<reportElement stretchType="RelativeToTallestObject" x="0" y="94" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU2}+ " No. "+ $F{DOC_DEU2}]]></textFieldExpression>
+					</textField>
+					<line>
+						<reportElement x="0" y="81" width="197" height="1"/>
+					</line>
+				</frame>
+				<frame>
+					<reportElement x="0" y="394" width="493" height="106">
+						<printWhenExpression><![CDATA[!$F{DEUDOR1}.equals( null )]]></printWhenExpression>
+					</reportElement>
+					<line>
+						<reportElement x="0" y="69" width="197" height="1"/>
+					</line>
+					<textField isBlankWhenNull="false">
+						<reportElement stretchType="RelativeToTallestObject" x="1" y="81" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU1}+ " No. "+ $F{DOC_DEU1}]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="false">
+						<reportElement stretchType="RelativeToTallestObject" x="0" y="69" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase()]]></textFieldExpression>
+					</textField>
+					<rectangle>
+						<reportElement mode="Opaque" x="372" y="0" width="70" height="70"/>
+					</rectangle>
+				</frame>
+			</frame>
+		</band>
+		<band height="50"/>
+	</detail>
+	<pageFooter>
+		<band height="51" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="1" width="490" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="42" width="197" height="9"/>
+				<textElement>
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="2" width="495" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[CARRERA 80 AA Nº 36 – 57 LAURELES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="12" width="495" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[TELEFONO No 4487771]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="22" width="495" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[www.portadainmobiliaria.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="261" y="32" width="234" height="10" forecolor="#000000"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Verdana" size="8" isBold="false" isItalic="false"/>
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ELABORADO_POR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="32" width="261" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[ELABORADO POR: ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

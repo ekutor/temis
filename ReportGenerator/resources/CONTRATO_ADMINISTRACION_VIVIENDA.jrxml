@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20" scriptletClass="net.sf.jasperreports.engine.JRDefaultScriptlet">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="3860"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<subDataset name="dataset1"/>
+	<parameter name="LOGO" class="java.lang.String">
+		<defaultValueExpression><![CDATA["D:\\Mis Documentos\\Documents\\Proyectos\\workspace\\ReportGenerator\\resources\\icono.png"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="NCONTRATO" class="java.lang.String"/>
+	<field name="ARRENDATARIO1" class="java.lang.String"/>
+	<field name="TIPO_DOC_ARR1" class="java.lang.String"/>
+	<field name="DOC_ARR1" class="java.lang.String"/>
+	<field name="DIRECCION" class="java.lang.String"/>
+	<field name="URBANIZACION" class="java.lang.String"/>
+	<field name="BARRIO" class="java.lang.String"/>
+	<field name="CANON" class="java.lang.String"/>
+	<field name="FECHA_INI" class="java.lang.String"/>
+	<field name="DIAPAGO" class="java.lang.String"/>
+	<field name="DEUDOR1" class="java.lang.String"/>
+	<field name="TIPO_DOC_DEU1" class="java.lang.String"/>
+	<field name="DOC_DEU1" class="java.lang.String"/>
+	<field name="DEUDOR2" class="java.lang.String"/>
+	<field name="TIPO_DOC_DEU2" class="java.lang.String"/>
+	<field name="DOC_DEU2" class="java.lang.String"/>
+	<field name="DIR_DEU1" class="java.lang.String"/>
+	<field name="DIR_DEU2" class="java.lang.String"/>
+	<field name="MUNI_DEU1" class="java.lang.String"/>
+	<field name="MUNI_DEU2" class="java.lang.String"/>
+	<field name="DIR_NOT_DEU1" class="java.lang.String"/>
+	<field name="DIR_NOT_DEU2" class="java.lang.String"/>
+	<field name="NUM_PUERTA" class="java.lang.String"/>
+	<field name="NOMENCLATURA" class="java.lang.String"/>
+	<field name="MATR_INMOB_SIGLA" class="java.lang.String"/>
+	<field name="MATR_INMOB" class="java.lang.String"/>
+	<field name="PARQUEADERO" class="java.lang.String"/>
+	<field name="CANON_LETRAS" class="java.lang.String"/>
+	<field name="FECHA_PAGO" class="java.lang.String"/>
+	<field name="MAIL_ARR1" class="java.lang.String"/>
+	<field name="TEL_ARR1" class="java.lang.String"/>
+	<field name="CEL_ARR1" class="java.lang.String"/>
+	<field name="VIGENCIA" class="java.lang.String"/>
+	<field name="DIR_NOT_ARR1" class="java.lang.String"/>
+	<field name="TEL_DEU1" class="java.lang.String"/>
+	<field name="CEL_DEU1" class="java.lang.String"/>
+	<field name="MAIL_DEU1" class="java.lang.String"/>
+	<field name="TEL_DEU2" class="java.lang.String"/>
+	<field name="CEL_DEU2" class="java.lang.String"/>
+	<field name="MAIL_DEU2" class="java.lang.String"/>
+	<field name="ELABORADO_POR" class="java.lang.String"/>
+	<field name="UTIL" class="java.lang.String"/>
+	<field name="MATR_INMOB_PARQ" class="java.lang.String"/>
+	<field name="FECHA_INI_LARGA" class="java.lang.String"/>
+	<field name="FECHA_FIN" class="java.lang.String"/>
+	<field name="DIA_LETRAS" class="java.lang.String"/>
+	<field name="MUNICIPIO" class="java.lang.String"/>
+	<field name="FI_DIA" class="java.lang.String"/>
+	<field name="FI_MES" class="java.lang.String"/>
+	<field name="FI_ANO" class="java.lang.String"/>
+	<field name="NUM_APTO" class="java.lang.String"/>
+	<field name="BANCO" class="java.lang.String"/>
+	<field name="NUM_CUENTA" class="java.lang.String"/>
+	<field name="TIPO_CUENTA" class="java.lang.String"/>
+	<field name="TITULAR_CUENTA" class="java.lang.String"/>
+	<field name="TIPO_DOC_TITULAR" class="java.lang.String"/>
+	<field name="DOC_TITULAR" class="java.lang.String"/>
+	<field name="CLAUSULA" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="121" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="415" y="0" width="80" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Verdana" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="66" width="161" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[NIT No. 900.336.513-4
+M.A.V.U.00011/08 SGM
+]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="346" y="12" width="148" height="34"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="0" y="12" width="162" height="54"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="347" y="12" width="80" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  CONTRATO N°  ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="250">
+			<textField>
+				<reportElement style="SubTitle" x="0" y="0" width="495" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONTRATO DE ADMINISTRACION DE VIVIENDA"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement mode="Transparent" x="0" y="18" width="495" height="230"/>
+				<rectangle>
+					<reportElement x="0" y="0" width="495" height="223"/>
+				</rectangle>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="2" width="298" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S."]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="1" y="145" width="197" height="24" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["BIEN OBJETO DEL CONTRATO"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="15" width="298" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NIT No. 900.336.513-4"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="1" y="40" width="197" height="27" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PROPIETARIOS (S)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="196" y="58" width="299" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1} + " No. "+$F{DOC_ARR1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="196" y="43" width="299" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ARRENDATARIO1}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement x="198" y="145" width="295" height="78"/>
+					<textField>
+						<reportElement style="SubTitle" x="0" y="0" width="295" height="13" forecolor="#000000"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+							<paragraph leftIndent="20"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="197" y="0" width="1" height="223"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="131" width="495" height="1"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement style="SubTitle" x="1" y="89" width="197" height="24" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CONSIGNANTE"]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="40" width="495" height="1"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="88" width="495" height="1"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement style="SubTitle" x="0" y="0" width="197" height="26" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["ARRENDADOR"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="164" width="295" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["URBANIZACION: "+$F{URBANIZACION}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="179" width="295" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["BARRIO: "+$F{BARRIO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="197" y="194" width="295" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["MUNICIPIO: "+$F{MUNICIPIO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="196" y="91" width="299" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DEUDOR1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="SubTitle" x="196" y="108" width="299" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU1} + " No. "+$F{DOC_DEU1}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="300">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="300"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="10" width="494" height="280" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Entre los suscritos a saber por una parte, FLOR VIVIANA CASTAÑO BETANCUR identificada con cédula de ciudadanía número 43.568.821 de Medellín, actuando en calidad de Representante Legal de PORTADA INMOBILIARIA S.A.S identificada con el Nit No. 900.336.513-4, entidad con matrícula de arrendadora No. 00011/08, expedida por la Secretaría de Gobierno y Derechos Humanos de la Ciudad de Medellín, quién para efectos de este contrato se denominará LA ADMINISTRADORA, y de otra parte "+$F{DEUDOR1}+" identificado(a) con "+$F{TIPO_DOC_DEU1}+" N° "+$F{DOC_DEU1}+", actuando en nombre propio, y  quien para efectos de este contrato se denominara (EL) LA CONSIGNANTE, se ha celebrado el siguiente contrato de administracion contenido en las siguientes clausula. <br/><br/> PRIMERA: OBJETO DEL NEGOCIO Y DESCRIPCION DEL BIEN: (EL) LA CONSIGNANTE comisiona a LA ADMINISTRADORA para Arrendar y en general administrar por cuenta y riesgo del PROPIETARIO(S) el inmueble ubicado en la siguiente direccion:<br/>"+$F{DIRECCION}+"," + ($F{PARQUEADERO} != null ? "PARQUEADERO "+ $F{PARQUEADERO} +"," : "" )+" URBANIZACION "+$F{URBANIZACION}+", barrio "+$F{BARRIO}+" del municipio de "+$F{MUNICIPIO}+" MATRICULA INMOBILIARIA No. "+$F{MATR_INMOB}+" (APT), No. "+$F{NUM_APTO}+".<br/><br/> SEGUNDA: DESTINACION. (EL) LA CONSIGNANTE autoriza expresamente a LA ADMINISTRADORA, para arrendar el inmueble CON DESTINACION VIVIENDA. En todo caso es convenido que en el inmueble objeto del presente contrato solamente podrán desarrollarse actividades lícitas. <br/><br/>TERCERA: CANON DE ARRENDAMIENTO. (EL) LA CONSIGNANTE, expresamente establece que el canon de arrendamiento para el inmueble entregado a LA ADMINISTRADORA se fijará en la suma de "+$F{CANON_LETRAS}+" PESOS (\$"+$F{CANON}+"). Teniendo en cuenta los precios vigentes para inmuebles de similares condiciones físicas y de ubicación.<br/><br/>CUARTA: OBLIGACIONES DE LA ADMINISTRADORA. En desarrollo de este contrato LA ADMINISTRADORA, asume las siguientes obligaciones: A) Anunciar en Arrendamiento el inmueble cuando considere necesario y por el medio que estime conveniente, siendo de su cargo el costo de la publicidad."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["B) Realizar los reajustes del canon de arrendamiento anualmente teniendo en cuenta las limitaciones legales de acuerdo con las normas vigentes. C) Celebrar en su propio nombre, pero por cuenta y riesgo de (EL) LA CONSIGNANTE los contratos de Arrendamientos respectivos. D) Cobrar a LOS ARRENDATARIOS directamente o por vía judicial, el canon de arrendamiento y los servicios públicos básicos de los que el inmueble está dotado y que corresponda cancelar al arrendatario. E) Rendir cuenta detallada a (EL) LA CONSIGNANTE, del canon de arrendamiento del mes inmediatamente anterior, así como de los gastos que se hubieren efectuado por su cuenta y del saldo a favor o en contra que se haya pagado o que adeude (EL) LA CONSIGNANTE a LA ADMINISTRADORA, cuentas que serán entregadas a (EL) LA CONSIGNANTE en las instalaciones de LA ADMINISTRADORA. Si en los diez (10) días siguientes a la fecha de la entrega de las referidas cuentas (EL) LA CONSIGNANTE no ha realizado observación alguna en relación con las mismas, se entenderá que este la ha encontrado a entera satisfacción y no habrá lugar a reclamaciones posteriores. F) Informar a (EL) LA CONSIGNANTE por cualquier medio de comunicación idóneo el estado de ocupación del inmueble para efectos de los pagos a que hubiere lugar. G) Pagar al CONSIGNANTE, la suma que corresponda al valor del canon de arrendamiento que cancele el arrendatario una vez descontada la correspondiente comisión y los gastos relacionados con la administración del inmueble, específicamente los relacionados con el pago de servicios públicos,  que le correspondan hasta la fecha de iniciación del contrato o financiaciones pendientes del propietario, al igual que reparaciones, mediante consignación o transferencia a la cuenta No "+$F{NUM_CUENTA}+"del Banco "+$F{BANCO}+" ("+$F{TIPO_CUENTA}+") cuya titularidad radica en cabeza de "+$F{TITULAR_CUENTA}+"identificado  con "+$F{TIPO_DOC_TITULAR}+" No. "+$F{DOC_TITULAR}+".  Es convenido que dicho pago se cancelará AL DECIMO (10º) día calendario a la fecha en que el arrendatario deba efectuar el pago respectivo, de acuerdo con la fecha de iniciación del contrato de arrendamiento y en todo caso dentro de cada periodo mensual, y hasta el día en que el inmueble se encuentre habitado por los arrendatarios.  Así mismo es convenido que los gastos que se generen por la consignación, transferencia o cheque de las sumas indicadas serán asumidos en su totalidad por EL CONSIGNANTE, pudiendo ser descontadas por LA ADMINISTRADORA del valor a consignar. H) Pagar en nombre y por cuenta del (EL) LA CONSIGNANTE una vez sea arrendado el inmueble, los servicios públicos, las cuotas de administración y demás gastos que estén pendientes de pago, relacionados con el inmueble objeto de arrendamiento. I) Cancelar en nombre y por cuenta del CONSIGNANTE, durante la vigencia del contrato de arrendamiento, las reparaciones necesarias detalladas en el inventario debidamente autorizadas por el propietario o aquellas que una vez notificadas y cotizadas debidamente no se obtenga autorización o respuesta alguna en un plazo máximo de ocho días, con el fin de garantizarle a los ARRENDATARIOS el uso y goce del inmueble en condiciones de normalidad. J) realizar por cuenta y riesgo del (EL) LA CONSIGNANTE y aun sin necesidad de autorización expresa las reparaciones que LA ADMINISTRADORA, estime necesarias y requeridas para la conservación del inmueble, así como aquellas que sean ordenadas por las autoridades competentes, siempre que ni legal ni convencionalmente correspondan a los arrendatarios, de acuerdo a lo establecido en la ley 820 del 2003. K) Exigir la entrega del inmueble a los arrendatarios, cuando se configure una causal legal de terminación del contrato de arrendamiento, ya sea judicial o extrajudicialmente L) LA ADMINISTRADORA será responsable ante la consignante por el pago de cánones de arrendamiento pactados en el contrato de arrendamiento respectivo, aun cuando los ARRENDATARIOS se encontraren en mora. En todo caso el contrato de arrendamiento se encuentra asegurado con una compañía aseguradora o afianzadora. En caso de fuerza mayor, caso fortuito o diligencia del proceso de restitución de inmueble, LA ADMINISTRADORA solo reconocerá el canon hasta la fecha real de la entrega material del inmueble por parte de los arrendatarios.  M) En caso de tener que acudir al proceso de restitución de bien inmueble arrendado por mora en el pago, los costos y gastos  judiciales serán por cuenta de LA ADMINISTRADORA igualmente cubrirá los gastos y las costas del proceso ejecutivo generados por el incumplimiento en el pago del canon de arrendamiento, por lo tanto las indemnizaciones y pagos que efectuare el arrendatario en razón de dichas acciones judiciales serán a favor de LA ADMINISTRADORA. N) LA ADMINISTRADORA, será responsable de los daños causados al inmueble por los Arrendatarios a excepción de los generados por el deterioro natural y la acción del tiempo según el inventario inicial.  En este caso LA ADMINISTRADORA se encargará de efectuar el cobro de los servicios públicos  causados hasta la fecha de entrega del inmueble y de los daños que estuvieren a cargo de los Arrendatarios, según el inventario que hace parte integral del presente contrato."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["O) En el evento en que (EL) LA CONSIGNANTE fallezca, LA ADMINISTRADORA, quedará facultada para retener el valor del canon de arrendamiento, hasta tanto los herederos acrediten el reconocimiento de tal calidad dentro del proceso de sucesión respectivo, o se acredite la condición del albacea que administrará los bienes de la sucesión o hasta tanto se le adjudique el bien inmueble objeto de este contrato a uno de los herederos del (EL) LA CONSIGNANTE, a quien se le haría entrega de los cánones de arrendamiento retenidos y del inmueble entregado en arrendamiento en caso que el contrato respectivo estuviere vigente. P) Dar respuesta a las peticiones realizadas por (EL) (LA) CONSIGNANTE en el término de 15 días hábiles, contados a partir de la fecha de recibo de las mismas.<br/>QUINTA: OBLIGACIONES DE (EL) LA CONSIGNANTE: En desarrollo de este contrato (EL) LA CONSIGNANTE, asume las siguientes obligaciones: A) mantener el (los) inmuebles, en condiciones de servir para el fin en que fue arrendado el inmueble, mientras este sea promocionado por LA ADMINISTRADORA, aun cuando este permanezca sin ser arrendado B) (EL) LA CONSIGNANTE, reconocerá a la ADMINISTRADORA los gastos en que esta haya incurrido para mantener o conservar el inmueble, de conformidad con lo estipulado en el literal J) de la CLÁUSULA CUARTA. C) reconocer a la administradora el valor de la comisión y los gastos a que haya lugar de conformidad con lo establecido del presente contrato D) el propietario se compromete a asegurar el bien inmueble por destrucción total o parcial, que ocurriere por caso fortuito o fuerza mayor, asonada, terremoto o incendio; en caso que no lo hiciere, asumirá cualquier daño o destrucción que el inmueble sufriere, por las razones antes expuestas; E) (EL) LA CONSIGNANTE se obliga a recoger y cancelar los servicios públicos, impuesto predial, las cuotas de administración y demás gravámenes que el inmueble genere mientras éste se encuentre desocupado aun siendo promocionado por la ADMINISTRADORA y en este mismo sentido será responsable del cuidado del mismo. F) si por razón de la gestión desarrollada por la ADMINISTRADORA, el arrendatario o alguno de sus allegados con vinculos comprobados resolviera adquirir el (los) inmuebles arrendados (EL) LA CONSIGNANTE, estará obligado a reconocer a favor de LA ADMINISTRADORA, la comisión del tres por ciento (3%), generalmente aceptada por la intermediación en los contratos de compraventa, más El IVA correspondiente. G) (EL) LA CONSIGNANTE responderá ante la ADMINISTRADORA por cualquier acción u omisión de su parte con la que se le hubiese generado un perjuicio al arrendatario, que hubiese derivado en una condena económica reclamada o impuesta al ADMINISTRADORA, a favor del arrendatario o una sanción a la ADMINISTRADORA, por cualquier entidad administrativa o judicial. H) (EL) LA CONSIGNANTE asume(n) toda responsabilidad por causa de reclamación, juicio, devoluciones o indemnización que se origine en el régimen legal de arrendamiento o en caso de responsabilidad civil contractual y extracontractual por perjuicios que sobrevengan en razón del mal estado del inmueble, daños y/o actos efectuados por trabajadores que (EL) LA CONSIGNANTE haya contratado directamente para efectuar reparaciones y/o mejoras en el inmueble, caso en el cual - (EL) LA CONSIGNANTE asumirán el costo de las reparaciones e indemnizaciones, de igual forma se producirá en caso(s) de fuerza mayor o caso(s) fortuito(s), o en general ante cualquier evento. Si por cualquier circunstancia a la ADMINISTRADORA se le obliga a restituir excedente de los cánones de arrendamiento, penalizaciones, mantenimientos, cargos efectuados en los servicios públicos como financiaciones y/o pagos de Gasodomesticos, líneas telefónicas etc., que no se encuentren a cargo de los arrendatarios y/o cualquier otro concepto, (EL) LA CONSIGNANTE deberá(n) pagarle dicha(s) suma(S) dentro de los diez (10) días siguientes a la notificación que por escrito le haga la ADMINISTRADORA. I) apoyar a la ADMINISTRADORA en su gestión ante las compañías o las personas que tengan a cargo la administración, tanto en el desarrollo normal de la relación,  como en la solución de posibles conflictos que puedan afectar el contrato de arrendamiento que se encuentre vigente sobre el (los) inmueble(s). J) en caso de enajenación de (los) inmueble(s) durante la vigencia del contrato de arrendamiento, de prórrogas o renovaciones del mismo, (EL) LA CONSIGNANTE se obliga(n) a imponer al adquiriente el deber de respetarlo hasta su vencimiento. En caso contrario asumirá el valor de los perjuicios que le legalmente pueda(n) reclamar EL (LOS) ARRENDATARIO(S) a la ADMINISTRADORA. K) efectuar las gestiones necesarias para la legalización ante Planeación Metropolitana, empresas prestadoras de servicios públicos y ante similares en los casos que sea requisito para el buen funcionamiento del (los) inmueble(S) de acuerdo al uso y contrato para el cual fue arrendado. L) suministrar a la ADMINISTRADORA  la información necesaria del valor, lugar de pago, periodicidad, etc., con respecto a la cuota de administración, predial cuando la ADMINISTRADORA deba pagarla."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["M) en caso de incumplimiento de las obligaciones del (EL) LA CONSIGNANTE que conlleven a PORTADA INMOBILIARIA S.A.S a incumplir el contrato de arrendamiento con el ARRENDATARIO y por tal circunstancia se genere la sanción por incumplimiento pactada en el contrato de arrendamiento, esta será de absoluta responsabilidad del (EL) LA CONSIGNANTE y será este quien responda por dicho pago a los arrendatarios. N) Devolver el IVA sobre el canon pagado en caso de que este no haya sido cancelado por los arrendatarios y se hubiere girado a (EL) LA CONSIGNANTE. O) Así mismo el CONSIGNANTE, se obliga a no interferir ni intervenir, directamente ni por interpuesta persona, en el contrato de arrendamiento celebrado entre la ADMINISTRADORA y el ARRENDATARIO, so pena de responder por los perjuicios que con su comportamiento genere al ARRENDATARIO o a la ADMINISTRADORA. <br/>SEXTA: COMISION POR ADMINISTRACION. (EL) LA CONSIGNANTE, pagará a LA ADMINISTRADORA como remuneración por los servicios que presta en razón de la ejecución del presente contrato una comisión equivalente al DIEZ POR CIENTO (10 %) del canon de Arrendamiento mensual, mas el IVA del 16% sobre el valor de la comisión y autoriza a LA ADMINISTRADORA, para deducir mensualmente del monto de dicho canon de Arrendamiento, no solo el valor de la comisión pactada sino además aquellos gastos que haya efectuado LA ADMINISTRADORA que legal o convencionalmente se encuentren a cargo del (EL) LA CONSIGNANTE.<br/>SEPTIMA: FACULTADES ESPECIALES O AUTORIZACIONES: En desarrollo del objeto de este contrato (EL) LA CONSIGNANTE faculta A LA ADMINISTRADORA para: A) Pagar por cuenta de (EL) LA CONSIGNANTE las cuotas de administración, incluidas las cuotas extras debidamente decretadas por la asamblea de copropietarios que se generen, los servicios públicos que estuvieren a cargo del propietario, los impuestos con que fuera gravado el inmueble y demás gastos que no correspondan pagar a los Arrendatarios al momento de ser arrendado el inmueble, si (EL) LA CONSIGNANTE no los hubieren pagado oportunamente, no obstante habérsele  informado por cualquier medio de comunicación expedito y que estos estuvieren causando perjuicio a los Arrendatarios.-B) Pagar por cuenta de (EL) LA CONSIGNANTE los gastos que siendo a cargo de los arrendatarios no estuvieren cubiertos por las pólizas y no hubieren sido cancelados por ellos al finalizar el contrato de arrendamiento, previa presentación y aprobación sobre cuantía  y origen de los mismos C) Efectuar por cuenta de (EL) LA CONSIGNANTE las reparaciones necesarias que LA ADMINISTRADORA juzgue conveniente para la conservación del inmueble o para facilitar su arrendamiento, así como aquellas que sean ordenadas por las autoridades siempre que legalmente no correspondan al Arrendatario. Para efecto de las reparaciones que el inmueble requiera y que afecten el normal uso y disfrute del mismo o de los servicios, cosas y usos conexos adicionales con los que se arrendó el inmueble. LA ADMINISTRADORA podrá obrar sin consentimiento del CONSIGNANTE hasta el valor de un canon de arrendamiento, si tales situaciones amenazan ruina o atentan contra la estabilidad de la edificación o constituyen riesgo frente a bienes de terceros o para seguridad o la salud de los habitantes del inmueble o de la copropiedad, cuando comprobadamente habiendo requerido a (EL) LA CONSIGNANTE este no hubiere sido encontrado oportunamente o no hubiere dado respuesta dentro de los 5 días siguientes a la comunicación de la necesidad de reparación. D) Deducir del monto del canon mensual cancelado por los ARRENDATARIOS, los siguientes conceptos: 1. el valor de la comisión estipulada en la clausula sexta con preferencia sobre cualquier otro gasto o concepto. 2. el valor de las reparaciones o mejoras efectuadas en el (los) inmueble(s), el valor de los pagos de servicios públicos, cuota de administración, impuestos, gravámenes y demás gastos que haya efectuado LA ADMINISTRADORA en nombre y por cuenta de (EL) LA CONSIGNANTE. 3. En la recuperación de dineros, abonar en primera instancia al valor de los cánones de arrendamiento dejados de pagar por los ARRENDATARIOS y reconocidos por la ADMINISTRADORA a (EL) LA CONSIGNANTE. 4. Las costas y gastos del juicio de restitución por mora en el canon y de cobro jurídico que se recuperen, serán igualmente para la ADMINISTRADORA. 5. Descontar de los pagos del canon los honorarios sobre el valor de las reparaciones y/o mantenimiento que se hayan efectuado en el inmueble a través de LA ADMINISTRADORA. 6. A consultar y reportar a Procrédito, Datacrédito, Cifin, Lonja DE propiedad raíz de Medellín y otras bases de datos que se consideren necesarias la información sobre los saldos adeudados por  (EL) LA CONSIGNANTE a la ADMINISTRADORA cuando haya negado o incumplido el reembolso en forma oportuna. 6. Fijar los reajustes del canon de arrendamiento teniendo en cuenta los cánones vigentes para inmuebles similares en el medio y las limitaciones de las normas vigentes. 7. Realizar cesión de contrato de arrendamiento a un nuevo ARRENDATARIO en caso de que la ADMINISTRADORA lo considere necesario, previo estudio de estos."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["8. Definir libremente la vigencia de la prorroga y renovaciones en los eventos en que esta sea diferente a la vigencia anterior y no se logre localizar (EL) LA CONSIGNANTE. <br/>OCTAVA: DURACIÓN.  El presente contrato de administración tendrá la misma duración del contrato de arrendamiento que se celebre sobre el inmueble, incluidas todas sus prorrogas, pero en todo caso se entenderá que las obligaciones pecuniarias derivadas del presente contrato se mantendrán solo hasta la fecha en que se encuentre ocupado el inmueble por parte de los arrendatarios. PARAGRAFO: (EL) LA CONSIGNANTE no podrá solicitar unilateralmente la terminación del contrato de Administración estando el inmueble arrendado por LA ADMINISTRADORA, a menos que acredite una causal legal de terminación del contrato de arrendamiento, a la luz de lo dispuesto en el artículo 22 de la ley 820 de 2003, según sea el caso y siempre y cuando cumpla con los requisitos exigidos por dicha norma, relacionados con el tiempo del preaviso y con las cauciones y/o indemnizaciones a que hubiere lugar. <br/>NOVENA: CAUSALES DE TERMINACIÓN: el presente contrato podrá darse por terminado con fundamento en las siguientes causales: <br/>A)	Por mutuo acuerdo entre las partes.<br/>B)	Por el engaño, omisión o falsedad en el suministro de la información relacionada con el presente contrato y que sea necesaria en la ejecución del mismo.<br/>C)	Por la destrucción total o parcial del inmueble de manera que se haga imposible la continuidad del contrato de arrendamiento sobre el mismo.<br/>D)	Por la expiración del contrato de arrendamiento de acuerdo a las normas legales vigentes en materia de arrendamiento. <br/>DECIMA: RESTITUCIÓN ANTICIPADA DEL INMUEBLE. Si los Arrendatarios hubieren cumplido en forma oportuna y adecuada todas sus obligaciones contractuales durante la vigencia del contrato, y  (EL) LA CONSIGNANTE solicita unilateralmente la restitución del inmueble, (por causal diferente a la mora en el pago del arrendamiento o al incumplimiento de sus obligaciones contractuales) negándose los arrendatarios a efectuar la entrega voluntaria, los gastos judiciales que se causen para su restitución serán por cuenta de (EL) LA CONSIGNANTE; Así mismo (EL) LA CONSIGNANTE estará obligado a cancelar las indemnizaciones a que hubiere lugar, y que tengan origen en la petición de restitución anticipada del inmueble entregado en administración y adicionalmente no podrá exigir suma alguna por concepto de canon de arrendamiento en caso tal, que el arrendatario se abstenga de pagar el canon fijado.<br/>DECIMA PRIMERA: TERMINACIÓN ANTICIPADA DEL CONTRATO DE ARRENDAMIENTO. En caso en que por razones de fuerza mayor o caso fortuito, los arrendatarios soliciten la terminación del contrato de arrendamiento antes de la fecha de vencimiento del termino inicial o de cualquiera de sus prorrogas LA ADMINISTRADORA, podrá libremente resolver dicha solicitud teniendo en cuenta las circunstancias particulares que generan la terminación anticipada del contrato de arrendamiento celebrado.Así mismo es convenido que, en caso que los arrendatarios soliciten la terminación del contrato de arrendamiento antes de la fecha de vencimiento del término pactado y de común acuerdo con la arrendadora, se dé por terminado el mismo y ello diere lugar a que el arrendatario cancelare alguna suma de dinero a título de indemnización; las referidas sumas serán divididas entre EL CONSIGNANTE y LA ADMINISTRADORA, es decir 50% de lo cancelado por el arrendatario para EL CONSIGNANTE y el 50% restante para LA ADMINISTRADORA. <br/><br/>DECIMA SEGUNDA: SOLICITUD DE TERMINACION DEL CONTRATO DE ARRENDAMIENTO Y DE RESTITUCION DEL INMUEBLE AL PROPIETARIO: (EL) LA CONSIGNANTE se comprometen a notificar por escrito a la ADMINISTRADORA su solicitud de restitución de (los) inmueble(s) arrendado(s) al vencimiento de las prorrogas, con un plazo mínimo de cuatro (4) meses para vivienda urbana, ciñéndose a los términos y a las normatividad que para estos casos estipula la ley, para de esta forma otorgar un plazo prudencial a la ADMINISTRADORA, para realizar la gestiones tendientes a obtener la restitución del inmueble. Así mismo informará la causal legal en la que fundamenta su solicitud de restitución, prestará la caución respectiva en los casos en que esta sea necesaria y se comprometerá a dar cumplimiento a lo ordenado por la ley sobre la futura destinación del inmueble.<br/>DECIMA TERCERA: LIBERTAD DEL INMUEBLE: (EL) LA CONSIGNANTE manifiesta(n) que el (los) inmueble(s) de que tratan este contrato es (son) de su exclusiva propiedad y que está(n) libre(s) de embargos o pleitos pendientes y en general de cualquier limitación para ser arrendado(s). <br/>"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DECIMA CUARTA: CESION - TERMINACIÓN UNILATERAL DEL CONTRATO DE ADMINISTRACIÓN. Si LA ADMINISTRADORA hubiere cumplido en forma oportuna y adecuada sus obligaciones contractuales y el inmueble se encuentra arrendado por cuenta de LA ADMINISTRADORA, (EL) CONSIGNANTE no podrá solicitar unilateralmente la terminación del presente contrato, ni su cesión a favor de un tercero, pues esto solo será posible si le asiste una causal legal de terminación del contrato de arrendamiento debidamente sustentada o si el inmueble es restituido por los arrendatarios de forma voluntaria.<br/>DECIMA QUINTA: RESPONSABILIDAD DE (EL) LA CONSIGNANTE. (EL) LA CONSIGNANTE asume toda la responsabilidad por causa de reclamación, juicio, devoluciones o indemnizaciones que se originen en el régimen del arrendamiento o en caso de responsabilidad civil contractual o extracontractual por perjuicios que sobrevengan en razón del mal estado del inmueble o en general ante cualquier evento que le sea imputable, salvo que estos se deban a deficiencias y/o errores debidamente comprobados en la gestión DE LA ADMINISTRADORA, en cuyo caso ésta asumirá dicha responsabilidad. PARAGRAFO: Si por cualquier circunstancia LA ADMINISTRADORA, se viera obligada a restituir al arrendatario, excedentes de cánones de arrendamiento o alguna suma de dinero relacionada con el contrato de arrendamiento celebrado, (EL) LA CONSIGNANTE se obliga a pagarle a LA ADMINISTRADORA, dichas suma dentro de los diez (10) días siguientes a la notificación que en ese sentido le haga LA ADMINISTRADORA, por escrito.<br/>DÉCIMA SEXTA: CESION DEL CONTRATO.  LA ADMINISTRADORA, podrá ceder el presente contrato previa aprobación escrita del propietario, en virtud que este se entiende celebrado en consideración a las condiciones de la ADMINISTRADORA.  (EL) LA CONSIGNANTE, por su parte podrá ceder su posición contractual a cualquier persona natural o jurídica debiendo notificar de ello a la administradora con 30 días calendario a la fecha en que pretenda efectuar la cesión, para efectos de las notificaciones a que hubiere lugar. <br/>DÉCIMA SEPTIMA: VENTA DEL INMUEBLE ARRENDADO. En caso de enajenación del inmueble durante la vigencia del contrato de arrendamiento o de las prórrogas del mismo, (EL) LA CONSIGNANTE, se obliga a informar al adquirente el deber de respetar dicho contrato hasta su vencimiento. <br/>DÉCIMA OCTAVA: AVALUO CATASTRAL. (EL) LA CONSIGNANTE declara que el precio del canon de arrendamiento, está señalado con base en el avalúo catastral que él ha informado a la INMOBILIARIA y por tanto cualquier sanción administrativa impuesta a LA ADMINISTRADORA proveniente o que se derive del cobro de la suma aquí celebrada, dará derecho a LA ADMINISTRADORA o a su apoderado, para repetir lo pagado contra (EL) LA CONSIGNANTE.<br/>DECIMA NOVENA: REQUISITOS DE SALUBRIDAD Y REGIMEN DE PROPIEDAD HORIZONTAL. (EL) LA CONSIGNANTE se compromete a cumplir con los requisitos y exigencias de sanidad, higiene, policía y reglamentos de propiedad horizontal que sean exigidos por la legislación vigente; igualmente se compromete a hacer entrega  a LA ADMINISTRADORA, de una copia del reglamento de propiedad Horizontal y del manual de convivencia al que se encuentre sometido el inmueble objeto del presente contrato.<br/>VIGESIMA: EXENCIONES DE RESPONSABILIDAD: LA ADMINISTRADORA no será responsable ante  (EL) LA CONSIGNANTE del valor de las cuentas no pagadas por los ARRENDATARIOS por concepto de: A). llamadas a larga distancia nacionales e internacionales, llamadas realizadas a teléfonos celulares, teléfonos móviles y publicaciones en el directorio telefónico. B) por responsabilidad civil por perjuicio que sobrevengan por el mal estado del inmueble, vicios ocultos, casos de fuerza mayor o casos fortuitos o por el engaño, omisión o falsedad de (EL) LA CONSIGNANTE en el suministro cabal y oportuno de la información necesaria para que la ADMINISTRADORA pueda cumplir sus funciones o en general ante cualquier evento. C) por los honorarios y costas de abogados por cobros jurídicos diferentes a los que se generen con ocasión de los procesos ejecutivos y de restitución que se inicien por mora en el pago del canon de arrendamiento por parte de los ARRENDATARIOS. <br/>VIGESIMA PRIMERA: AUTORIZACIONES: (EL) LA CONSIGNANTE colabora(n) al máximo con la ADMINISTRADORA para el cumplimiento de sus obligaciones en aquellos casos que se requiera de su consentimiento para la toma de decisiones y no se obtenga una respuesta oportuna. Faculta a la ADMINSTRADORA para actuar en conformidad con la ley y la práctica comercial en la solución de los casos. Así mismo EL (LOS) PROPIETARIOS autoriza(n) a LA ADMINISTRADORA para aceptar la terminación anticipada del contrato de arrendamiento sin penalización por efectos de un acuerdo conciliatorio con los ARRENDATARIOS dentro de un proceso de lanzamiento y el cobro jurídico.<br/>"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["VIGESIMA SEGUNDA: PRESENTACION DE ESCRITURAS Y COBROS JURIDICOS. Si la ADMINISTRADORA tuviese la necesidad de acudir a un proceso de restitución de (los) inmueble(s)   (EL) LA CONSIGNANTE se comprometen a facilitar a la mayor brevedad las copias de las respectivas escrituras de los inmuebles para proceder con dicho trámite. Cuando (EL) LA CONSIGNANTE decida asumir los trámites jurídicos  en forma directa, deberán pagarle a la administradora el valor de la comisión de los cánones en mora y de los cánones de arrendamiento que fueron girados, así como los demás saldos adeudados por el (EL) LA CONSIGNANTE a la ADMINISTRADORA para proceder a la cesión del contrato de arrendamiento.<br/>VIGESIMA TERCERA: CALIDAD DE LA ADMINISTRADORA EN EL CONTRATO DE ARRENDAMIENTO. LA ADMINISTRADORA obra en el contrato de arrendamiento como arrendador del inmueble objeto del contrato, como intermediario y en nombre y en representación de EL (LOS) PROPIETARIOS en desarrollo de las facultades que este le confiere a través del contrato de administración. Como tal no adquiere la calidad de propietario, ni de tenedor del inmueble y por ello está exento de cualquier responsabilidad civil con la propiedad y/o el edificio del cual hace parte el inmueble; no aplica para PORTADA INMOBILIARIA S.A.S la solidaridad de pago establecido en la ley 675 del 2001 sobre régimen de propiedad horizontal ya que esta es únicamente entre los propietarios, arrendatarios y usuarios o tenedores del inmueble, con el edificio o con la propiedad horizontal.<br/>VIGESIMA CUARTA: MODIFICACIONES O ADICIONES. Cualquier modificación  al presente contrato deberá realizarse y suscribirse por las partes mediante OTRO SI, que hará parte integral del mismo. <br/>VIGESIMA QUINTA: CERTIFICADOS. Para los efectos de la expedición de los certificados destinados a la declaración de renta, los mismos se emitirán a nombre del (EL) LA PROPIETARIA (O), de conformidad con lo dispuesto en el presente contrato.<br/>VIGESIMA SEXTA: NOTIFICACIONES: Toda comunicación en relación con este contrato deberá hacerse por escrito, no obstante los contratantes indican los siguientes correos electrónicos a los que también pueden remitirse las comunicaciones, diferentes de aquellos que por expreso mandato de la ley deban realizarse con una formalidad especial, los correos electrónicos y las direcciones son los siguientes: A LA ARRENDADORA: MAIL: info@portadainmobiliaria.com Y/O  CARRERA 80 AA Nº 36 – 57 de Medellín Teléfono 448 77 71, A (EL) LA CONSIGNANTE en "+$F{DIR_NOT_DEU1}+", MEDELLIN Y/O MAIL: "+$F{MAIL_DEU1}+" TEL: "+$F{TEL_DEU1}+" CEL: "+$F{CEL_DEU1}+". Así mismo (EL) LA CONSIGNANTE se obliga a informar a la ADMINISTRADORA por escrito de cualquier cambio de dirección de correspondencia y teléfonos, con un lapso no inferior a un mes de antelación al periodo de pago, al igual como del lugar y/o modificaciones a la cuenta y banco donde autorizo realizar el pago.<br/><br/>VIGESIMA SEPTIMA: TITULO EJECUTIVO. Las partes contratantes reconocen la calidad de titulo ejecutivo al presente contrato, para la exigencia judicial de las obligaciones de dar y hacer que en él se incorporan.<br/>En constancia de aceptación de lo aquí contenido, se firma por las partes en la ciudad de Medellín, en dos (2) ejemplares del mismo tenor, el día "+$F{FI_DIA} +"("+$F{FI_DIA}+") del mes de "+$F{FI_MES}+"del año "+$F{FI_ANO}+".<br/><br/>APROBACION Y CONSENTIMIENTO: Presente la señora "+$F{ARRENDATARIO1}+" manifiesta: 1) Que han leído y comprendido la totalidad de las cláusulas que rigen el presente contrato, 2) Que las inquietudes que el presente contrato les hubiese podido generar, le fueron aclaradas y oportunamente resueltas por la ADMINISTRADORA, 3) que aprueba íntegramente las declaraciones contenidas en el presente contrato 4) Que conocen las normas que rigen los contratos de arrendamiento de inmuebles destinados a vivienda y a los denominados inmuebles por exclusión y por tanto se comprometen a acatarlas con estricta sujeción 5) Que en señal de aprobación y aceptación de lo aquí contenido, proceden a suscribir el presente contrato junto con la representante legal de PORTADA INMOBILIARIA S.A.S en la ciudad de Medellín, el día "+$F{FI_DIA}+"("+$F{FI_DIA}+") del mes de "+$F{FI_MES}+" del año "+$F{FI_ANO}+".<br/>"+($F{CLAUSULA}!= null? "CLAUSULA ADICIONAL: "+$F{CLAUSULA} :" ")]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="620">
+			<frame>
+				<reportElement positionType="Float" x="1" y="0" width="494" height="620"/>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="241" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["FLOR VIVIANA CASTAÑO BETANCUR"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="253" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["C.C. No. 43.568.821"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="265" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="277" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Nit Nº 900.336.513-4"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="289" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Representante Legal "]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="373" y="430" width="70" height="70"/>
+				</rectangle>
+				<line>
+					<reportElement x="0" y="240" width="197" height="1"/>
+				</line>
+			</frame>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="125" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LA ADMINISTRADORA:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="512" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1}+ " No. "+ $F{DOC_ARR1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="406" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EL (LA) CONSIGNANTE,"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="500" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ARRENDATARIO1}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="500" width="197" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="51" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="1" width="490" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="42" width="197" height="9"/>
+				<textElement>
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="2" width="495" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[CARRERA 80 AA Nº 36 – 57 LAURELES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="12" width="495" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[TELEFONO No 4487771]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="22" width="495" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[www.portadainmobiliaria.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="261" y="32" width="234" height="10" forecolor="#000000"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Verdana" size="8" isBold="false" isItalic="false"/>
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ELABORADO_POR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="32" width="261" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Verdana" size="7"/>
+				</textElement>
+				<text><![CDATA[ELABORADO POR: ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
