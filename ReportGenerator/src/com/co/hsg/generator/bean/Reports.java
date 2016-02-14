@@ -2,7 +2,7 @@
  
  public enum Reports
  {
-   CONTRATO_ARRENDAMIENTO, CONTRATO_ADMON_VIVIENDA;
+   CONTRATO_ARRENDAMIENTO, CONTRATO_ADMON_VIVIENDA, ENUME_PRUEBA;
  
    public static Reports getReportType(String type) {
      Reports[] reports = values();
