@@ -15,19 +15,19 @@
  
      switch (tipo) {
      case Debug:
-       this.lc.addTrace(mensaje);
-       break;
-     case Error:
        this.lc.addDebug(mensaje);
        break;
-     case Info:
-       this.lc.addWarn(mensaje);
-       break;
-     case Trace:
+     case Error:
        this.lc.addError(mensaje);
        break;
+     case Info:
+       this.lc.addInfo(mensaje);
+       break;
+     case Trace:
+       this.lc.addTrace(mensaje);
+       break;
      case Warning:
-       this.lc.addFatal(mensaje);
+       this.lc.addWarn(mensaje);
      case Fatal:
      }
    }

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20" scriptletClass="net.sf.jasperreports.engine.JRDefaultScriptlet">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="1013"/>
-	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
-	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
-	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
-	<style name="Detail" fontName="Arial" fontSize="12"/>
-	<subDataset name="dataset1"/>
-	<parameter name="LOGO" class="java.lang.String">
-		<defaultValueExpression><![CDATA["D:\\Mis Documentos\\Documents\\Proyectos\\workspace\\ReportGenerator\\resources\\icono.png"]]></defaultValueExpression>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Verdana" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Verdana" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Verdana" fontSize="12" isBold="true"/>
+	<parameter name="LOGO" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\GitRepos\\ReportGenerator\\ReportGenerator\\resources\\icono.png"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[]]>
@@ -71,14 +69,14 @@
 	<pageHeader>
 		<band height="121" splitType="Stretch">
 			<textField>
-				<reportElement style="Column header" x="415" y="0" width="80" height="12"/>
+				<reportElement style="SubTitle" x="415" y="0" width="80" height="12"/>
 				<textElement textAlignment="Right">
 					<font fontName="Verdana" size="9" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="1" y="66" width="161" height="23"/>
+				<reportElement style="SubTitle" x="1" y="66" width="161" height="23"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Verdana" size="7"/>
 				</textElement>
@@ -87,7 +85,7 @@ M.A.V.U.00011/08 SGM
 ]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement mode="Transparent" x="346" y="12" width="148" height="34"/>
+				<reportElement style="SubTitle" mode="Transparent" x="346" y="12" width="148" height="34"/>
 				<graphicElement>
 					<pen lineWidth="1.0"/>
 				</graphicElement>
@@ -97,7 +95,7 @@ M.A.V.U.00011/08 SGM
 				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement style="Title" x="347" y="12" width="80" height="20"/>
+				<reportElement style="SubTitle" x="347" y="12" width="80" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Verdana" size="9" isBold="true"/>
 				</textElement>
@@ -108,77 +106,77 @@ M.A.V.U.00011/08 SGM
 	<detail>
 		<band height="320">
 			<textField>
-				<reportElement style="SubTitle" x="0" y="0" width="495" height="18" forecolor="#000000"/>
+				<reportElement x="0" y="0" width="495" height="18" forecolor="#000000"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Verdana" size="9" isBold="true"/>
+					<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["CONTRATO DE ARRENDAMIENTO DE VIVIENDA URBANA"]]></textFieldExpression>
 			</textField>
 			<frame>
 				<reportElement mode="Transparent" x="0" y="18" width="495" height="302"/>
 				<rectangle>
-					<reportElement x="0" y="0" width="495" height="300"/>
+					<reportElement style="SubTitle" x="0" y="0" width="495" height="300"/>
 				</rectangle>
 				<textField>
-					<reportElement style="SubTitle" x="197" y="0" width="298" height="13" forecolor="#000000"/>
+					<reportElement x="197" y="0" width="298" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<font fontName="TahomaNegrilla"  pdfFontName="fonts/verdanab.ttf" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S."]]></textFieldExpression>
+					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="198" y="66" width="297" height="13" forecolor="#000000"/>
+					<reportElement x="198" y="66" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["URBANIZACION: "+$F{URBANIZACION}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="1" y="145" width="197" height="24" forecolor="#000000"/>
+					<reportElement x="1" y="145" width="197" height="24" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["DEUDORES SOLIDARIOS"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="198" y="118" width="297" height="13" forecolor="#000000"/>
+					<reportElement x="198" y="118" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["FECHA DE INICIO: DIA:"+$F{FI_DIA}+" MES:"+$F{FI_MES}+" AÑO:"+$F{FI_ANO}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="197" y="13" width="298" height="13" forecolor="#000000"/>
+					<reportElement x="197" y="13" width="298" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["NIT No. 900.336.513-4"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="1" y="26" width="197" height="27" forecolor="#000000"/>
+					<reportElement x="1" y="26" width="197" height="27" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["ARRENDATARIOS (S)"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="197" y="131" width="297" height="13" forecolor="#000000"/>
+					<reportElement x="197" y="131" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["FECHA DE PAGO: "+$F{DIAPAGO}+ " DE CADA MES"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="196" y="40" width="299" height="13" forecolor="#000000"/>
+					<reportElement x="196" y="40" width="299" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1} + " No. "+$F{DOC_ARR1}]]></textFieldExpression>
@@ -188,76 +186,76 @@ M.A.V.U.00011/08 SGM
 						<printWhenExpression><![CDATA[!$F{DEUDOR2}.equals( null )]]></printWhenExpression>
 					</reportElement>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="0" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="0" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase( )]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="13" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="13" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU2} + " No. "+$F{DOC_DEU2}]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="26" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="26" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="39" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="39" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{DIR_DEU2}]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="52" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="52" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{MUNI_DEU2}]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="62" width="295" height="13" forecolor="#000000">
+						<reportElement x="0" y="62" width="295" height="13" forecolor="#000000">
 							<printWhenExpression><![CDATA[!$F{MAIL_DEU2}.equals( null )]]></printWhenExpression>
 						</reportElement>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{MAIL_DEU2}]]></textFieldExpression>
 					</textField>
 				</frame>
 				<textField>
-					<reportElement style="SubTitle" x="196" y="27" width="299" height="13" forecolor="#000000"/>
+					<reportElement x="196" y="27" width="299" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ARRENDATARIO1}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="197" y="92" width="297" height="13" forecolor="#000000"/>
+					<reportElement x="197" y="92" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["MUNICIPIO: "+$F{MUNICIPIO}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="198" y="53" width="297" height="13" forecolor="#000000"/>
+					<reportElement x="198" y="53" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
@@ -267,51 +265,51 @@ M.A.V.U.00011/08 SGM
 						<printWhenExpression><![CDATA[!$F{DEUDOR1}.equals( null )]]></printWhenExpression>
 					</reportElement>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="0" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="0" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase( )]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="13" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="13" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU1} + " No. "+$F{DOC_DEU1}]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="26" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="26" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="52" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="52" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{MUNI_DEU1}]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="39" width="295" height="13" forecolor="#000000"/>
+						<reportElement x="0" y="39" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{DIR_DEU1}]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement style="SubTitle" x="0" y="65" width="295" height="13" forecolor="#000000">
+						<reportElement x="0" y="65" width="295" height="13" forecolor="#000000">
 							<printWhenExpression><![CDATA[!$F{MAIL_DEU1}.equals( null )]]></printWhenExpression>
 						</reportElement>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{MAIL_DEU1}]]></textFieldExpression>
@@ -324,9 +322,9 @@ M.A.V.U.00011/08 SGM
 					</graphicElement>
 				</line>
 				<textField>
-					<reportElement style="SubTitle" x="198" y="79" width="297" height="13" forecolor="#000000"/>
+					<reportElement x="198" y="79" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["BARRIO: "+$F{BARRIO}]]></textFieldExpression>
@@ -338,9 +336,9 @@ M.A.V.U.00011/08 SGM
 					</graphicElement>
 				</line>
 				<textField>
-					<reportElement style="SubTitle" x="0" y="54" width="197" height="24" forecolor="#000000"/>
+					<reportElement x="0" y="54" width="197" height="24" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["OBJETO DEL CONTRATO"]]></textFieldExpression>
@@ -358,17 +356,17 @@ M.A.V.U.00011/08 SGM
 					</graphicElement>
 				</line>
 				<textField>
-					<reportElement style="SubTitle" x="0" y="0" width="197" height="26" forecolor="#000000"/>
+					<reportElement x="0" y="0" width="197" height="26" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["ARRENDADOR"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="SubTitle" x="196" y="105" width="297" height="13" forecolor="#000000"/>
+					<reportElement x="196" y="105" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="false"/>
+						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["CANON: "+$F{CANON} + " MENSUAL"]]></textFieldExpression>
@@ -468,7 +466,7 @@ M.A.V.U.00011/08 SGM
 					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
 						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA["VIGÉSIMA CUARTA. ORIGEN DE FONDOS: (EL) (LOS) (LA) ARRENDATARIA(O)(S), declaran que los fondos con que dará cumplimiento a las obligaciones dinerarias que se desprenden del presente contrato, tienen procedencia lícita. VIGÉSIMA QUINTA. DOMICILIO: Para todos los efectos contractuales el domicilio será la ciudad de Medellín.<br/><br/>VIGESIMA SEXTA. GASTOS DEL PRESENTE CONTRATO: Correrán a cargo de (EL) (LOS) (LA) ARRENDATARIA(O) (S) los gastos que ocasione el presente contrato y la correspondencia que se derive por estado de cuenta morosa.<br/><br/>VIGESIMA SEPTIMA. COPIAS: El presente contrato se firma en TRES (3) originales, los cuales serán distribuidos de la siguiente manera: uno (1) para (EL) (LOS) (LA) ARRENDATARIA (OS), uno (1) para los Deudores Solidarios y uno (1) para LA ARRENDADORA y LA ASEGURADORA O AFIANZADORA. (EL) (LOS)(LA) ARRENDATARIA(OS) y los DEUDORES SOLIDARIOS manifiestan expresamente haber recibido un ejemplar del presente contrato.<br/><br/>VIGÉSIMA OCTAVA. NORMATIVIDAD APLICABLE: Este contrato se rige y se interpretara conforme a la Ley Colombiana especialmente a lo establecido el Código Civil Colombiano y la Ley 820 de 2003. <br/><br/>VIGÉSIMA NOVENA. NOTIFICACIONES: Toda comunicación en relación con este contrato deberá hacerse por escrito, no obstante los contratantes indican los siguientes correos electrónicos a los que también pueden remitirse las comunicaciones, diferentes de aquellos que por expreso mandato de la ley deban realizarse con una formalidad especial, los correos electrónicos y las direcciones son los siguientes: A LA ARRENDADORA: MAIL: info@portadainmobiliaria.com en Y/O la CARRERA 80 AA Nº 36 – 57  de Medellín Teléfono 448 77 71.<br/><br/>A (EL) (LOS) (LA) ARRENDATARIA(O)(S): en la "+$F{DIRECCION} +" de "+ $F{MUNICIPIO} + " Y/O "+$F{DIR_NOT_ARR1} +" MAIL: "+$F{MAIL_ARR1} +", TEL: "+$F{TEL_ARR1} +" CEL: "+$F{CEL_ARR1} +". <br/><br/><br/><br/>DEUDORES SOLIDARIOS: "+$F{DIR_DEU1} +", "+$F{DIR_DEU1} +", TEL: "+$F{TEL_DEU1} +", CEL: "+$F{CEL_DEU1} +", MAIL: "+$F{MAIL_DEU1}  +". <br/><br/><br/><br/>APROBACION Y CONSENTIMIENTO: Presentes los señores "+$F{ARRENDATARIO1} +" Y  "+$F{DEUDOR1} +" manifiestan: 1) Que han leído y comprendido la totalidad de las clausulas que rigen el presente contrato. 2) Que las inquietudes que el presente contrato les hubiese podido generar le fueron aclaradas y oportunamente resueltas por la arrendadora. 3) que aprueba íntegramente las declaraciones contenidas en el presente contrato. 4) que en señal de aprobación y aceptación de lo aquí contenido, proceden a suscribir el presente contrato junto con la representante legal de PORTADA INMOBILIARIA S.A.S en la ciudad de Medellín, el día "+$F{FECHA_INI}+"." ]]></textFieldExpression>
+					<textFieldExpression><![CDATA["VIGÉSIMA CUARTA. ORIGEN DE FONDOS: (EL) (LOS) (LA) ARRENDATARIA(O)(S), declaran que los fondos con que dará cumplimiento a las obligaciones dinerarias que se desprenden del presente contrato, tienen procedencia lícita. VIGÉSIMA QUINTA. DOMICILIO: Para todos los efectos contractuales el domicilio será la ciudad de Medellín.<br/><br/>VIGESIMA SEXTA. GASTOS DEL PRESENTE CONTRATO: Correrán a cargo de (EL) (LOS) (LA) ARRENDATARIA(O) (S) los gastos que ocasione el presente contrato y la correspondencia que se derive por estado de cuenta morosa.<br/><br/>VIGESIMA SEPTIMA. COPIAS: El presente contrato se firma en TRES (3) originales, los cuales serán distribuidos de la siguiente manera: uno (1) para (EL) (LOS) (LA) ARRENDATARIA (OS), uno (1) para los Deudores Solidarios y uno (1) para LA ARRENDADORA y LA ASEGURADORA O AFIANZADORA. (EL) (LOS)(LA) ARRENDATARIA(OS) y los DEUDORES SOLIDARIOS manifiestan expresamente haber recibido un ejemplar del presente contrato.<br/><br/>VIGÉSIMA OCTAVA. NORMATIVIDAD APLICABLE: Este contrato se rige y se interpretara conforme a la Ley Colombiana especialmente a lo establecido el Código Civil Colombiano y la Ley 820 de 2003. <br/><br/>VIGÉSIMA NOVENA. NOTIFICACIONES: Toda comunicación en relación con este contrato deberá hacerse por escrito, no obstante los contratantes indican los siguientes correos electrónicos a los que también pueden remitirse las comunicaciones, diferentes de aquellos que por expreso mandato de la ley deban realizarse con una formalidad especial, los correos electrónicos y las direcciones son los siguientes: A LA ARRENDADORA: MAIL: info@portadainmobiliaria.com en Y/O la CARRERA 80 AA Nº 36 – 57  de Medellín Teléfono 448 77 71.<br/><br/>A (EL) (LOS) (LA) ARRENDATARIA(O)(S): en la "+$F{DIRECCION} +" de "+ $F{MUNICIPIO} + " Y/O "+$F{DIR_NOT_ARR1} +" MAIL: "+$F{MAIL_ARR1} +", TEL: "+$F{TEL_ARR1} +" CEL: "+$F{CEL_ARR1} +". <br/><br/><br/><br/>DEUDORES SOLIDARIOS: "+$F{DIR_DEU1} +", "+$F{DIR_DEU1} +", TEL: "+$F{TEL_DEU1} +", CEL: "+$F{CEL_DEU1} +", MAIL: "+$F{MAIL_DEU1}  +". <br/><br/><br/><br/>APROBACION Y CONSENTIMIENTO: Presentes los señores "+$F{ARRENDATARIO1} +" Y  "+$F{DEUDOR1} +" manifiestan: 1) Que han leído y comprendido la totalidad de las clausulas que rigen el presente contrato. 2) Que las inquietudes que el presente contrato les hubiese podido generar le fueron aclaradas y oportunamente resueltas por la arrendadora. 3) que aprueba íntegramente las declaraciones contenidas en el presente contrato. 4) que en señal de aprobación y aceptación de lo aquí contenido, proceden a suscribir el presente contrato junto con la representante legal de PORTADA INMOBILIARIA S.A.S en la ciudad de Medellín, el día "+$F{FECHA_INI}+"."]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>

@@ -2,14 +2,14 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20" scriptletClass="net.sf.jasperreports.engine.JRDefaultScriptlet">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="3860"/>
+	<property name="ireport.y" value="96"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
 	<subDataset name="dataset1"/>
 	<parameter name="LOGO" class="java.lang.String">
-		<defaultValueExpression><![CDATA["D:\\Mis Documentos\\Documents\\Proyectos\\workspace\\ReportGenerator\\resources\\icono.png"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["D:\\GitRepos\\ReportGenerator\\ReportGenerator\\resourcesicono.png"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[]]>
@@ -129,7 +129,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement style="SubTitle" x="197" y="2" width="298" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="true" isItalic="true"/>
+						<font fontName="Verdanaxx" size="9" isBold="true" isItalic="true"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S."]]></textFieldExpression>
@@ -220,7 +220,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement style="SubTitle" x="0" y="0" width="197" height="26" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Verdana" size="9" isBold="false"/>
+						<font fontName="Verdanaxx" size="9" isBold="false"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["ARRENDADOR"]]></textFieldExpression>
