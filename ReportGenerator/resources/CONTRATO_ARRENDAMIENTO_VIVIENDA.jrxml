@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.2100000000000002"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="632"/>
 	<style name="Title" fontName="Verdana" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Verdana" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Verdana" fontSize="12" isBold="true"/>
@@ -97,7 +97,7 @@ M.A.V.U.00011/08 SGM
 			<staticText>
 				<reportElement style="SubTitle" x="347" y="12" width="80" height="20"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Verdana" size="9" isBold="true"/>
+					<font fontName="VerdanaNegrilla" size="9" isBold="true" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 				</textElement>
 				<text><![CDATA[  CONTRATO N°  ]]></text>
 			</staticText>
@@ -108,7 +108,7 @@ M.A.V.U.00011/08 SGM
 			<textField>
 				<reportElement x="0" y="0" width="495" height="18" forecolor="#000000"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 				</textElement>
 				<textFieldExpression><![CDATA["CONTRATO DE ARRENDAMIENTO DE VIVIENDA URBANA"]]></textFieldExpression>
 			</textField>
@@ -120,7 +120,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="197" y="0" width="298" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="TahomaNegrilla"  pdfFontName="fonts/verdanab.ttf" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaZ" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanaz.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S"]]></textFieldExpression>
@@ -128,7 +128,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="198" y="66" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["URBANIZACION: "+$F{URBANIZACION}]]></textFieldExpression>
@@ -136,15 +136,15 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="1" y="145" width="197" height="24" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
-						<paragraph leftIndent="20"/>
+						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA["DEUDORES SOLIDARIOS"]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="198" y="118" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["FECHA DE INICIO: DIA:"+$F{FI_DIA}+" MES:"+$F{FI_MES}+" AÑO:"+$F{FI_ANO}]]></textFieldExpression>
@@ -152,7 +152,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="197" y="13" width="298" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["NIT No. 900.336.513-4"]]></textFieldExpression>
@@ -160,15 +160,15 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="1" y="26" width="197" height="27" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
-						<paragraph leftIndent="20"/>
+						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA["ARRENDATARIOS (S)"]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="197" y="131" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["FECHA DE PAGO: "+$F{DIAPAGO}+ " DE CADA MES"]]></textFieldExpression>
@@ -176,7 +176,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="196" y="40" width="299" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1} + " No. "+$F{DOC_ARR1}]]></textFieldExpression>
@@ -188,7 +188,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="0" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase( )]]></textFieldExpression>
@@ -196,7 +196,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="13" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU2} + " No. "+$F{DOC_DEU2}]]></textFieldExpression>
@@ -204,7 +204,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="26" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
@@ -212,7 +212,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="39" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{DIR_DEU2}]]></textFieldExpression>
@@ -220,7 +220,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="52" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{MUNI_DEU2}]]></textFieldExpression>
@@ -230,7 +230,7 @@ M.A.V.U.00011/08 SGM
 							<printWhenExpression><![CDATA[!$F{MAIL_DEU2}.equals( null )]]></printWhenExpression>
 						</reportElement>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{MAIL_DEU2}]]></textFieldExpression>
@@ -239,7 +239,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="196" y="27" width="299" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ARRENDATARIO1}]]></textFieldExpression>
@@ -247,7 +247,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="197" y="92" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["MUNICIPIO: "+$F{MUNICIPIO}]]></textFieldExpression>
@@ -255,7 +255,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="198" y="53" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
@@ -267,7 +267,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="0" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase( )]]></textFieldExpression>
@@ -275,7 +275,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="13" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU1} + " No. "+$F{DOC_DEU1}]]></textFieldExpression>
@@ -283,7 +283,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="26" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
@@ -291,7 +291,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="52" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{MUNI_DEU1}]]></textFieldExpression>
@@ -299,7 +299,7 @@ M.A.V.U.00011/08 SGM
 					<textField>
 						<reportElement x="0" y="39" width="295" height="13" forecolor="#000000"/>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{DIR_DEU1}]]></textFieldExpression>
@@ -309,7 +309,7 @@ M.A.V.U.00011/08 SGM
 							<printWhenExpression><![CDATA[!$F{MAIL_DEU1}.equals( null )]]></printWhenExpression>
 						</reportElement>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 							<paragraph leftIndent="20"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{MAIL_DEU1}]]></textFieldExpression>
@@ -324,7 +324,7 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="198" y="79" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["BARRIO: "+$F{BARRIO}]]></textFieldExpression>
@@ -338,10 +338,10 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="0" y="54" width="197" height="24" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
-						<paragraph leftIndent="20"/>
+						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
-					<textFieldExpression><![CDATA["OBJETO DEL CONTRATO"]]></textFieldExpression>
+					<textFieldExpression><![CDATA["BIEN OBJETO DEL CONTRATO"]]></textFieldExpression>
 				</textField>
 				<line>
 					<reportElement positionType="FixRelativeToBottom" x="0" y="26" width="495" height="1"/>
@@ -358,15 +358,15 @@ M.A.V.U.00011/08 SGM
 				<textField>
 					<reportElement x="0" y="0" width="197" height="26" forecolor="#000000"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
-						<paragraph leftIndent="20"/>
+						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA["ARRENDADOR"]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="196" y="105" width="297" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Serif" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["CANON: "+$F{CANON} + " MENSUAL"]]></textFieldExpression>
@@ -377,25 +377,241 @@ M.A.V.U.00011/08 SGM
 			<frame>
 				<reportElement positionType="Float" x="0" y="0" width="494" height="300"/>
 				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="10" width="494" height="280" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="10" width="127" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
 					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA["Entre los suscritos a saber, FLOR VIVIANA CASTAÑO BETANCUR, mayor de edad, domiciliada en la ciudad de Medellín identificada con la cédula de ciudadanía número 43.568.821, actuando en calidad de representante Legal de PORTADA INMOBILIARIA S.A.S., identificada con el Nit No. 900.336.5134, entidad con matrícula de arrendador No. 00011/08, expedida por la Secretaría de Gobierno y Derechos Humanos de la Ciudad de Medellín, y quien en adelante se denominará LA ARRENDADORA, y "+$F{ARRENDATARIO1} +" identificado(a) con "+$F{TIPO_DOC_ARR1}+" número "+$F{DOC_ARR1} +" quien(es) en adelante se denominaran (EL) (LOS) (LA) ARRENDATARIA(O)(S), hemos convenido en celebrar el presente contrato, el cual se regirá por las normas consagradas en el Código Civil colombiano, por la Ley 820 de 2003 y demás normas legales aplicables a la materia y en especial por las siguientes cláusulas: <br/><br/>PRIMERA.OBJETO: Mediante la suscripción del presente contrato LA ARRENDADORA  entrega a (EL) (LOS) (LA) ARRENDATARIA(O) (OS) el uso y goce a titulo de arrendamiento del inmueble ubicado en la "+$F{DIRECCION}+","+
-( $F{PARQUEADERO} != null ? "PARQUEADERO "+$F{PARQUEADERO}+"," : "" )+" "+( $F{UTIL} != null ? "CUARTO UTIL "+$F{UTIL}+"," : "" )+" URBANIZACION "+$F{URBANIZACION} +" barrio "+$F{BARRIO} +" de la Ciudad de "+$F{MUNICIPIO}+", cuya descripción particular es como a continuación se indica: con todas sus mejoras, anexidades y dependencias. Distinguido en su puerta de entrada con el número "+$F{NUM_PUERTA} +" de la "+$F{NOMENCLATURA} +" actual nomenclatura de la ciudad de MEDELLIN. Este inmueble está identificado con MATRICULA INMOBILIARIA No.  "+$F{MATR_INMOB}+", "+( $F{NUM_APTO} != null? "(APT) No. "+$F{NUM_APTO}+",":"") +" "+( $F{PARQUEADERO} != null? "(PARQ) No. "+$F{PARQUEADERO}+",":"")+" de la Oficina de Registro de Instrumentos Públicos de la ciudad de MEDELLIN. PARÁGRAFO. AUTORIZACIÓN ESPECIAL. El arrendatario faculta expresamente al arrendador para modificar en este contrato, los linderos o nomenclatura en caso de haberse presentado error, al digitar los mismos o cuando se deba a cambios en su nomenclatura.<br/><br/>"]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Entre los suscritos a saber,"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="127" y="10" width="134" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["FLOR VIVIANA CASTAÑO BETANCUR"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="261" y="10" width="233" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[",  mayor  de  edad,  domiciliada  en  la  ciudad  de"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="21" width="494" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Medellín identificada con la cédula de ciudadanía número 43.568.821, actuando en calidad de representante"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="32" width="41" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Legal  de  "]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="41" y="32" width="134" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S., "]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="175" y="32" width="318" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["  identificada con el  Nit   No.  900.336.513-4,   entidad   con       matrícula          de"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="43" width="494" height="36" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["arrendador No. 00011/08 del Municipio de Medellín,XXXXXXX del Municipio de Envigado, XXXXXXX del Municipio de Sabaneta, XXXXXXX del Municipio de Rionegro,  expedida por la Secretaría de Gobierno y Derechos Humanos de la Municipio de Medellín, y quien en adelante se denominará  "]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="360" y="65" width="134" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["LA ARRENDADORA"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="78" width="17" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" y "]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="17" y="78" width="145" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ARRENDATARIO1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="161" y="78" width="332" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["identificado(a) con "+$F{TIPO_DOC_ARR1}+" número "+$F{DOC_ARR1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="89" width="196" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["quienes en adelante se denominaran"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="174" y="89" width="215" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["(EL) (LOS) (LA) ARRENDATARIA(O)(S), "]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="360" y="89" width="133" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["hemos convenido en"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="100" width="494" height="33" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["celebrar el presente contrato, el cual se regirá por las normas consagradas en el Código Civil colombiano, por la Ley 820 de 2003 y demás normas legales aplicables a la materia y en especial por las siguientes cláusulas: ----------------"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="106" y="133" width="214" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Mediante la suscripción del presente contrato"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="133" width="106" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PRIMERA.-OBJETO: "]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="320" y="133" width="106" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["LA ARRENDADORA"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="426" y="133" width="67" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["entrega a"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="144" width="210" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["(EL) (LOS) (LA) ARRENDATARIA(O)(S)"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="205" y="144" width="288" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["el uso y goce a titulo de arrendamiento del inmueble ubicado"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="155" width="27" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["en la"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="25" y="155" width="468" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DIRECCION}+" "+( $F{PARQUEADERO} != null ? "PARQUEADERO "+$F{PARQUEADERO}+"," : "" )+" "+( $F{UTIL} != null ? " UTIL "+$F{UTIL}+"," : "" )+" URBANIZACION "+$F{URBANIZACION} +" barrio "+$F{BARRIO}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="166" width="494" height="22" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["del Municipio de MEDELLIN, cuya descripción particular es como a continuación se indica: con todas sus mejoras, anexidades y dependencias. Distinguido en su puerta de entrada con el número"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="427" y="177" width="66" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NUM_PUERTA}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="93" y="188" width="400" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["actual nomenclatura      de la      ciudad de      MEDELLIN. Este inmueble está identificado con"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="188" width="27" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["de la"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="27" y="188" width="66" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOMENCLATURA}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="199" width="493" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["MATRICULA INMOBILIARIA No.  "+$F{MATR_INMOB}+", "+( $F{NUM_APTO} != null? "(APT) No. "+$F{NUM_APTO}+",":"") +" "+( $F{PARQUEADERO} != null? "(PARQ) No. "+$F{PARQUEADERO}+",":"")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="210" width="493" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["de la Oficina de Registro de Instrumentos Públicos de la ciudad de MEDELLIN.-----------"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="221" width="220" height="11" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Top" markup="html">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PARÁGRAFO. AUTORIZACIÓN ESPECIAL."]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="232" width="494" height="37" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="html">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["El arrendatario faculta expresamente al arrendador para modificar en este contrato, los linderos o nomenclatura en caso de haberse presentado error, al digitar los mismos o cuando se deba a cambios en su nomenclatura.-------------------------------------------"]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
 		<band height="620">
 			<frame>
 				<reportElement positionType="Float" x="0" y="0" width="494" height="620"/>
-				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="494" height="620" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-						<font fontName="Verdana" size="9" isBold="false" isItalic="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["SEGUNDA. DURACIÓN: Las partes acuerdan como plazo de duración del presente contrato, un período de "+$F{VIGENCIA} +" contados a partir de "+$F{FECHA_INI} +" y "+$F{FECHA_FIN} +".<br/><br/>No obstante lo anterior, el término del presente contrato de arrendamiento se prorrogará automáticamente por periodos consecutivos iguales al inicial, si ninguna de las partes informa a la otra  su decisión de terminar este Contrato con una antelación no inferior a (3) MESES a la fecha del vencimiento del periodo inicial o de cualquiera de sus prorrogas.<br/><br/>TERCERA. VALOR Y FORMA DE PAGO: Para efectos legales y fiscales el valor del presente canon de arrendamiento se fija en la suma de "+$F{CANON_LETRAS} +" PESOS M.L. ( \$ "+$F{CANON} +"), valor que será cancelado por parte de (EL) (LOS) (LA) ARRENDATARIA(O)(S) el día "+$F{DIA_LETRAS} +" "+($F{DIAPAGO}) +" de cada mes, por anticipado durante la vigencia del contrato, realizando los pagos por medio de la página virtual de BANCOLOMBIA por el modulo de pagos a terceros o en nuestra oficina principal por PAC electrónico BANCOLOMBIA  a nombre de Portada Inmobiliaria S.A.S.<br/><br/>PARÁGRAFO PRIMERO: La mera tolerancia de LA ARRENDADORA  en recibir el pago del canon de arrendamiento con posterioridad al plazo indicado para ello en esta Cláusula, no se entenderá, en ningún caso, como ánimo de LA ARRENDADORA  de modificar el término establecido en este Contrato para el pago del canon (periodo regulador de pagos).<br/><br/>PARAGRAFO SEGUNDO: En caso de mora, o aun de simple retardo en el pago de los cánones de arrendamiento establecidos en la presente cláusula, LA ARRENDATARIA, cancelará intereses moratorios a la tasa máxima legal vigente, establecida por la Superintendencia Financiera desde el momento de presentarse la mora y hasta el momento en que se efectué el pago total de la obligación, sin perjuicio de las acciones judiciales que pueda emprender LA ARRENDADORA , para dar por terminado el contrato de arrendamiento, con fundamento en esta causa legal de terminación.<br/><br/>PARAGRAFO TERCERO: Así mismo es convenido que en caso de mora, o aun de simple retardo en el pago de los cánones de arrendamiento establecidos en la presente cláusula, LA ARRENDATARIA, se obliga a cancelar los gastos de cobranza que su retardo genere, tales como gastos de envío de correspondencia, bloqueo y desbloqueo de centrales de riesgo y bases de datos, y honorarios de abogado, sin perjuicio de las acciones judiciales que pueda emprender LA ARRENDADORA , para dar por terminado el contrato de arrendamiento, con fundamento en esta causa legal de terminación.<br/><br/>CUARTA. AJUSTE DEL CANON: Las partes acuerdan reajustar automáticamente el precio del arrendamiento, a partir del día siguiente al vencimiento del primer año de ejecución, en un porcentaje equivalente a la variación del Índice de Precios al Consumidor decretado por el DANE (del año inmediatamente anterior) durante el término de duración del contrato. <br/><br/>QUINTA. SERVICIOS PUBLICOS Y ADMINISTRACION: El arrendamiento incluye el uso de los siguientes servicios públicos: servicios básicos instalados actualmente ACUEDUCTO, SANEAMIENTO, ENERGIA Y GAS, así que los que se instalen a futuro por cuenta del ARRENDATARIO, para uso del inmueble, serán cancelados única y exclusivamente por los ARRENDATARIOS tan pronto lleguen las cuentas de cobro respectivas, el inmueble NO TIENE LINEA TELEFONICA <br/><br/>PARAGRAFO PRIMERO: El pago de las expensas comunes o cuotas de Administración estarán a cargo de LA ARRENDADORA, quien se obliga a realizar dichos pagos de manera oportuna, pero no obstante lo anterior, las sanciones o multas que imponga la administración de la copropiedad, atribuibles a comportamientos, actuaciones u omisiones de (EL) (LOS) (LA) ARRENDATARIA(O)(S), deberán ser canceladas por éste inmediatamente A LA ARRENDADORA incluyendo los cobros adicionales que la administración realice por el uso de parqueadero de visitantes en horario no permitido y le informe el valor adeudado. "]]></textFieldExpression>
-				</textField>
 			</frame>
 		</band>
 		<band height="620">
