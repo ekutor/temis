@@ -36,7 +36,7 @@
      "once", "doce", "trece", "catorce", "quince", "dieciseis", 
      "diecisiete", "dieciocho", "diecinueve" };
  
-   private static final String[] cientos = { "", "ciento", "doscientos", "trescientos", 
+   private static final String[] cientos = { "", "cien", "doscientos", "trescientos", 
      "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos" };
  
    private static final String[] decenas = { "", "diez", "veinte", "treinta", "cuarenta", 
@@ -417,19 +417,21 @@
    private static String convertLessThanOneThousand(int number)
    {
      String soFar;
-     if (number % 100 < 20) {
-       soFar = unidades[(number % 100)];
+      int mod = number % 100;
+     if (mod < 20) {
+       soFar = unidades[(mod)];
        number /= 100;
      }
      else {
        soFar = unidades[(number % 10)];
        number /= 10;
  
-       soFar = decenas[(number % 10)] + soFar;
+       soFar = decenas[(number % 10)] +" y "+ soFar;
        number /= 10;
      }
      if (number == 0) return soFar;
-     return cientos[number] + " " + soFar;
+     String sn = cientos[number];
+     return  sn + " " + soFar;
    }
  
    public static String convertNumberToWords(String number) {
@@ -480,12 +482,19 @@
        tradMillions = "";
        break;
      case 1:
-       tradMillions = convertLessThanOneThousand(millions) + 
-         " millon ";
+       tradMillions = convertLessThanOneThousand(millions) ; 
+       if("uno".equals(tradMillions)){
+    	   tradMillions = "un";
+       }
+       tradMillions += " millon ";
        break;
      default:
-       tradMillions = convertLessThanOneThousand(millions) + 
-         " millon ";
+       tradMillions = convertLessThanOneThousand(millions);
+       if("uno".equals(tradMillions)){
+    	   tradMillions = "un";
+       }
+       tradMillions += " millon ";
+       break;
      }
      result = result + tradMillions;
      String tradHundredThousands;
@@ -510,7 +519,7 @@
  
    public static void main(String[] args)
    {
-     int number = 1000000;
+     int number = 895000;
      System.out.println(convertNumberToWords(number));
    }
  
