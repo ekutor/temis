@@ -76,6 +76,11 @@
            report.setARRENDATARIO1(rs.getString("nombre_inquilino_c"));
            report.setTIPO_DOC_ARR1(rs.getString("tipo_documento_inquilino_c"));
            report.setDOC_ARR1(rs.getString("documento_inquilino_c"));
+           report.setDIR_NOT_ARR1(rs.getString("direccion_notificacion_inqui_c"));
+           report.setDIR_NOT_ARR2(rs.getString("direccion_notifi_inqui2_c"));
+           report.setMAIL_ARR1(rs.getString("email_inquilino_c"));
+           report.setTEL_ARR1(rs.getString("tel_inquilino_c"));
+           report.setCEL_ARR1(rs.getString("celular_inquilino_c"));
  
            report.setDEUDOR1(rs.getString("nombre_deudor_solidario1_c"));
            report.setDOC_DEU1(rs.getString("documento_deudor_solidario1_c"));
@@ -83,6 +88,9 @@
            report.setMAIL_DEU1(rs.getString("email_deudor_solidario1_c"));
            report.setMUNI_DEU1(rs.getString("municipio_deudor_solidario1_c"));
            report.setDIR_DEU1(rs.getString("direccion_deudor_solidario1_c"));
+           report.setTEL_DEU1(rs.getString("telefono_deudor_solidario1_c"));
+           report.setCEL_DEU1(rs.getString("celular_deudor_solidario1_c"));
+           
  
            report.setDEUDOR2(rs.getString("nombre_deudor_solidario2_c"));
            report.setDOC_DEU2(rs.getString("documento_deudor_solidario2_c"));
@@ -90,6 +98,8 @@
            report.setMAIL_DEU2(rs.getString("email_deudor_solidario2_c"));
            report.setMUNI_DEU2(rs.getString("municipio_deudor_solidario2_c"));
            report.setDIR_DEU2(rs.getString("direccion_deudor_solidario2_c"));
+           report.setTEL_DEU2(rs.getString("telefono_deudor_solidario2_c"));
+           report.setCEL_DEU2(rs.getString("celular_deudor_solidario2_c"));
  
            break;
          case CONTRATO_ADMON_VIVIENDA:

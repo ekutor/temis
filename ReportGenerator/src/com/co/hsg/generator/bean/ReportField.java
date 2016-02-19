@@ -29,7 +29,7 @@ private String CANON_LETRAS;
 private String CANON;
 private String DIA_LETRAS;
 private String DIAPAGO;
-private String DIR_NOT_ARR1;
+private String DIR_NOT_ARR1,DIR_NOT_ARR2;
 private String MAIL_ARR1;
 private String TEL_ARR1,LINEATEL,GAS,GAS_PIPETA,AGUA,ENERGIA;
 private String CEL_ARR1;
@@ -77,6 +77,14 @@ public void setELABORADO_POR(String eLABORADO_POR) {
 
 public String getGAS() {
 	return GAS;
+}
+
+public String getDIR_NOT_ARR2() {
+	return DIR_NOT_ARR2;
+}
+
+public void setDIR_NOT_ARR2(String dIR_NOT_ARR2) {
+	DIR_NOT_ARR2 = dIR_NOT_ARR2;
 }
 
 public void setGAS(String gAS) {
