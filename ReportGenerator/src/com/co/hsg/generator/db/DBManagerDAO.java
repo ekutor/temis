@@ -45,18 +45,33 @@
          report.setUTIL(rs.getString("cuarto_util_c"));
          report.setMATR_INMOB(rs.getString("matricula_inmobiliaria_c"));
          report.setCANON(rs.getString("canon_c"));
+         report.setLINEATEL(rs.getString("linea_telefonica_c"));
+         
+         report.setGAS(rs.getString("gas_c"));
+         report.setGAS_PIPETA(rs.getString("gas_pipeta_c"));
+         report.setAGUA(rs.getString("agua_c"));
+         report.setENERGIA(rs.getString("luz_c"));
  
          Date inicio = rs.getDate("start_date");
          Calendar c = Calendar.getInstance();
          c.setTime(inicio);
          report.setFI_DIA(String.valueOf(c.get(5)));
          report.setFI_MES(String.valueOf(c.get(2) + 1));
+         report.setFI_MES_LETRAS(Util.getMonthName(c));
          report.setFI_ANO(String.valueOf(c.get(1)));
- 
+         
+         Date fin = rs.getDate("end_date");
+         c.setTime(fin);
+         report.setFECHA_FIN(rs.getString("end_date"));
+         report.setFF_DIA(String.valueOf(c.get(5)));
+         report.setFF_MES(String.valueOf(c.get(2) + 1));
+         report.setFF_MES_LETRAS(Util.getMonthName(c));
+         report.setFF_ANO(String.valueOf(c.get(1)));
+         
          switch (reportType)
          {
-         case CONTRATO_ADMON_VIVIENDA:
-           report.setFECHA_FIN(rs.getString("end_date"));
+         case CONTRATO_ARRENDAMIENTO:
+          
            report.setDIAPAGO(rs.getString("dia_fecha_pago_c"));
            report.setARRENDATARIO1(rs.getString("nombre_inquilino_c"));
            report.setTIPO_DOC_ARR1(rs.getString("tipo_documento_inquilino_c"));
@@ -77,7 +92,7 @@
            report.setDIR_DEU2(rs.getString("direccion_deudor_solidario2_c"));
  
            break;
-         case CONTRATO_ARRENDAMIENTO:
+         case CONTRATO_ADMON_VIVIENDA:
            report.setARRENDATARIO1(rs.getString("name"));
            report.setTIPO_DOC_ARR1(rs.getString("tipo_doc_propietario_c"));
            report.setDOC_ARR1(rs.getString("cedula_c"));
@@ -98,7 +113,6 @@
            report.setTIPO_DOC_TITULAR(rs.getString("tipo_doc_propietario_c"));
            report.setDOC_TITULAR(rs.getString("cedula_c"));
  
-           report.setFI_MES(Util.getMonthName(c));
          }
  
        }

@@ -31,7 +31,7 @@ private String DIA_LETRAS;
 private String DIAPAGO;
 private String DIR_NOT_ARR1;
 private String MAIL_ARR1;
-private String TEL_ARR1;
+private String TEL_ARR1,LINEATEL,GAS,GAS_PIPETA,AGUA,ENERGIA;
 private String CEL_ARR1;
 private String DIR_DEU1;
 private String DIR_DEU2;
@@ -54,9 +54,9 @@ private String FECHA_PAGO;
 private String VIGENCIA;
 private String ELABORADO_POR;
 private String ELABORADO_POR_ID;
-private String FI_DIA;
-private String FI_MES;
-private String FI_ANO;
+private String FI_DIA,FF_DIA,DIA_INI_LETRAS,DIA_FIN_LETRAS;
+private String FI_MES,FF_MES, FI_MES_LETRAS,FF_MES_LETRAS;
+private String FI_ANO,FF_ANO;
 private String id;
 private String CLAUSULA;
 private String BANCO;
@@ -75,9 +75,81 @@ public void setELABORADO_POR(String eLABORADO_POR) {
      this.ELABORADO_POR = eLABORADO_POR;
 }
 
+public String getGAS() {
+	return GAS;
+}
+
+public void setGAS(String gAS) {
+	if(gAS!= null){
+		GAS = gAS.toUpperCase();
+	}else{
+		GAS = "NO";
+	}
+	
+}
+
+public String getGAS_PIPETA() {
+	return GAS_PIPETA;
+}
+
+public void setGAS_PIPETA(String gAS_PIPETA) {
+	if(gAS_PIPETA!= null){
+		GAS_PIPETA = gAS_PIPETA.toUpperCase();
+	}else{
+		GAS_PIPETA = "NO";
+	}
+	
+}
+
 public String getNCONTRATO()
 {
      return this.NCONTRATO;
+}
+
+public String getFI_MES_LETRAS() {
+	return FI_MES_LETRAS;
+}
+
+public String getDIA_FIN_LETRAS() {
+	return DIA_FIN_LETRAS;
+}
+
+public String getDIA_INI_LETRAS() {
+	return DIA_INI_LETRAS;
+}
+
+public String getAGUA() {
+	return AGUA;
+}
+
+public void setAGUA(String aGUA) {
+	if(aGUA!= null){
+		aGUA = aGUA.toUpperCase();
+	}
+	AGUA = aGUA;
+}
+
+public String getENERGIA() {
+	return ENERGIA;
+}
+
+public void setENERGIA(String eNERGIA) {
+	if(eNERGIA!= null){
+		eNERGIA = eNERGIA.toUpperCase();
+	}
+	ENERGIA = eNERGIA;
+}
+
+public void setDIA_INI_LETRAS(String dIA_INI_LETRAS) {
+	DIA_INI_LETRAS = dIA_INI_LETRAS;
+}
+
+public void setDIA_FIN_LETRAS(String dIA_FIN_LETRAS) {
+	DIA_FIN_LETRAS = dIA_FIN_LETRAS;
+}
+
+public void setFI_MES_LETRAS(String fI_MES_LETRAS) {
+	FI_MES_LETRAS = fI_MES_LETRAS;
 }
 
 public void setNCONTRATO(String nCONTRATO) {
@@ -101,8 +173,55 @@ public void setCLAUSULA(String cLAUSULA) {
      this.CLAUSULA = cLAUSULA;
 }
 
+public String getLINEATEL() {
+	return LINEATEL;
+}
+
+public void setLINEATEL(String lINEATEL) {
+	if(lINEATEL == null || lINEATEL.toUpperCase().contains("NO")){
+		LINEATEL = "NO";
+	}else {
+		LINEATEL = lINEATEL.toUpperCase();
+	}
+}
+
 public String getBANCO() {
      return this.BANCO;
+}
+
+public String getFF_DIA() {
+	return FF_DIA;
+}
+
+public void setFF_DIA(String fF_DIA) {
+	 if (fF_DIA != null) {
+	       this.DIA_FIN_LETRAS = Util.convertNumberToWords(fF_DIA).toUpperCase();
+	     }
+	FF_DIA = fF_DIA;
+}
+
+public String getFF_MES() {
+	return FF_MES;
+}
+
+public void setFF_MES(String fF_MES) {
+	FF_MES = fF_MES;
+}
+
+public String getFF_MES_LETRAS() {
+	return FF_MES_LETRAS;
+}
+
+public void setFF_MES_LETRAS(String fF_MES_LETRAS) {
+	FF_MES_LETRAS = fF_MES_LETRAS;
+}
+
+public String getFF_ANO() {
+	return FF_ANO;
+}
+
+public void setFF_ANO(String fF_ANO) {
+	FF_ANO = fF_ANO;
 }
 
 public void setBANCO(String bANCO) {
@@ -167,8 +286,8 @@ public String getFI_DIA() {
 
 public void setFI_DIA(String fI_DIA) {
      if (fI_DIA != null) {
-       this.DIA_LETRAS = Util.convertNumberToWords(fI_DIA).toUpperCase();
-}
+       this.DIA_INI_LETRAS = Util.convertNumberToWords(fI_DIA).toUpperCase();
+     }
      this.FI_DIA = fI_DIA;
 }
 
@@ -453,7 +572,9 @@ public String getDIAPAGO() {
 }
 
 public void setDIAPAGO(String dIAPAGO) {
-     this.DIA_LETRAS = Util.convertNumberToWords(dIAPAGO).toUpperCase();
+	if (dIAPAGO != null) {
+	       this.DIA_LETRAS = Util.convertNumberToWords(dIAPAGO).toUpperCase();
+	 }
      this.DIAPAGO = dIAPAGO;
 }
 
@@ -568,4 +689,5 @@ public void setID(String id) {
 public String getID() {
      return this.id;
 }
+
 }

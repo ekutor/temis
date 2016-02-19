@@ -380,7 +380,9 @@
    }
  
    public static String getMonthName(Calendar c) {
-     return c.getDisplayName(2, 2, new Locale("es"));
+	 String m =  c.getDisplayName(2, 2, new Locale("es"));
+	 m = m.substring(0,1).toUpperCase()+m.substring(1);
+	 return m;
    }
  
    private static String convert999(int n)
