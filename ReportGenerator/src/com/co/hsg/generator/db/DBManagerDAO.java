@@ -59,9 +59,9 @@
          report.setFI_MES_LETRAS(Util.getMonthName(c));
          report.setFI_ANO(String.valueOf(c.get(1)));
          
-         Date fin = rs.getDate("end_date");
+         Date fin = rs.getDate("fecha_vencimiento_c");
          c.setTime(fin);
-         report.setFECHA_FIN(rs.getString("end_date"));
+         report.setFECHA_FIN(rs.getString("fecha_vencimiento_c"));
          report.setFF_DIA(String.valueOf(c.get(5)));
          report.setFF_MES(String.valueOf(c.get(2) + 1));
          report.setFF_MES_LETRAS(Util.getMonthName(c));

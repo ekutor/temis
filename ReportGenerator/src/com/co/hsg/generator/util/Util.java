@@ -1,31 +1,26 @@
  package com.co.hsg.generator.util;
  
  import java.io.File;
- import java.io.PrintStream;
- import java.io.PrintWriter;
- import java.io.StringWriter;
- import java.net.URI;
- import java.net.URISyntaxException;
- import java.net.URL;
- import java.security.CodeSource;
- import java.security.ProtectionDomain;
- import java.text.DecimalFormat;
- import java.text.ParseException;
- import java.text.SimpleDateFormat;
- import java.util.ArrayList;
- import java.util.Calendar;
- import java.util.GregorianCalendar;
- import java.util.HashMap;
- import java.util.Iterator;
- import java.util.List;
- import java.util.Locale;
- import java.util.Map;
- import java.util.Map.Entry;
- import java.util.Set;
- import java.util.TimeZone;
- import javax.xml.datatype.DatatypeConfigurationException;
- import javax.xml.datatype.DatatypeFactory;
- import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.net.URISyntaxException;
+import java.security.CodeSource;
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TimeZone;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
  
  public class Util
  {
@@ -53,7 +48,12 @@
      System.out.println("Fecha Calculada " + fecha);
      return fecha;
    }
- 
+   
+   public static String validateNull(String value){
+	   if(value != null && value.equals(""))
+		   value = null;
+	   return value;
+   }
    public static Calendar convertToCal(String date) {
      SimpleDateFormat sd = new SimpleDateFormat("yyyyMMdd");
      Calendar c = Calendar.getInstance();
@@ -429,6 +429,8 @@
        number /= 10;
  
        soFar = decenas[(number % 10)] +" y "+ soFar;
+       
+       soFar = ajuste(soFar);
        number /= 10;
      }
      if (number == 0) return soFar;
@@ -436,7 +438,32 @@
      return  sn + " " + soFar;
    }
  
-   public static String convertNumberToWords(String number) {
+   private static String ajuste(String value) {
+	   if(value.equals("veinte y uno") || value.equals("veinte y un") ){
+			value = "veintiuno";
+		}
+	   else if(value.equals("veinte y dos")){
+			value = "veintidos";
+		}
+	   else if(value.equals("veinte y tres")){
+			value = "veintitres";
+		}
+	   else if(value.equals("veinte y cuatro")){
+			value = "veinticuatro";
+		}
+	   else if(value.equals("veinte y cinco")){
+			value = "veinticinco";
+		}if(value.equals("veinte y seis")){
+			value = "veintiseis";
+		}else if(value.equals("veinte y siete")){
+			value = "veintisiete";
+		}else if(value.equals("veinte y ocho")){
+			value = "veintiocho";
+		}
+		return value;
+   }
+
+public static String convertNumberToWords(String number) {
      try {
        return convertNumberToWords(Long.parseLong(number));
      }
@@ -518,15 +545,29 @@
  
      return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
    }
- 
+	public static String setMiles(String value) {
+		
+		if(value !=null && value.length() > 1){
+			try{
+				int val = Integer.parseInt(value);
+				value = String.format(Locale.GERMANY,"%,d", val);
+			}catch(Exception e){
+				
+			}
+		}
+		return value;
+	}
    public static void main(String[] args)
    {
-     int number = 895000;
-     System.out.println(convertNumberToWords(number));
+     String val = "1000000002";
+//     System.out.println(convertNumberToWords(number));
+     System.out.println(setMiles(val));
    }
  
    public static enum DateType
    {
      START, END;
    }
+
+
  }
