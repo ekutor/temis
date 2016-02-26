@@ -20,7 +20,7 @@
      Connection conn = null;
      PreparedStatement st = null;
      LogInfo.T("[DBManager] Leyendo Datos del Contrato:: ");
-     String sql = "SELECT ac.id,ac.name,ac.created_by,ac.start_date ,ac.end_date, ac.assigned_user_id,concat(u.first_name , ' ', u.last_name) as user,c.* FROM  aos_contracts ac, aos_contracts_cstm c, users u WHERE ac.id = ? AND ac.id = c.id_c AND ac.created_by = u.id ";
+     String sql = "SELECT ac.id,ac.name,ac.description,ac.created_by,ac.start_date ,ac.end_date, ac.assigned_user_id,concat(u.first_name , ' ', u.last_name) as user,c.* FROM  aos_contracts ac, aos_contracts_cstm c, users u WHERE ac.id = ? AND ac.id = c.id_c AND ac.created_by = u.id ";
      try
      {
        conn = getConnection();
@@ -34,8 +34,7 @@
          report.setELABORADO_POR(rs.getString("user"));
          report.setELABORADO_POR_ID(rs.getString("created_by"));
          report.setVIGENCIA(rs.getString("duracion_c"));
-         report.setCLAUSULA(rs.getString("clausula_adicional_c"));
- 
+          
          report.setDIRECCION(rs.getString("direccion_inmueble_c"));
          report.setNUM_APTO(rs.getString("numero_apto_c"));
          report.setURBANIZACION(rs.getString("nombre_unidad_c"));
@@ -71,7 +70,7 @@
          switch (reportType)
          {
          case CONTRATO_ARRENDAMIENTO:
-          
+           report.setCLAUSULA(rs.getString("clausula_adicional_c"));
            report.setDIAPAGO(rs.getString("dia_fecha_pago_c"));
            report.setARRENDATARIO1(rs.getString("nombre_inquilino_c"));
            report.setTIPO_DOC_ARR1(rs.getString("tipo_documento_inquilino_c"));
@@ -106,6 +105,7 @@
            report.setARRENDATARIO1(rs.getString("name"));
            report.setTIPO_DOC_ARR1(rs.getString("tipo_doc_propietario_c"));
            report.setDOC_ARR1(rs.getString("cedula_c"));
+           report.setCLAUSULA(rs.getString("description"));
  
            report.setDEUDOR1(rs.getString("nombre_consignante_c"));
            report.setDOC_DEU1(rs.getString("ced_consignante_c"));
