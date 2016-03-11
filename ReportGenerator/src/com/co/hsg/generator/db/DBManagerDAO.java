@@ -119,9 +119,9 @@
            report.setBANCO(rs.getString("banco_c"));
            report.setNUM_CUENTA(rs.getString("no_cuenta_c"));
            report.setTIPO_CUENTA(rs.getString("tipo_cuenta_c"));
-           report.setTITULAR_CUENTA(rs.getString("name"));
-           report.setTIPO_DOC_TITULAR(rs.getString("tipo_doc_propietario_c"));
-           report.setDOC_TITULAR(rs.getString("cedula_c"));
+           report.setTITULAR_CUENTA(rs.getString("beneficiario_c"));
+           report.setTIPO_DOC_TITULAR(rs.getString("tipo_doc_beneficiario_c"));
+           report.setDOC_TITULAR(rs.getString("ced_beneficiario_c"));
  
          }
  
