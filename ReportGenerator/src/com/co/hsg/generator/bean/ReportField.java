@@ -499,7 +499,6 @@ public String getUTIL() {
 
 public void setUTIL(String uTIL) {
      this.UTIL = Util.validateNull(uTIL);
-     LogInfo.T("Cuarto UTIIL: "+UTIL);
 }
 
 public String getURBANIZACION() {
