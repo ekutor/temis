@@ -28,7 +28,7 @@
  {
    private DataFileManager dataMgr;
    private Map<Integer, Object> pages;
-   private List<Object> reportsJP;
+  
  
    public ReportManager()
    {
@@ -53,8 +53,13 @@
        ReportParams reportInfo = this.dataMgr.getReportInfo(reportTemplate, id);
        List data = new ArrayList();
        data.add(reportInfo.getDatos());
-       this.reportsJP = new ArrayList();
- 
+       
+       if(reportInfo.getDatos().getDeudores().size() > 0){
+    	   JRBeanCollectionDataSource ds1 = new JRBeanCollectionDataSource(reportInfo.getDatos().getDeudores());
+           reportInfo.addParam("SUB_DATASOURCE", ds1) ;
+           JRBeanCollectionDataSource ds2 = new JRBeanCollectionDataSource(reportInfo.getDatos().getDeudores());
+           reportInfo.addParam("SUB_DATASOURCE2", ds2) ;
+       }
        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(data);
        reportInfo.setDatasourcePpal(ds);
        String pathTarget = FileManager.getInst().leerPropiedad("RUTA_TEMP");
@@ -163,37 +168,7 @@
      LogInfo.T("[ReportManager] Ruta Archivo GENERADO Sugar :" + 
        f.getAbsolutePath());
    }
- 
-   private void exportReport(String pathTarget)
-   {
-     try
-     {
-       Map params = new HashMap();
-       params.put("LOGO", Util.getAbsolutePath(Constants.LOGO.getValue()));
- 
-       JRPdfExporter exporter = new JRPdfExporter();
- 
-       ByteArrayOutputStream baos = new ByteArrayOutputStream();
-       exporter.setParameter(JRExporterParameter.JASPER_PRINT_LIST, 
-         this.reportsJP);
- 
-       exporter.setParameter(
-         JRPdfExporterParameter.IS_CREATING_BATCH_MODE_BOOKMARKS, 
-         Boolean.TRUE);
-       exporter.setParameter(JRExporterParameter.OUTPUT_STREAM, baos);
-       exporter.exportReport();
- 
-       File f = new File(pathTarget);
-       FileOutputStream fos = new FileOutputStream(f);
-       fos.write(baos.toByteArray());
-       fos.flush();
-       fos.close();
-       LogInfo.T("[ReportManager] Ruta Archivo Unico GENERADO :" + pathTarget);
-     } catch (Exception e) {
-       LogInfo.T("[ReportManager] Fallo al generar Reporte Completo:" + pathTarget);
-       LogInfo.E("[ReportManager] Fallo al generar Reporte Unico::", e);
-     }
-   }
+
  
    public static enum TypeReport
    {

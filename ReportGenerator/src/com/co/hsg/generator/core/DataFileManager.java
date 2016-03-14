@@ -70,6 +70,7 @@
      r.setReport(report);
      r.generateUID();
      String jasper = "";
+     String subreport = "", subreportSigns = "";
      switch (report) {
      case CONTRATO_ADMON_VIVIENDA:
        jasper = FileManager.getInst().leerPropiedad("REPORT." + report.name());
@@ -77,10 +78,14 @@
        break;
      case CONTRATO_ARRENDAMIENTO:
        jasper = FileManager.getInst().leerPropiedad("REPORT." + report.name());
+       subreport = FileManager.getInst().leerPropiedad("SUBREPORT." + report.name());
+       subreportSigns = FileManager.getInst().leerPropiedad("SUBREPORTSIGN." + report.name());
        break;
      }
  
      r.setJasperFile(Util.getAbsolutePath(jasper));
+     r.addParam("SUBREPORT", Util.getAbsolutePath(subreport));
+     r.addParam("SUBREPORTSIGN", Util.getAbsolutePath(subreportSigns));
      if (reportInfo != null) {
        r.setDatos(reportInfo);
        return r;

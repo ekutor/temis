@@ -1,5 +1,9 @@
 package com.co.hsg.generator.bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.co.hsg.generator.log.LogInfo;
 import com.co.hsg.generator.util.Util;
 
 public class ReportField
@@ -65,6 +69,17 @@ private String TIPO_CUENTA;
 private String TITULAR_CUENTA;
 private String TIPO_DOC_TITULAR;
 private String DOC_TITULAR;
+
+private List<DeudorReportField> Deudores  = new ArrayList<DeudorReportField>();
+
+
+public List<DeudorReportField> getDeudores() {
+	return Deudores;
+}
+
+public void setDeudores(List<DeudorReportField> deudores) {
+	Deudores = deudores;
+}
 
 public String getELABORADO_POR()
 {
@@ -484,6 +499,7 @@ public String getUTIL() {
 
 public void setUTIL(String uTIL) {
      this.UTIL = Util.validateNull(uTIL);
+     LogInfo.T("Cuarto UTIIL: "+UTIL);
 }
 
 public String getURBANIZACION() {

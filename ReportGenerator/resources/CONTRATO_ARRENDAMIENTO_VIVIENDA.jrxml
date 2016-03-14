@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20">
 	<property name="ireport.zoom" value="1.100000000000001"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="528"/>
+	<property name="ireport.y" value="1122"/>
 	<style name="Title" fontName="Verdana" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Verdana" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Verdana" fontSize="12" isBold="true"/>
@@ -10,6 +10,17 @@
 	<parameter name="LOGO" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["D:\\GitRepos\\ReportGenerator\\ReportGenerator\\resources\\icono.png"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\GitRepos\\ReportGenerator\\ReportGenerator\\resources\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUB_DATASOURCE" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="SUBREPORT" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport1.jasper"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORTSIGN" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport_firmas.jasper"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUB_DATASOURCE2" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -117,7 +128,14 @@
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="452">
+		<band height="480">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="286" width="495" height="10">
+					<printWhenExpression><![CDATA[$F{DEUDOR1}!= null  && !$F{DEUDOR1}.isEmpty() && !$F{DEUDOR1}.equalsIgnoreCase( "" )]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{SUB_DATASOURCE}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT}]]></subreportExpression>
+			</subreport>
 			<textField>
 				<reportElement x="0" y="0" width="495" height="18" forecolor="#000000"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -126,20 +144,17 @@
 				<textFieldExpression><![CDATA["CONTRATO DE ARRENDAMIENTO DE VIVIENDA URBANA"]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement mode="Transparent" x="0" y="18" width="495" height="434"/>
-				<rectangle>
-					<reportElement style="SubTitle" x="0" y="0" width="495" height="434"/>
-				</rectangle>
+				<reportElement mode="Transparent" x="0" y="18" width="495" height="266"/>
 				<textField>
-					<reportElement x="0" y="0" width="162" height="26" forecolor="#000000"/>
+					<reportElement mode="Opaque" x="0" y="0" width="495" height="15" forecolor="#000000" backcolor="#999999"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
+						<font fontName="VerdanaZ" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
 						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA["ARRENDADOR"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="0" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="15" width="495" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaZ" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanaz.ttf"/>
 						<paragraph leftIndent="20"/>
@@ -147,107 +162,23 @@
 					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="13" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="28" width="495" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["NIT No. 900.336.513-4"]]></textFieldExpression>
 				</textField>
-				<line>
-					<reportElement positionType="FixRelativeToBottom" x="0" y="26" width="495" height="1"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineColor="#000000"/>
-					</graphicElement>
-				</line>
 				<textField>
-					<reportElement x="0" y="26" width="162" height="27" forecolor="#000000"/>
+					<reportElement mode="Opaque" x="0" y="41" width="495" height="15" forecolor="#000000" backcolor="#999999"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
-						<paragraph leftIndent="2"/>
-					</textElement>
-					<textFieldExpression><![CDATA["ARRENDATARIOS (S)"]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="162" y="27" width="332" height="13" forecolor="#000000"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-						<paragraph leftIndent="20"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{ARRENDATARIO1}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="162" y="40" width="332" height="13" forecolor="#000000"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-						<paragraph leftIndent="20"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1} + " No. "+$F{DOC_ARR1}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="162" y="53" width="332" height="13" forecolor="#000000"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-						<paragraph leftIndent="20"/>
-					</textElement>
-					<textFieldExpression><![CDATA["DIRECCION NOTIFICACION 1"]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="162" y="65" width="332" height="26" forecolor="#000000"/>
-					<textElement textAlignment="Center" verticalAlignment="Top">
-						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-						<paragraph leftIndent="20"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{DIR_NOT_ARR1}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="162" y="90" width="332" height="13" forecolor="#000000"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-						<paragraph leftIndent="20"/>
-					</textElement>
-					<textFieldExpression><![CDATA["DIRECION NOTIFICACION 2"]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="162" y="102" width="332" height="26" forecolor="#000000"/>
-					<textElement textAlignment="Center" verticalAlignment="Top">
-						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-						<paragraph leftIndent="20"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{DIR_NOT_ARR2}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="162" y="141" width="332" height="13" forecolor="#000000"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-						<paragraph leftIndent="20"/>
-					</textElement>
-					<textFieldExpression><![CDATA[($F{TEL_ARR1}!= null ? "TELEFONO: "+$F{TEL_ARR1} :"")+($F{CEL_ARR1}!= null ? " CELULAR: "+$F{CEL_ARR1} :"")]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="162" y="128" width="332" height="13" forecolor="#000000"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-						<paragraph leftIndent="20"/>
-					</textElement>
-					<textFieldExpression><![CDATA["MAIL: "+$F{MAIL_ARR1}]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement positionType="FixRelativeToBottom" x="0" y="156" width="495" height="1"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineColor="#000000"/>
-					</graphicElement>
-				</line>
-				<textField>
-					<reportElement x="0" y="159" width="162" height="24" forecolor="#000000"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
+						<font fontName="VerdanaZ" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
 						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA["BIEN OBJETO DEL CONTRATO"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="157" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="56" width="495" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
@@ -255,7 +186,7 @@
 					<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="170" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="69" width="495" height="13" isRemoveLineWhenBlank="true" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
@@ -263,7 +194,7 @@
 					<textFieldExpression><![CDATA[$F{URBANIZACION}.equals( null )? "URBANIZACION NO APLICA":"URBANIZACION "+$F{URBANIZACION}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="183" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="82" width="495" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
@@ -271,7 +202,7 @@
 					<textFieldExpression><![CDATA["BARRIO: "+$F{BARRIO}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="196" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="95" width="495" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
@@ -279,7 +210,7 @@
 					<textFieldExpression><![CDATA["MUNICIPIO: "+$F{MUNICIPIO}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="209" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="108" width="495" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
@@ -287,7 +218,7 @@
 					<textFieldExpression><![CDATA["CANON: "+$F{CANON} + " MENSUAL"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="222" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="121" width="495" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
@@ -295,164 +226,88 @@
 					<textFieldExpression><![CDATA["FECHA DE INICIO: DIA:"+$F{FI_DIA}+" MES:"+$F{FI_MES}.toUpperCase()+" AÑO:"+$F{FI_ANO}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="162" y="235" width="332" height="13" forecolor="#000000"/>
+					<reportElement x="0" y="134" width="495" height="13" forecolor="#000000"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA["FECHA DE PAGO: "+$F{DIAPAGO}+ " DE CADA MES"]]></textFieldExpression>
 				</textField>
-				<line>
-					<reportElement positionType="FixRelativeToBottom" x="0" y="251" width="495" height="1"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineColor="#000000"/>
-					</graphicElement>
-				</line>
 				<textField>
-					<reportElement x="0" y="250" width="162" height="24" forecolor="#000000"/>
+					<reportElement mode="Opaque" x="0" y="147" width="495" height="15" forecolor="#000000" backcolor="#999999"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
+						<font fontName="VerdanaZ" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
 						<paragraph leftIndent="2"/>
 					</textElement>
-					<textFieldExpression><![CDATA["DEUDORES SOLIDARIOS"]]></textFieldExpression>
+					<textFieldExpression><![CDATA["ARRENDATARIOS (S)"]]></textFieldExpression>
 				</textField>
-				<frame>
-					<reportElement x="162" y="252" width="332" height="91">
-						<printWhenExpression><![CDATA[!$F{DEUDOR1}.equals( null )]]></printWhenExpression>
-					</reportElement>
-					<textField>
-						<reportElement x="0" y="0" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase( )]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="13" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU1} + " No. "+$F{DOC_DEU1}]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="26" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="39" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{DIR_DEU1}]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="52" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{MUNI_DEU1}]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="78" width="332" height="13" forecolor="#000000">
-							<printWhenExpression><![CDATA[!$F{MAIL_DEU1}.equals( null )]]></printWhenExpression>
-						</reportElement>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{MAIL_DEU1}]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="65" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[($F{TEL_DEU1}!= null ? "TELEFONO: "+$F{TEL_DEU1} :"")+($F{CEL_DEU1}!= null ? " CELULAR: "+$F{CEL_DEU1} :"")]]></textFieldExpression>
-					</textField>
-				</frame>
-				<frame>
-					<reportElement x="162" y="343" width="332" height="91">
-						<printWhenExpression><![CDATA[!$F{DEUDOR2}.equals( null ) && !$F{DEUDOR2}.equals( "" )]]></printWhenExpression>
-					</reportElement>
-					<textField>
-						<reportElement x="0" y="0" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{DEUDOR2}.toUpperCase( )]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="13" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU2} + " No. "+$F{DOC_DEU2}]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="26" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="39" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{DIR_DEU2}]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="52" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{MUNI_DEU2}]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="78" width="332" height="13" forecolor="#000000">
-							<printWhenExpression><![CDATA[!$F{MAIL_DEU2}.equals( null )]]></printWhenExpression>
-						</reportElement>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{MAIL_DEU2}]]></textFieldExpression>
-					</textField>
-					<textField>
-						<reportElement x="0" y="65" width="332" height="13" forecolor="#000000"/>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
-							<paragraph leftIndent="20"/>
-						</textElement>
-						<textFieldExpression><![CDATA[($F{TEL_DEU2}!= null ? "TELEFONO: "+$F{TEL_DEU2} :"")+($F{CEL_DEU2}!= null ? " CELULAR: "+$F{CEL_DEU2} :"")]]></textFieldExpression>
-					</textField>
-				</frame>
-				<line>
-					<reportElement positionType="FixRelativeToBottom" x="162" y="0" width="1" height="434"/>
-					<graphicElement>
-						<pen lineWidth="1.0" lineColor="#000000"/>
-					</graphicElement>
-				</line>
+				<textField>
+					<reportElement x="0" y="162" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ARRENDATARIO1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="175" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1} + " No. "+$F{DOC_ARR1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="188" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DIRECCION NOTIFICACION 1"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="201" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DIR_NOT_ARR1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="214" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DIRECION NOTIFICACION 2"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="227" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DIR_NOT_ARR2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="253" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{TEL_ARR1}!= null ? "TELEFONO: "+$F{TEL_ARR1} :"")+($F{CEL_ARR1}!= null ? " CELULAR: "+$F{CEL_ARR1} :"")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="240" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdana.ttf"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA["MAIL: "+$F{MAIL_ARR1}]]></textFieldExpression>
+				</textField>
 			</frame>
-		</band>
-		<band height="168">
 			<frame>
-				<reportElement positionType="Float" x="0" y="0" width="495" height="168"/>
+				<reportElement positionType="Float" x="0" y="307" width="495" height="168"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
 					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="495" height="168" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" forecolor="#000000"/>
 					<textElement textAlignment="Justified" verticalAlignment="Top" markup="styled">
@@ -464,7 +319,7 @@
 		</band>
 		<band height="620">
 			<frame>
-				<reportElement positionType="Float" x="1" y="0" width="494" height="620"/>
+				<reportElement positionType="Float" x="1" y="0" width="494" height="358"/>
 				<textField isBlankWhenNull="false">
 					<reportElement stretchType="RelativeToTallestObject" x="1" y="17" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
 					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
@@ -512,17 +367,10 @@
 					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
 						<font fontName="VerdanaZ" size="9" isBold="false" isItalic="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA["ARRENDATARIO(S):"]]></textFieldExpression>
+					<textFieldExpression><![CDATA["ARRENDATARIO(S):  "]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="374" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-						<font fontName="VerdanaZ" size="9" isBold="false" isItalic="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["DEUDORES SOLIDARIO(S):"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="320" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<reportElement stretchType="RelativeToTallestObject" x="1" y="321" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
 					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
 					</textElement>
@@ -539,62 +387,20 @@
 					<textFieldExpression><![CDATA[$F{TIPO_DOC_ARR1}+ " No. "+ $F{DOC_ARR1}]]></textFieldExpression>
 				</textField>
 				<rectangle>
-					<reportElement mode="Opaque" x="372" y="251" width="70" height="70"/>
+					<reportElement mode="Opaque" x="383" y="251" width="70" height="70"/>
 				</rectangle>
 				<line>
 					<reportElement x="0" y="132" width="197" height="1"/>
 				</line>
-				<frame>
-					<reportElement mode="Transparent" x="1" y="510" width="493" height="106">
-						<printWhenExpression><![CDATA[!$F{DEUDOR2}.equals( null )]]></printWhenExpression>
-					</reportElement>
-					<rectangle>
-						<reportElement mode="Opaque" x="371" y="12" width="70" height="70"/>
-					</rectangle>
-					<textField isBlankWhenNull="false">
-						<reportElement stretchType="RelativeToTallestObject" x="0" y="82" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{DEUDOR2}.toUpperCase()]]></textFieldExpression>
-					</textField>
-					<textField isBlankWhenNull="false">
-						<reportElement stretchType="RelativeToTallestObject" x="0" y="94" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-							<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU2}+ " No. "+ $F{DOC_DEU2}]]></textFieldExpression>
-					</textField>
-					<line>
-						<reportElement x="0" y="81" width="197" height="1"/>
-					</line>
-				</frame>
-				<frame>
-					<reportElement x="0" y="394" width="493" height="106">
-						<printWhenExpression><![CDATA[!$F{DEUDOR1}.equals( null )]]></printWhenExpression>
-					</reportElement>
-					<line>
-						<reportElement x="0" y="69" width="197" height="1"/>
-					</line>
-					<textField isBlankWhenNull="false">
-						<reportElement stretchType="RelativeToTallestObject" x="1" y="81" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-							<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU1}+ " No. "+ $F{DOC_DEU1}]]></textFieldExpression>
-					</textField>
-					<textField isBlankWhenNull="false">
-						<reportElement stretchType="RelativeToTallestObject" x="0" y="69" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-						<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-							<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$F{DEUDOR1}.toUpperCase()]]></textFieldExpression>
-					</textField>
-					<rectangle>
-						<reportElement mode="Opaque" x="372" y="0" width="70" height="70"/>
-					</rectangle>
-				</frame>
 			</frame>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="362" width="495" height="38">
+					<printWhenExpression><![CDATA[$F{DEUDOR1}!= null  && !$F{DEUDOR1}.isEmpty() && !$F{DEUDOR1}.equalsIgnoreCase( "" )
+]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{SUB_DATASOURCE2}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORTSIGN}]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 	<pageFooter>

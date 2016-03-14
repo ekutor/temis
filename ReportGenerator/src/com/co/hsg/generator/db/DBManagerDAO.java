@@ -1,26 +1,31 @@
  package com.co.hsg.generator.db;
  
- import com.co.hsg.generator.bean.ReportField;
- import com.co.hsg.generator.bean.Reports;
- import com.co.hsg.generator.log.LogInfo;
- import com.co.hsg.generator.util.Util;
- import java.sql.Connection;
- import java.sql.Date;
- import java.sql.PreparedStatement;
- import java.sql.ResultSet;
- import java.util.Calendar;
+ import com.co.hsg.generator.bean.DeudorField;
+import com.co.hsg.generator.bean.DeudorReportField;
+import com.co.hsg.generator.bean.ReportField;
+import com.co.hsg.generator.bean.Reports;
+import com.co.hsg.generator.log.LogInfo;
+import com.co.hsg.generator.util.Util;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Calendar;
  
  public class DBManagerDAO extends JDBCResourceManager
  {
+   private static final String SEPARADOR = ",";
    public static String actualMeet;
+   ReportField report;
  
    public ReportField getContract(String id, Reports reportType)
    {
-     ReportField report = new ReportField();
+     report = new ReportField();
      Connection conn = null;
      PreparedStatement st = null;
      LogInfo.T("[DBManager] Leyendo Datos del Contrato:: ");
-     String sql = "SELECT ac.id,ac.name,ac.description,ac.created_by,ac.start_date ,ac.end_date, ac.assigned_user_id,concat(u.first_name , ' ', u.last_name) as user,c.* FROM  aos_contracts ac, aos_contracts_cstm c, users u WHERE ac.id = ? AND ac.id = c.id_c AND ac.created_by = u.id ";
+     String sql = "SELECT ac.id,ac.name,ac.description,ac.created_by,ac.start_date ,ac.end_date, " +
+     		"ac.assigned_user_id,concat(u.first_name , ' ', u.last_name) as user,c.* FROM  aos_contracts ac, aos_contracts_cstm c, users u WHERE ac.id = ? AND ac.id = c.id_c AND ac.created_by = u.id ";
      try
      {
        conn = getConnection();
@@ -80,15 +85,16 @@
            report.setMAIL_ARR1(rs.getString("email_inquilino_c"));
            report.setTEL_ARR1(rs.getString("tel_inquilino_c"));
            report.setCEL_ARR1(rs.getString("celular_inquilino_c"));
- 
-           report.setDEUDOR1(rs.getString("nombre_deudor_solidario1_c"));
-           report.setDOC_DEU1(rs.getString("documento_deudor_solidario1_c"));
-           report.setTIPO_DOC_DEU1(rs.getString("tipodoc_deudor_solidario1_c"));
-           report.setMAIL_DEU1(rs.getString("email_deudor_solidario1_c"));
-           report.setMUNI_DEU1(rs.getString("municipio_deudor_solidario1_c"));
-           report.setDIR_DEU1(rs.getString("direccion_deudor_solidario1_c"));
-           report.setTEL_DEU1(rs.getString("telefono_deudor_solidario1_c"));
-           report.setCEL_DEU1(rs.getString("celular_deudor_solidario1_c"));
+           
+
+           report.setDEUDOR1(getDeudores(rs.getString("nombre_deudor_solidario1_c"),DeudorField.NOMBRE));
+           report.setDOC_DEU1(getDeudores(rs.getString("documento_deudor_solidario1_c"),DeudorField.NUMDOC));
+           report.setTIPO_DOC_DEU1(getDeudores(rs.getString("tipodoc_deudor_solidario1_c"),DeudorField.TIPODOC));
+           report.setMAIL_DEU1(getDeudores(rs.getString("email_deudor_solidario1_c"),DeudorField.MAIL));
+           report.setMUNI_DEU1(getDeudores(rs.getString("municipio_deudor_solidario1_c"),DeudorField.MUNICIPIO));
+           report.setDIR_DEU1(getDeudores(rs.getString("direccion_deudor_solidario1_c"),DeudorField.DIRECCION));
+           report.setTEL_DEU1(getDeudores(rs.getString("telefono_deudor_solidario1_c"),DeudorField.TELEFONO));
+           report.setCEL_DEU1(getDeudores(rs.getString("celular_deudor_solidario1_c"),DeudorField.CELULAR));
            
  
            report.setDEUDOR2(rs.getString("nombre_deudor_solidario2_c"));
@@ -136,7 +142,52 @@
      return null;
    }
  
-   public void saveFile(String fileID, ReportField report, String fileName, String reportName)
+	private String getDeudores(String deudores, DeudorField tipo) {
+		
+		if (deudores != null) {
+			String[] arrayDeudores = deudores.split(SEPARADOR);
+			for (int i = 0; i < arrayDeudores.length; i++) {
+				DeudorReportField drf = new DeudorReportField();
+				if (report.getDeudores().size() > i) {
+					drf = report.getDeudores().get(i);
+				} else {
+					report.getDeudores().add(drf);
+				}
+				switch(tipo){
+					case NUMDOC:
+						drf.setDOC_DEU(arrayDeudores[i]);
+						drf.setNUM_DEUDOR(String.valueOf(i+1));
+						break;
+					case NOMBRE:
+						drf.setDEUDOR(arrayDeudores[i]);
+						break;
+					case TIPODOC:
+						drf.setTIPO_DOC_DEU(arrayDeudores[i]);
+						break;
+					case TELEFONO:
+						drf.setTEL_DEU(arrayDeudores[i]);
+						break;
+					case MAIL:
+						drf.setMAIL_DEU(arrayDeudores[i]);
+						break;
+					case DIRECCION:
+						drf.setDIR_DEU(arrayDeudores[i]);
+						break;
+					case MUNICIPIO:
+						drf.setMUNI_DEU(arrayDeudores[i]);
+						break;
+					case CELULAR:
+						drf.setCEL_DEU(arrayDeudores[i]);
+						break;
+				}
+				
+
+			}
+		}
+		return deudores;
+	}
+
+public void saveFile(String fileID, ReportField report, String fileName, String reportName)
      throws Exception
    {
      LogInfo.T("[DBManager] Insertando Archivo en Registro de Sugar:: ");
