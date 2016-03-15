@@ -69,23 +69,19 @@
      ReportParams r = new ReportParams();
      r.setReport(report);
      r.generateUID();
-     String jasper = "";
-     String subreport = "", subreportSigns = "";
-     switch (report) {
-     case CONTRATO_ADMON_VIVIENDA:
-       jasper = FileManager.getInst().leerPropiedad("REPORT." + report.name());
- 
-       break;
-     case CONTRATO_ARRENDAMIENTO:
-       jasper = FileManager.getInst().leerPropiedad("REPORT." + report.name());
-       subreport = FileManager.getInst().leerPropiedad("SUBREPORT." + report.name());
-       subreportSigns = FileManager.getInst().leerPropiedad("SUBREPORTSIGN." + report.name());
-       break;
-     }
- 
+     String jasper = "", subreportHeader = "",subreportSign = "",subreportArr = "";
+     
+     jasper = FileManager.getInst().leerPropiedad("REPORT." + report.name());
+     subreportSign = FileManager.getInst().leerPropiedad("SUBREPORT.SIGN");
+     subreportHeader = FileManager.getInst().leerPropiedad("SUBREPORT.HEADER");
+     subreportArr = FileManager.getInst().leerPropiedad("SUBREPORT.HEADER_ARRENDATARIOS");
+     
      r.setJasperFile(Util.getAbsolutePath(jasper));
-     r.addParam("SUBREPORT", Util.getAbsolutePath(subreport));
-     r.addParam("SUBREPORTSIGN", Util.getAbsolutePath(subreportSigns));
+     //SUBREPORTS
+     r.addParam("SUBREPORT", Util.getAbsolutePath(subreportHeader));
+     r.addParam("SUBREPORTSIGN", Util.getAbsolutePath(subreportSign));
+     r.addParam("SUBREPORTARRENDATARIOS", Util.getAbsolutePath(subreportArr));
+
      if (reportInfo != null) {
        r.setDatos(reportInfo);
        return r;

@@ -1,16 +1,19 @@
  package com.co.hsg.generator.db;
  
- import com.co.hsg.generator.bean.DeudorField;
-import com.co.hsg.generator.bean.DeudorReportField;
-import com.co.hsg.generator.bean.ReportField;
-import com.co.hsg.generator.bean.Reports;
-import com.co.hsg.generator.log.LogInfo;
-import com.co.hsg.generator.util.Util;
-import java.sql.Connection;
+ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Calendar;
+import java.util.List;
+
+import com.co.hsg.generator.bean.DinamycField;
+import com.co.hsg.generator.bean.DinamycReportField;
+import com.co.hsg.generator.bean.ReportField;
+import com.co.hsg.generator.bean.Reports;
+import com.co.hsg.generator.bean.TypeField;
+import com.co.hsg.generator.log.LogInfo;
+import com.co.hsg.generator.util.Util;
  
  public class DBManagerDAO extends JDBCResourceManager
  {
@@ -74,27 +77,29 @@ import java.util.Calendar;
          
          switch (reportType)
          {
+         case CONTRATO_ARRENDAMIENTO_COMERCIAL:
          case CONTRATO_ARRENDAMIENTO:
            report.setCLAUSULA(rs.getString("clausula_adicional_c"));
            report.setDIAPAGO(rs.getString("dia_fecha_pago_c"));
-           report.setARRENDATARIO1(rs.getString("nombre_inquilino_c"));
-           report.setTIPO_DOC_ARR1(rs.getString("tipo_documento_inquilino_c"));
-           report.setDOC_ARR1(rs.getString("documento_inquilino_c"));
-           report.setDIR_NOT_ARR1(rs.getString("direccion_notificacion_inqui_c"));
-           report.setDIR_NOT_ARR2(rs.getString("direccion_notifi_inqui2_c"));
-           report.setMAIL_ARR1(rs.getString("email_inquilino_c"));
-           report.setTEL_ARR1(rs.getString("tel_inquilino_c"));
-           report.setCEL_ARR1(rs.getString("celular_inquilino_c"));
+           
+           report.setARRENDATARIO1(getDinamycField(rs.getString("nombre_inquilino_c"),DinamycField.NOMBRE,TypeField.INQUILINOS));
+           report.setTIPO_DOC_ARR1(getDinamycField(rs.getString("tipo_documento_inquilino_c"),DinamycField.TIPODOC,TypeField.INQUILINOS));
+           report.setDOC_ARR1(getDinamycField(rs.getString("documento_inquilino_c"),DinamycField.NUMDOC,TypeField.INQUILINOS));
+           report.setDIR_NOT_ARR1(getDinamycField(rs.getString("direccion_notificacion_inqui_c"),DinamycField.DIRECCION,TypeField.INQUILINOS));
+           report.setDIR_NOT_ARR2(getDinamycField(rs.getString("direccion_notifi_inqui2_c"),DinamycField.DIRECCION2,TypeField.INQUILINOS));
+           report.setMAIL_ARR1(getDinamycField(rs.getString("email_inquilino_c"),DinamycField.MAIL,TypeField.INQUILINOS));
+           report.setTEL_ARR1(getDinamycField(rs.getString("tel_inquilino_c"),DinamycField.TELEFONO,TypeField.INQUILINOS));
+           report.setCEL_ARR1(getDinamycField(rs.getString("celular_inquilino_c"),DinamycField.CELULAR,TypeField.INQUILINOS));
            
 
-           report.setDEUDOR1(getDeudores(rs.getString("nombre_deudor_solidario1_c"),DeudorField.NOMBRE));
-           report.setDOC_DEU1(getDeudores(rs.getString("documento_deudor_solidario1_c"),DeudorField.NUMDOC));
-           report.setTIPO_DOC_DEU1(getDeudores(rs.getString("tipodoc_deudor_solidario1_c"),DeudorField.TIPODOC));
-           report.setMAIL_DEU1(getDeudores(rs.getString("email_deudor_solidario1_c"),DeudorField.MAIL));
-           report.setMUNI_DEU1(getDeudores(rs.getString("municipio_deudor_solidario1_c"),DeudorField.MUNICIPIO));
-           report.setDIR_DEU1(getDeudores(rs.getString("direccion_deudor_solidario1_c"),DeudorField.DIRECCION));
-           report.setTEL_DEU1(getDeudores(rs.getString("telefono_deudor_solidario1_c"),DeudorField.TELEFONO));
-           report.setCEL_DEU1(getDeudores(rs.getString("celular_deudor_solidario1_c"),DeudorField.CELULAR));
+           report.setDEUDOR1(getDinamycField(rs.getString("nombre_deudor_solidario1_c"),DinamycField.NOMBRE,TypeField.DEUDORES));
+           report.setDOC_DEU1(getDinamycField(rs.getString("documento_deudor_solidario1_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
+           report.setTIPO_DOC_DEU1(getDinamycField(rs.getString("tipodoc_deudor_solidario1_c"),DinamycField.TIPODOC,TypeField.DEUDORES));
+           report.setMAIL_DEU1(getDinamycField(rs.getString("email_deudor_solidario1_c"),DinamycField.MAIL,TypeField.DEUDORES));
+           report.setMUNI_DEU1(getDinamycField(rs.getString("municipio_deudor_solidario1_c"),DinamycField.MUNICIPIO,TypeField.DEUDORES));
+           report.setDIR_DEU1(getDinamycField(rs.getString("direccion_deudor_solidario1_c"),DinamycField.DIRECCION,TypeField.DEUDORES));
+           report.setTEL_DEU1(getDinamycField(rs.getString("telefono_deudor_solidario1_c"),DinamycField.TELEFONO,TypeField.DEUDORES));
+           report.setCEL_DEU1(getDinamycField(rs.getString("celular_deudor_solidario1_c"),DinamycField.CELULAR,TypeField.DEUDORES));
            
  
            report.setDEUDOR2(rs.getString("nombre_deudor_solidario2_c"));
@@ -142,49 +147,60 @@ import java.util.Calendar;
      return null;
    }
  
-	private String getDeudores(String deudores, DeudorField tipo) {
-		
-		if (deudores != null) {
-			String[] arrayDeudores = deudores.split(SEPARADOR);
-			for (int i = 0; i < arrayDeudores.length; i++) {
-				DeudorReportField drf = new DeudorReportField();
-				if (report.getDeudores().size() > i) {
-					drf = report.getDeudores().get(i);
+	private String getDinamycField(String infoInLine, DinamycField tipo, TypeField type) {
+		List<DinamycReportField> data = null;
+		switch(type){
+			case DEUDORES:
+				data = report.getDeudores();
+				break;
+			case INQUILINOS:
+				data = report.getInquilinos();
+				break;
+		}
+		if (infoInLine != null) {
+			String[] arrayFields = infoInLine.split(SEPARADOR);
+			for (int i = 0; i < arrayFields.length; i++) {
+				DinamycReportField drf = new DinamycReportField();
+				if (data.size() > i) {
+					drf = data.get(i);
 				} else {
-					report.getDeudores().add(drf);
+					data.add(drf);
 				}
 				switch(tipo){
 					case NUMDOC:
-						drf.setDOC_DEU(arrayDeudores[i]);
+						drf.setDOC_DEU(arrayFields[i]);
 						drf.setNUM_DEUDOR(String.valueOf(i+1));
 						break;
 					case NOMBRE:
-						drf.setDEUDOR(arrayDeudores[i]);
+						drf.setDEUDOR(arrayFields[i]);
 						break;
 					case TIPODOC:
-						drf.setTIPO_DOC_DEU(arrayDeudores[i]);
+						drf.setTIPO_DOC_DEU(arrayFields[i]);
 						break;
 					case TELEFONO:
-						drf.setTEL_DEU(arrayDeudores[i]);
+						drf.setTEL_DEU(arrayFields[i]);
 						break;
 					case MAIL:
-						drf.setMAIL_DEU(arrayDeudores[i]);
+						drf.setMAIL_DEU(arrayFields[i]);
 						break;
 					case DIRECCION:
-						drf.setDIR_DEU(arrayDeudores[i]);
+						drf.setDIR_DEU(arrayFields[i]);
+						break;
+					case DIRECCION2:
+						drf.setDIR_DEU2(arrayFields[i]);
 						break;
 					case MUNICIPIO:
-						drf.setMUNI_DEU(arrayDeudores[i]);
+						drf.setMUNI_DEU(arrayFields[i]);
 						break;
 					case CELULAR:
-						drf.setCEL_DEU(arrayDeudores[i]);
+						drf.setCEL_DEU(arrayFields[i]);
 						break;
 				}
 				
 
 			}
 		}
-		return deudores;
+		return infoInLine;
 	}
 
 public void saveFile(String fileID, ReportField report, String fileName, String reportName)

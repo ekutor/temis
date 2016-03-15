@@ -1,28 +1,27 @@
  package com.co.hsg.generator.core;
  
- import com.co.hsg.generator.bean.ReportParams;
- import com.co.hsg.generator.bean.Reports;
- import com.co.hsg.generator.io.Constants;
- import com.co.hsg.generator.io.FileManager;
- import com.co.hsg.generator.log.LogInfo;
- import com.co.hsg.generator.util.Util;
  import java.io.ByteArrayOutputStream;
- import java.io.File;
- import java.io.FileOutputStream;
- import java.util.ArrayList;
- import java.util.HashMap;
- import java.util.List;
- import java.util.Map;
- import net.sf.jasperreports.engine.JRExporterParameter;
- import net.sf.jasperreports.engine.JasperCompileManager;
- import net.sf.jasperreports.engine.JasperFillManager;
- import net.sf.jasperreports.engine.JasperPrint;
- import net.sf.jasperreports.engine.JasperReport;
- import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
- import net.sf.jasperreports.engine.design.JasperDesign;
- import net.sf.jasperreports.engine.export.JRPdfExporter;
- import net.sf.jasperreports.engine.export.JRPdfExporterParameter;
- import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import net.sf.jasperreports.engine.JRExporterParameter;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+
+import com.co.hsg.generator.bean.ReportParams;
+import com.co.hsg.generator.bean.Reports;
+import com.co.hsg.generator.io.FileManager;
+import com.co.hsg.generator.log.LogInfo;
  
  public class ReportManager
  {
@@ -54,11 +53,23 @@
        List data = new ArrayList();
        data.add(reportInfo.getDatos());
        
+       //AGREGAR PARAMETROS Y DS AL REPORTE
        if(reportInfo.getDatos().getDeudores().size() > 0){
     	   JRBeanCollectionDataSource ds1 = new JRBeanCollectionDataSource(reportInfo.getDatos().getDeudores());
            reportInfo.addParam("SUB_DATASOURCE", ds1) ;
            JRBeanCollectionDataSource ds2 = new JRBeanCollectionDataSource(reportInfo.getDatos().getDeudores());
            reportInfo.addParam("SUB_DATASOURCE2", ds2) ;
+           
+           JRBeanCollectionDataSource ds3 = new JRBeanCollectionDataSource(reportInfo.getDatos().getInquilinos());
+           reportInfo.addParam("SUB_DATASOURCE_ARR", ds3);
+          
+           JRBeanCollectionDataSource ds4= new JRBeanCollectionDataSource(reportInfo.getDatos().getInquilinos());
+           reportInfo.addParam("SUB_DATASOURCE2_SIGN", ds4);
+           
+           reportInfo.addParam("TITLE_DEUDORES", "DEUDORES SOLIDARIOS");
+           reportInfo.addParam("SINGLE_TITLE", "DEUDOR");
+           reportInfo.addParam("TITLE_ARRENDATARIOS", "ARRENDATARIO(S)");
+           reportInfo.addParam("TITLE_PROPIETARIOS", "PROPIETARIO(S)");
        }
        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(data);
        reportInfo.setDatasourcePpal(ds);

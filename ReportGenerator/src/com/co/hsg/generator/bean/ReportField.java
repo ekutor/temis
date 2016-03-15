@@ -70,14 +70,23 @@ private String TITULAR_CUENTA;
 private String TIPO_DOC_TITULAR;
 private String DOC_TITULAR;
 
-private List<DeudorReportField> Deudores  = new ArrayList<DeudorReportField>();
+private List<DinamycReportField> Deudores  = new ArrayList<DinamycReportField>();
+private List<DinamycReportField> Inquilinos  = new ArrayList<DinamycReportField>();
 
 
-public List<DeudorReportField> getDeudores() {
+public List<DinamycReportField> getInquilinos() {
+	return Inquilinos;
+}
+
+public void setInquilinos(List<DinamycReportField> inquilinos) {
+	Inquilinos = inquilinos;
+}
+
+public List<DinamycReportField> getDeudores() {
 	return Deudores;
 }
 
-public void setDeudores(List<DeudorReportField> deudores) {
+public void setDeudores(List<DinamycReportField> deudores) {
 	Deudores = deudores;
 }
 

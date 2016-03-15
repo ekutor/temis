@@ -2,13 +2,13 @@ package com.co.hsg.generator.bean;
 
 import com.co.hsg.generator.util.Util;
 
-public class DeudorReportField
+public class DinamycReportField
 {
 
 private String DOC_DEU,NUM_DEUDOR;
 private String TIPO_DOC_DEU;
 private String DEUDOR;
-private String DIR_DEU;
+private String DIR_DEU,DIR_DEU2;
 private String TEL_DEU;
 private String CEL_DEU;
 private String MAIL_DEU;
@@ -67,6 +67,12 @@ public String getMUNI_DEU() {
 }
 public void setMUNI_DEU(String mUNI_DEU) {
 	MUNI_DEU = mUNI_DEU;
+}
+public String getDIR_DEU2() {
+	return DIR_DEU2;
+}
+public void setDIR_DEU2(String dIR_DEU2) {
+	DIR_DEU2 = dIR_DEU2;
 }
 
 
