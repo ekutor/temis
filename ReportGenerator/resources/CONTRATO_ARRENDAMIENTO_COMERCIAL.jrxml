@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20">
 	<property name="ireport.zoom" value="1.100000000000001"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="432"/>
+	<property name="ireport.y" value="769"/>
 	<style name="Title" fontName="Verdana" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Verdana" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Verdana" fontSize="12" isBold="true"/>
@@ -15,20 +15,20 @@
 	</parameter>
 	<parameter name="SUB_DATASOURCE" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<parameter name="SUBREPORT" class="java.lang.String">
-		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport1.jasper"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\Subreport_header.jasper"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="SUBREPORTSIGN" class="java.lang.String">
-		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport_firmas.jasper"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\Subreport_firmas.jasper"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="SUB_DATASOURCE2" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<parameter name="SUBREPORTARRENDATARIOS" class="java.lang.String">
-		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport2.jasper"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\Subreport_header_arrendatarios.jasper"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="SUB_DATASOURCE_ARR" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
-	<parameter name="SUBREPORT2SIGN" class="java.lang.String">
-		<defaultValueExpression><![CDATA[$P{SUBREPORT_DIR}+ "\\CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport2_firmas.jasper"]]></defaultValueExpression>
-	</parameter>
 	<parameter name="SUB_DATASOURCE2_SIGN" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="TITLE_DEUDORES" class="java.lang.String"/>
+	<parameter name="TITLE_ARRENDATARIOS" class="java.lang.String"/>
+	<parameter name="SINGLE_TITLE" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -141,6 +141,12 @@
 				<reportElement positionType="Float" x="0" y="176" width="495" height="10">
 					<printWhenExpression><![CDATA[$F{DEUDOR1}!= null  && !$F{DEUDOR1}.isEmpty() && !$F{DEUDOR1}.equalsIgnoreCase( "" )]]></printWhenExpression>
 				</reportElement>
+				<subreportParameter name="SINGLE_TITLE">
+					<subreportParameterExpression><![CDATA[$P{SINGLE_TITLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="TITLE">
+					<subreportParameterExpression><![CDATA[$P{TITLE_DEUDORES}]]></subreportParameterExpression>
+				</subreportParameter>
 				<dataSourceExpression><![CDATA[$P{SUB_DATASOURCE}]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT}]]></subreportExpression>
 			</subreport>
@@ -311,13 +317,19 @@
 				<reportElement positionType="Float" x="2" y="247" width="495" height="38">
 					<printWhenExpression><![CDATA[$F{DEUDOR1}!= null  && !$F{DEUDOR1}.isEmpty() && !$F{DEUDOR1}.equalsIgnoreCase( "" )]]></printWhenExpression>
 				</reportElement>
+				<subreportParameter name="TITLE">
+					<subreportParameterExpression><![CDATA[$P{TITLE_DEUDORES}]]></subreportParameterExpression>
+				</subreportParameter>
 				<dataSourceExpression><![CDATA[$P{SUB_DATASOURCE2}]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORTSIGN}]]></subreportExpression>
 			</subreport>
 			<subreport>
 				<reportElement positionType="Float" x="0" y="209" width="495" height="38"/>
+				<subreportParameter name="TITLE">
+					<subreportParameterExpression><![CDATA[$P{TITLE_ARRENDATARIOS}]]></subreportParameterExpression>
+				</subreportParameter>
 				<dataSourceExpression><![CDATA[$P{SUB_DATASOURCE2_SIGN}]]></dataSourceExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT2SIGN}]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORTSIGN}]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
