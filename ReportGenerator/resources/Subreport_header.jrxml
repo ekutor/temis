@@ -81,8 +81,10 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DIR_DEU}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="0" y="39" width="495" height="13" forecolor="#000000"/>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="39" width="495" height="13" forecolor="#000000">
+					<printWhenExpression><![CDATA[$F{MUNI_DEU}!= null ]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 					<paragraph leftIndent="20"/>

@@ -81,7 +81,27 @@
      r.addParam("SUBREPORT", Util.getAbsolutePath(subreportHeader));
      r.addParam("SUBREPORTSIGN", Util.getAbsolutePath(subreportSign));
      r.addParam("SUBREPORTARRENDATARIOS", Util.getAbsolutePath(subreportArr));
+     
+     
+     r.addParam("TITLE_ARRENDATARIOS", "ARRENDATARIO(S)");
+     r.addParam("TITLE_PROPIETARIOS", "PROPIETARIO(S)");
+     
+     switch(report){
+     case CONTRATO_ARRENDAMIENTO:
+    	 r.addParam("SINGLE_TITLE", "DEUDOR");
+    	 r.addParam("TITLE_DEUDORES", "DEUDORES SOLIDARIOS");
 
+    	 break;
+     case CONTRATO_ADMON_VIVIENDA:
+    	 r.addParam("SINGLE_TITLE", "CONSIGNANTE");
+    	 r.addParam("TITLE_ARRENDATARIOS", "PROPIETARIO(S)");
+    	 r.addParam("TITLE_DEUDORES", "CONSIGNANTES");
+    	 break;
+     case CONTRATO_ARRENDAMIENTO_COMERCIAL:
+    	 r.addParam("SINGLE_TITLE", "DEUDOR");
+    	 r.addParam("TITLE_DEUDORES", "DEUDORES SOLIDARIOS");
+    	 break;
+     }
      if (reportInfo != null) {
        r.setDatos(reportInfo);
        return r;

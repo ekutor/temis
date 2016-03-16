@@ -102,30 +102,39 @@ import com.co.hsg.generator.util.Util;
            report.setCEL_DEU1(getDinamycField(rs.getString("celular_deudor_solidario1_c"),DinamycField.CELULAR,TypeField.DEUDORES));
            
  
-           report.setDEUDOR2(rs.getString("nombre_deudor_solidario2_c"));
+          /* report.setDEUDOR2(rs.getString("nombre_deudor_solidario2_c"));
            report.setDOC_DEU2(rs.getString("documento_deudor_solidario2_c"));
            report.setTIPO_DOC_DEU2(rs.getString("tipodoc_deudor_solidario2_c"));
            report.setMAIL_DEU2(rs.getString("email_deudor_solidario2_c"));
            report.setMUNI_DEU2(rs.getString("municipio_deudor_solidario2_c"));
            report.setDIR_DEU2(rs.getString("direccion_deudor_solidario2_c"));
            report.setTEL_DEU2(rs.getString("telefono_deudor_solidario2_c"));
-           report.setCEL_DEU2(rs.getString("celular_deudor_solidario2_c"));
+           report.setCEL_DEU2(rs.getString("celular_deudor_solidario2_c"));*/
  
            break;
          case CONTRATO_ADMON_VIVIENDA:
-           report.setARRENDATARIO1(rs.getString("name"));
-           report.setTIPO_DOC_ARR1(rs.getString("tipo_doc_propietario_c"));
-           report.setDOC_ARR1(rs.getString("cedula_c"));
+
+           //propietarios
+           report.setARRENDATARIO1(getDinamycField(rs.getString("name"),DinamycField.NOMBRE,TypeField.INQUILINOS));
+           report.setTIPO_DOC_ARR1(getDinamycField(rs.getString("tipo_doc_propietario_c"),DinamycField.TIPODOC,TypeField.INQUILINOS));
+           report.setDOC_ARR1(getDinamycField(rs.getString("cedula_c"),DinamycField.NUMDOC,TypeField.INQUILINOS));
            report.setCLAUSULA(rs.getString("description"));
- 
-           report.setDEUDOR1(rs.getString("nombre_consignante_c"));
-           report.setDOC_DEU1(rs.getString("ced_consignante_c"));
-           report.setTIPO_DOC_DEU1(rs.getString("tipo_doc_consignante_c"));
-           report.setMAIL_DEU1(rs.getString("mail_con_c"));
-           report.setMUNI_DEU1(rs.getString("municipio_inmueble_c"));
-           report.setTEL_DEU1(rs.getString("telefono_c"));
-           report.setCEL_DEU1(rs.getString("celular_c"));
-           report.setDIR_NOT_DEU1(rs.getString("direccion_notificacion2_c"));
+           report.setDIR_NOT_ARR1(getDinamycField(rs.getString("direccion_notificacion_c"),DinamycField.DIRECCION,TypeField.INQUILINOS));
+           report.setMAIL_ARR1(getDinamycField(rs.getString("mail_c"),DinamycField.MAIL,TypeField.INQUILINOS));
+           report.setTEL_ARR1(getDinamycField(rs.getString("telefono_1_c"),DinamycField.TELEFONO,TypeField.INQUILINOS));
+           report.setCEL_ARR1(getDinamycField(rs.getString("celular_c"),DinamycField.CELULAR,TypeField.INQUILINOS));
+          
+           //consignantes
+               
+           report.setDEUDOR1(getDinamycField(rs.getString("nombre_consignante_c"),DinamycField.NOMBRE,TypeField.DEUDORES));
+           report.setDOC_DEU1(getDinamycField(rs.getString("ced_consignante_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
+           report.setTIPO_DOC_DEU1(getDinamycField(rs.getString("tipo_doc_consignante_c"),DinamycField.TIPODOC,TypeField.DEUDORES));
+           report.setMAIL_DEU1(getDinamycField(rs.getString("mail_con_c"),DinamycField.MAIL,TypeField.DEUDORES));
+           report.setMUNI_DEU1(getDinamycField(rs.getString("municipio_inmueble_c"),DinamycField.MUNICIPIO,TypeField.DEUDORES));
+           report.setDIR_DEU1(getDinamycField(rs.getString("direccion_notificacion2_c"),DinamycField.DIRECCION,TypeField.DEUDORES));
+           report.setTEL_DEU1(getDinamycField(rs.getString("telefono_c"),DinamycField.TELEFONO,TypeField.DEUDORES));
+           report.setCEL_DEU1(getDinamycField(rs.getString("celular_c"),DinamycField.CELULAR,TypeField.DEUDORES));
+           
  
            report.setBANCO(rs.getString("banco_c"));
            report.setNUM_CUENTA(rs.getString("no_cuenta_c"));

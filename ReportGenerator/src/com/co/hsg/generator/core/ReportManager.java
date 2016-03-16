@@ -65,13 +65,7 @@ import com.co.hsg.generator.log.LogInfo;
           
            JRBeanCollectionDataSource ds4= new JRBeanCollectionDataSource(reportInfo.getDatos().getInquilinos());
            reportInfo.addParam("SUB_DATASOURCE2_SIGN", ds4);
-           
-  
-           reportInfo.addParam("TITLE_DEUDORES", "DEUDORES SOLIDARIOS");
-           reportInfo.addParam("SINGLE_TITLE", "DEUDOR");
-           reportInfo.addParam("TITLE_ARRENDATARIOS", "ARRENDATARIO(S)");
-           reportInfo.addParam("TITLE_PROPIETARIOS", "PROPIETARIO(S)");
-           reportInfo.addParam("SINGLE_TITLEP", "PROPIETARIO");
+     
        }
        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(data);
        reportInfo.setDatasourcePpal(ds);
