@@ -435,7 +435,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
      }
      if (number == 0) return soFar;
      String sn = cientos[number];
-     return  sn + " " + soFar;
+     if(soFar.length() > 1 && sn.equals("cien")){
+    	 sn += "to " + soFar; 
+     }else{
+    	 sn += " "+ soFar; 
+     }
+     return  sn;
    }
  
    private static String ajuste(String value) {
@@ -459,6 +464,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 			value = "veintisiete";
 		}else if(value.equals("veinte y ocho")){
 			value = "veintiocho";
+		}else if(value.equals("veinte y nueve")){
+			value = "veintinueve";
 		}
 		return value;
    }
@@ -514,15 +521,20 @@ public static String convertNumberToWords(String number) {
        tradMillions = convertLessThanOneThousand(millions) ; 
        if("uno".equals(tradMillions)){
     	   tradMillions = "un";
+    	   tradMillions += " millon ";
+       }else{
+    	   tradMillions += " millones ";
        }
-       tradMillions += " millon ";
+       
        break;
      default:
        tradMillions = convertLessThanOneThousand(millions);
        if("uno".equals(tradMillions)){
     	   tradMillions = "un";
+    	   tradMillions += " millon ";
+       }else{
+    	   tradMillions += " millones ";
        }
-       tradMillions += " millon ";
        break;
      }
      result = result + tradMillions;
@@ -539,10 +551,21 @@ public static String convertNumberToWords(String number) {
          " mil ";
      }
      result = result + tradHundredThousands;
- 
+     if(result.indexOf("y  mil") > 0){
+    	 result = result.replace("y  mil", "mil");
+     }
      String tradThousand = convertLessThanOneThousand(thousands);
      result = result + tradThousand;
- 
+     try{
+    	 int l = result.lastIndexOf("millon");
+    	 int len = result.length();
+	     if(l+7 == len){
+	    	result += " de"; 
+	     }
+     
+     }catch(Exception e){
+    	 
+     }
      return result.replaceAll("^\\s+", "").replaceAll("\\b\\s{2,}\\b", " ");
    }
 	public static String setMiles(String value) {
@@ -559,8 +582,8 @@ public static String convertNumberToWords(String number) {
 	}
    public static void main(String[] args)
    {
-     String val = "1000000002";
-//     System.out.println(convertNumberToWords(number));
+     String val = "1000000";
+     System.out.println(convertNumberToWords(val));
      System.out.println(setMiles(val));
    }
  
