@@ -69,6 +69,88 @@ private String TIPO_CUENTA;
 private String TITULAR_CUENTA;
 private String TIPO_DOC_TITULAR;
 private String DOC_TITULAR;
+private String COMISION, COM_LETRAS, COMISION_DIA, COMISION_DIA_LETRAS;
+private String REP_LEGAL, DOC_REP_LEGAL;
+private String DESTINACION_COMERCIAL, TIPO_URB;
+
+public String getCOMISION() {
+	return COMISION;
+}
+
+public String getCOMISION_DIA() {
+	return COMISION_DIA;
+}
+
+public void setCOMISION_DIA(String cOMISION_DIA) {
+	COMISION_DIA = cOMISION_DIA;
+	setCOMISION_DIA_LETRAS(Util.convertNumberToWords(COMISION_DIA).toUpperCase());
+}
+
+public String getCOMISION_DIA_LETRAS() {
+	return COMISION_DIA_LETRAS;
+}
+
+public void setCOMISION_DIA_LETRAS(String cOMISION_DIA_LETRAS) {
+	COMISION_DIA_LETRAS = cOMISION_DIA_LETRAS;
+}
+
+public void setCOMISION(String cOMISION) {
+	COMISION = cOMISION;
+	setCOM_LETRAS(Util.convertNumberToWords(COMISION).toUpperCase());
+	if(COMISION.equals("8")){
+		this.setCOMISION_DIA("20");
+	}else if(COMISION.equals("10")){
+		this.setCOMISION_DIA("10");
+	}else if(COMISION.equals("12")){
+		this.setCOMISION_DIA("3");
+	}
+}
+
+
+public String getTIPO_URB() {
+	return TIPO_URB;
+}
+
+public void setTIPO_URB(String tIPO_URB) {
+	TIPO_URB = Util.validateNull(tIPO_URB);
+	if(TIPO_URB != null){
+		TIPO_URB = TIPO_URB.toUpperCase();
+	}
+}
+
+public String getDESTINACION_COMERCIAL() {
+	return DESTINACION_COMERCIAL;
+}
+
+public void setDESTINACION_COMERCIAL(String dESTINACION_COMERCIAL) {
+	DESTINACION_COMERCIAL = Util.validateNull(dESTINACION_COMERCIAL);
+}
+
+public String getDOC_REP_LEGAL() {
+	return DOC_REP_LEGAL;
+}
+
+public void setDOC_REP_LEGAL(String dOC_REP_LEGAL) {
+	DOC_REP_LEGAL = Util.validateNull(dOC_REP_LEGAL);
+}
+
+public String getCOM_LETRAS() {
+	return COM_LETRAS;
+}
+
+public void setCOM_LETRAS(String cOM_LETRAS) {
+	COM_LETRAS = cOM_LETRAS;
+}
+
+
+public String getREP_LEGAL() {
+	return REP_LEGAL;
+}
+
+public void setREP_LEGAL(String rEP_LEGAL) {
+	REP_LEGAL = Util.validateNull(rEP_LEGAL);
+}
+
 
 private List<DinamycReportField> Deudores  = new ArrayList<DinamycReportField>();
 private List<DinamycReportField> Inquilinos  = new ArrayList<DinamycReportField>();

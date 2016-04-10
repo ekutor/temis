@@ -45,6 +45,7 @@ import com.co.hsg.generator.util.Util;
           
          report.setDIRECCION(rs.getString("direccion_inmueble_c"));
          report.setNUM_APTO(rs.getString("numero_apto_c"));
+         report.setTIPO_URB(rs.getString("tipo_inmueble_c"));
          report.setURBANIZACION(rs.getString("nombre_unidad_c"));
          report.setBARRIO(rs.getString("barrio_inmueble_c"));
          report.setMUNICIPIO(rs.getString("municipio_inmueble_c"));
@@ -77,7 +78,12 @@ import com.co.hsg.generator.util.Util;
          
          switch (reportType)
          {
+//         case CONTRATO_ARRENDAMIENTO_REP_LEGAL:
+//        	 report.setREP_LEGAL(rs.getString("nombre_repre_legal_c"));
+//        	 report.setDOC_REP_LEGAL(rs.getString("num_doc_repre_legal_c"));
+         case CONTRATO_ARRENDAMIENTO_VIVIENDA_DEST_COMERCIAL:
          case CONTRATO_ARRENDAMIENTO_COMERCIAL:
+        	 report.setDESTINACION_COMERCIAL(rs.getString("dest_comercial_c"));
          case CONTRATO_ARRENDAMIENTO:
            report.setCLAUSULA(rs.getString("clausula_adicional_c"));
            report.setDIAPAGO(rs.getString("dia_fecha_pago_c"));
@@ -112,8 +118,11 @@ import com.co.hsg.generator.util.Util;
            report.setCEL_DEU2(rs.getString("celular_deudor_solidario2_c"));*/
  
            break;
+         case CONTRATO_ADMON_COMERCIAL:
          case CONTRATO_ADMON_VIVIENDA:
-
+        	 
+           report.setCOMISION(rs.getString("comision_propietario_c"));
+        	 
            //propietarios
            report.setARRENDATARIO1(getDinamycField(rs.getString("name"),DinamycField.NOMBRE,TypeField.INQUILINOS));
            report.setTIPO_DOC_ARR1(getDinamycField(rs.getString("tipo_doc_propietario_c"),DinamycField.TIPODOC,TypeField.INQUILINOS));

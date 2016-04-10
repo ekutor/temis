@@ -1,15 +1,13 @@
  package com.co.hsg.generator.core;
  
- import com.co.hsg.generator.bean.ReportField;
- import com.co.hsg.generator.bean.ReportParams;
- import com.co.hsg.generator.bean.Reports;
- import com.co.hsg.generator.db.DBManagerDAO;
- import com.co.hsg.generator.io.FileManager;
- import com.co.hsg.generator.log.LogInfo;
- import com.co.hsg.generator.util.Util;
- import java.util.ArrayList;
- import java.util.List;
  import java.util.Map;
+
+import com.co.hsg.generator.bean.ReportField;
+import com.co.hsg.generator.bean.ReportParams;
+import com.co.hsg.generator.bean.Reports;
+import com.co.hsg.generator.db.DBManagerDAO;
+import com.co.hsg.generator.io.FileManager;
+import com.co.hsg.generator.util.Util;
  
  public class DataFileManager
  {
@@ -21,31 +19,7 @@
      this.db = new DBManagerDAO();
    }
  
-   public List<Object> dataToObject(Reports repo, String data)
-     throws Exception
-   {
-     LogInfo.T("[DataFileManager] cargando Informacion..");
-     List objects = new ArrayList();
  
-     boolean cont = true;
-     try
-     {
-       switch (repo)
-       {
-       case CONTRATO_ADMON_VIVIENDA:
-         LogInfo.T("[DataFileManager] convirtiendo Objetos DVC_MES");
-         objects.add(datatoReport(data));
-         LogInfo.T("[DataFileManager] agregado ");
-       }
- 
-     }
-     catch (ArrayIndexOutOfBoundsException e)
-     {
-       LogInfo.E("[DataFileManager] Falla al generar  por  datos recibidos Incompletos ", e);
-     }
- 
-     return objects;
-   }
  
    private ReportField datatoReport(String data)
      throws ArrayIndexOutOfBoundsException
@@ -87,16 +61,15 @@
      r.addParam("TITLE_PROPIETARIOS", "PROPIETARIO(S)");
      
      switch(report){
-     case CONTRATO_ARRENDAMIENTO:
-    	 r.addParam("SINGLE_TITLE", "DEUDOR");
-    	 r.addParam("TITLE_DEUDORES", "DEUDORES SOLIDARIOS");
-
-    	 break;
+     
+     case CONTRATO_ADMON_COMERCIAL:
      case CONTRATO_ADMON_VIVIENDA:
     	 r.addParam("SINGLE_TITLE", "CONSIGNANTE");
     	 r.addParam("TITLE_ARRENDATARIOS", "PROPIETARIO(S)");
     	 r.addParam("TITLE_DEUDORES", "CONSIGNANTES");
     	 break;
+     case CONTRATO_ARRENDAMIENTO:
+     case CONTRATO_ARRENDAMIENTO_VIVIENDA_DEST_COMERCIAL:
      case CONTRATO_ARRENDAMIENTO_COMERCIAL:
     	 r.addParam("SINGLE_TITLE", "DEUDOR");
     	 r.addParam("TITLE_DEUDORES", "DEUDORES SOLIDARIOS");
