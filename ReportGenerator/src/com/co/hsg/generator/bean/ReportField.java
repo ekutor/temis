@@ -3,7 +3,6 @@ package com.co.hsg.generator.bean;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.co.hsg.generator.log.LogInfo;
 import com.co.hsg.generator.util.Util;
 
 public class ReportField
@@ -114,7 +113,11 @@ public String getTIPO_URB() {
 public void setTIPO_URB(String tIPO_URB) {
 	TIPO_URB = Util.validateNull(tIPO_URB);
 	if(TIPO_URB != null){
-		TIPO_URB = TIPO_URB.toUpperCase();
+		if(TIPO_URB.contains("aplica")){
+			TIPO_URB = "";
+		}else{
+			TIPO_URB = TIPO_URB.toUpperCase();
+		}
 	}
 }
 
