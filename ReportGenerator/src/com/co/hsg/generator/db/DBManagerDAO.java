@@ -82,8 +82,10 @@ import com.co.hsg.generator.util.Util;
 //        	 report.setREP_LEGAL(rs.getString("nombre_repre_legal_c"));
 //        	 report.setDOC_REP_LEGAL(rs.getString("num_doc_repre_legal_c"));
          case CONTRATO_ARRENDAMIENTO_VIVIENDA_DEST_COMERCIAL:
+        	 report.setDESTINACION_COMERCIAL(rs.getString("dest_comercial_c"));
          case CONTRATO_ARRENDAMIENTO_COMERCIAL:
         	 report.setDESTINACION_COMERCIAL(rs.getString("dest_comercial_c"));
+        	 report.setPORC_AUMENTO(rs.getString("und_mas_ipc_c"));
          case CONTRATO_ARRENDAMIENTO:
            report.setCLAUSULA(rs.getString("clausula_adicional_c"));
            report.setDIAPAGO(rs.getString("dia_fecha_pago_c"));
@@ -119,6 +121,7 @@ import com.co.hsg.generator.util.Util;
  
            break;
          case CONTRATO_ADMON_COMERCIAL:
+        	 report.setDESTINACION_COMERCIAL(rs.getString("dest_comercial_c"));
          case CONTRATO_ADMON_VIVIENDA:
         	 
            report.setCOMISION(rs.getString("comision_propietario_c"));
@@ -139,7 +142,7 @@ import com.co.hsg.generator.util.Util;
            report.setDOC_DEU1(getDinamycField(rs.getString("ced_consignante_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
            report.setTIPO_DOC_DEU1(getDinamycField(rs.getString("tipo_doc_consignante_c"),DinamycField.TIPODOC,TypeField.DEUDORES));
            report.setMAIL_DEU1(getDinamycField(rs.getString("mail_con_c"),DinamycField.MAIL,TypeField.DEUDORES));
-           report.setMUNI_DEU1(getDinamycField(rs.getString("municipio_inmueble_c"),DinamycField.MUNICIPIO,TypeField.DEUDORES));
+           report.setMUNI_DEU1(getDinamycField(rs.getString("municipio_consignante_c"),DinamycField.MUNICIPIO,TypeField.DEUDORES));
            report.setDIR_DEU1(getDinamycField(rs.getString("direccion_notificacion2_c"),DinamycField.DIRECCION,TypeField.DEUDORES));
            report.setTEL_DEU1(getDinamycField(rs.getString("telefono_c"),DinamycField.TELEFONO,TypeField.DEUDORES));
            report.setCEL_DEU1(getDinamycField(rs.getString("celular_c"),DinamycField.CELULAR,TypeField.DEUDORES));

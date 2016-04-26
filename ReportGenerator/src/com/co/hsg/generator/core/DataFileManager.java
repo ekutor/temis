@@ -46,7 +46,7 @@ import com.co.hsg.generator.util.Util;
      String jasper = "", subreportHeader = "",subreportSign = "",subreportArr = "";
      
      jasper = FileManager.getInst().leerPropiedad("REPORT." + report.name());
-     subreportSign = FileManager.getInst().leerPropiedad("SUBREPORT.SIGN");
+     subreportSign = FileManager.getInst().leerPropiedad("SUBREPORT.SIGN."+report.name());
      subreportHeader = FileManager.getInst().leerPropiedad("SUBREPORT.HEADER");
      subreportArr = FileManager.getInst().leerPropiedad("SUBREPORT.HEADER_ARRENDATARIOS");
      

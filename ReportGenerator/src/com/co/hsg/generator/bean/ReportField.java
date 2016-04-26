@@ -70,7 +70,7 @@ private String TIPO_DOC_TITULAR;
 private String DOC_TITULAR;
 private String COMISION, COM_LETRAS, COMISION_DIA, COMISION_DIA_LETRAS;
 private String REP_LEGAL, DOC_REP_LEGAL;
-private String DESTINACION_COMERCIAL, TIPO_URB;
+private String DESTINACION_COMERCIAL, TIPO_URB,PORC_AUMENTO,PORC_AUMENTO_LETRAS;
 
 public String getCOMISION() {
 	return COMISION;
@@ -78,6 +78,24 @@ public String getCOMISION() {
 
 public String getCOMISION_DIA() {
 	return COMISION_DIA;
+}
+
+
+public String getPORC_AUMENTO() {
+	return PORC_AUMENTO;
+}
+
+public void setPORC_AUMENTO(String pORC_AUMENTO) {
+	PORC_AUMENTO = pORC_AUMENTO;
+	setPORC_AUMENTO_LETRAS(Util.convertNumberToWords(PORC_AUMENTO).toUpperCase());
+}
+
+public String getPORC_AUMENTO_LETRAS() {
+	return PORC_AUMENTO_LETRAS;
+}
+
+public void setPORC_AUMENTO_LETRAS(String pORC_AUMENTO_LETRAS) {
+	PORC_AUMENTO_LETRAS = pORC_AUMENTO_LETRAS;
 }
 
 public void setCOMISION_DIA(String cOMISION_DIA) {
