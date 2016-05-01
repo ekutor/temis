@@ -145,7 +145,7 @@ import com.co.hsg.generator.util.Util;
            report.setMUNI_DEU1(getDinamycField(rs.getString("municipio_consignante_c"),DinamycField.MUNICIPIO,TypeField.DEUDORES));
            report.setDIR_DEU1(getDinamycField(rs.getString("direccion_notificacion2_c"),DinamycField.DIRECCION,TypeField.DEUDORES));
            report.setTEL_DEU1(getDinamycField(rs.getString("telefono_c"),DinamycField.TELEFONO,TypeField.DEUDORES));
-           report.setCEL_DEU1(getDinamycField(rs.getString("celular_c"),DinamycField.CELULAR,TypeField.DEUDORES));
+           report.setCEL_DEU1(getDinamycField(rs.getString("celular_consignante_c"),DinamycField.CELULAR,TypeField.DEUDORES));
            
  
            report.setBANCO(rs.getString("banco_c"));

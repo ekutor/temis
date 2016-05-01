@@ -82,17 +82,17 @@ class AOS_ContractsController extends SugarController {
 		global $mod_string;
 		$id = $_REQUEST['uid'];
 		$templateID = $_REQUEST['templateID'];
-		$path = "/var/www/html/crm_suite/custom/modules/AOS_Contracts/ReportGenerator.jar";
+		$path = "/var/www/vhosts/portadainmobiliaria.iatech.com.co/httpdocs/crm/custom/modules/AOS_Contracts/ReportGenerator.jar";
 		$command  = "/usr/bin/java -Djava.awt.headless=true -jar  $path $id $templateID";
 		exec($command, $output);
-		//$this->printRequest($_REQUEST, $path,$id , $templateID, $output, $command);
+		$this->printRequest($_REQUEST, $path,$id , $templateID, $output, $command);
 		//SugarApplication::redirect('index.php?entryPoint=download&id='.$id.'&type=Notes');	
 		SugarApplication::redirect('index.php?module=AOS_Contracts&action=DetailView&record='.$id.'#history');
 	}
 	
 	function printRequest( $infoArray , $pt,$id  ,$templateID , $out, $command){
 		if($infoArray != null){
-			$path = "/var/www/html/crm_suite/custom/modules/AOS_Contracts/";
+			$path = "/var/www/vhosts/portadainmobiliaria.iatech.com.co/httpdocs/crm/custom/modules/AOS_Contracts/";
 			$file = fopen($path."aos_contracts.log", "a") or die("Unable to open file!");
 			foreach($infoArray as $key => $value){
 			
