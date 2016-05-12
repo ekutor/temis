@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA_DEST_COMERCIAL" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20">
 	<property name="ireport.zoom" value="1.100000000000001"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="336"/>
+	<property name="ireport.y" value="442"/>
 	<style name="Title" fontName="Verdana" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Verdana" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Verdana" fontSize="12" isBold="true"/>
@@ -268,9 +268,9 @@
 				</textField>
 			</frame>
 		</band>
-		<band height="620">
+		<band height="342">
 			<subreport>
-				<reportElement positionType="Float" x="2" y="242" width="495" height="15">
+				<reportElement positionType="Float" x="0" y="317" width="495" height="15">
 					<printWhenExpression><![CDATA[$F{DEUDOR1}!= null  && !$F{DEUDOR1}.isEmpty() && !$F{DEUDOR1}.equalsIgnoreCase( "" )]]></printWhenExpression>
 				</reportElement>
 				<subreportParameter name="TITLE">
@@ -280,7 +280,7 @@
 				<subreportExpression><![CDATA[$P{SUBREPORTSIGN}]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement positionType="Float" x="0" y="205" width="495" height="15"/>
+				<reportElement positionType="Float" x="0" y="296" width="495" height="15"/>
 				<subreportParameter name="TITLE">
 					<subreportParameterExpression><![CDATA[$P{TITLE_ARRENDATARIOS}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -288,53 +288,53 @@
 				<subreportExpression><![CDATA[$P{SUBREPORTSIGN}]]></subreportExpression>
 			</subreport>
 			<frame>
-				<reportElement positionType="Float" x="1" y="0" width="494" height="199"/>
+				<reportElement positionType="Float" x="1" y="0" width="494" height="261"/>
 				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="1" y="17" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="60" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
 					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
 						<font fontName="VerdanaCursiva" size="9" isBold="false" isItalic="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["LA ARRENDADORA:"]]></textFieldExpression>
 				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="133" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["FLOR VIVIANA CASTAÑO BETANCUR"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="145" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["C.C. No. 43.568.821"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="157" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="169" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["Nit Nº 900.336.513-4"]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="false">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="181" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
-					<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
-						<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["Representante Legal "]]></textFieldExpression>
-				</textField>
-				<line>
-					<reportElement x="0" y="132" width="197" height="1"/>
-				</line>
 			</frame>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="176" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FLOR VIVIANA CASTAÑO BETANCUR"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="188" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["C.C. No. 43.568.821"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="200" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PORTADA INMOBILIARIA S.A.S"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="212" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nit Nº 900.336.513-4"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="224" width="238" height="12" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" markup="html">
+					<font fontName="VerdanaNormal" size="9" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Representante Legal "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="175" width="197" height="1"/>
+			</line>
 		</band>
 	</detail>
 	<pageFooter>

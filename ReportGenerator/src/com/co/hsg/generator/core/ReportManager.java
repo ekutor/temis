@@ -59,7 +59,8 @@ import com.co.hsg.generator.log.LogInfo;
            reportInfo.addParam("SUB_DATASOURCE", ds1) ;
            JRBeanCollectionDataSource ds2 = new JRBeanCollectionDataSource(reportInfo.getDatos().getDeudores());
            reportInfo.addParam("SUB_DATASOURCE2", ds2) ;
-           
+       } 
+       if(reportInfo.getDatos().getInquilinos().size() > 0){ 
            JRBeanCollectionDataSource ds3 = new JRBeanCollectionDataSource(reportInfo.getDatos().getInquilinos());
            reportInfo.addParam("SUB_DATASOURCE_ARR", ds3);
           

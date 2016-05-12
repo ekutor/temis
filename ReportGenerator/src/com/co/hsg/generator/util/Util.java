@@ -425,11 +425,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
        number /= 100;
      }
      else {
-       soFar = unidades[(number % 10)];
+       String und = unidades[(number % 10)];
        number /= 10;
- 
-       soFar = decenas[(number % 10)] +" y "+ soFar;
        
+       soFar = decenas[(number % 10)];
+       
+       if(und != ""){
+    	   soFar += " y "+ und;
+       }
        soFar = ajuste(soFar);
        number /= 10;
      }
@@ -558,10 +561,12 @@ public static String convertNumberToWords(String number) {
      result = result + tradThousand;
      try{
     	 int l = result.lastIndexOf("millon");
-    	 int len = result.length();
-	     if(l+7 == len){
-	    	result += " de"; 
-	     }
+    	 if(l != -1){
+	    	 int len = result.length();
+		     if(l+7 == len){
+		    	result += " de"; 
+		     }
+    	 }
      
      }catch(Exception e){
     	 
@@ -582,7 +587,7 @@ public static String convertNumberToWords(String number) {
 	}
    public static void main(String[] args)
    {
-     String val = "1000000";
+     String val = "15";
      System.out.println(convertNumberToWords(val));
      System.out.println(setMiles(val));
    }

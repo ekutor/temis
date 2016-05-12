@@ -131,7 +131,7 @@ public String getTIPO_URB() {
 public void setTIPO_URB(String tIPO_URB) {
 	TIPO_URB = Util.validateNull(tIPO_URB);
 	if(TIPO_URB != null){
-		if(TIPO_URB.contains("aplica")){
+		if(TIPO_URB.toLowerCase().contains("aplica")){
 			TIPO_URB = "";
 		}else{
 			TIPO_URB = TIPO_URB.toUpperCase();
@@ -621,7 +621,8 @@ public void setURBANIZACION(String uRBANIZACION) {
 	  if (uRBANIZACION == null)
 	       this.URBANIZACION = "";
 	else
-	       this.URBANIZACION = uRBANIZACION;
+	       
+		this.URBANIZACION = uRBANIZACION;
 }
 
 public String getBARRIO()
