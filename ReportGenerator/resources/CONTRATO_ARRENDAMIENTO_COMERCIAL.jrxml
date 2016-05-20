@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20">
 	<property name="ireport.zoom" value="1.100000000000001"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="104"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" fontName="Verdana" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Verdana" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Verdana" fontSize="12" isBold="true"/>
@@ -214,7 +214,7 @@
 						<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
 						<paragraph leftIndent="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{URBANIZACION}.equals( null )? "URBANIZACION NO APLICA":"URBANIZACION "+$F{URBANIZACION}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{URBANIZACION}.equals( null )? "URBANIZACION NO APLICA":$F{TIPO_URB}+" "+$F{URBANIZACION}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="0" y="82" width="495" height="13" forecolor="#000000"/>
@@ -292,9 +292,9 @@
 				</textField>
 			</frame>
 		</band>
-		<band height="620">
+		<band height="250">
 			<subreport>
-				<reportElement positionType="Float" x="2" y="242" width="495" height="15">
+				<reportElement positionType="Float" x="0" y="226" width="495" height="15">
 					<printWhenExpression><![CDATA[$F{DEUDOR1}!= null  && !$F{DEUDOR1}.isEmpty() && !$F{DEUDOR1}.equalsIgnoreCase( "" )]]></printWhenExpression>
 				</reportElement>
 				<subreportParameter name="TITLE">
@@ -304,7 +304,7 @@
 				<subreportExpression><![CDATA[$P{SUBREPORTSIGN}]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement positionType="Float" x="0" y="205" width="495" height="15"/>
+				<reportElement positionType="Float" x="0" y="206" width="495" height="15"/>
 				<subreportParameter name="TITLE">
 					<subreportParameterExpression><![CDATA[$P{TITLE_ARRENDATARIOS}]]></subreportParameterExpression>
 				</subreportParameter>
