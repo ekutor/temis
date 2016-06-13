@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport1" language="groovy" pageWidth="495" pageHeight="150" columnWidth="495" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="TITLE" class="java.lang.String"/>
+	<parameter name="SINGLE_TITLE" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="DOC_DEU" class="java.lang.String"/>
+	<field name="TIPO_DOC_DEU" class="java.lang.String"/>
+	<field name="DEUDOR" class="java.lang.String"/>
+	<field name="MUNI_DEU" class="java.lang.String"/>
+	<field name="TEL_DEU" class="java.lang.String"/>
+	<field name="CEL_DEU" class="java.lang.String"/>
+	<field name="MAIL_DEU" class="java.lang.String"/>
+	<field name="NUM_DEUDOR" class="java.lang.String"/>
+	<field name="DIR_DEU" class="java.lang.String"/>
+	<group name="groupDeudores">
+		<groupExpression><![CDATA[$F{DEUDOR}]]></groupExpression>
+		<groupHeader>
+			<band height="15">
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="2" width="495" height="13" forecolor="#000000"/>
+					<textElement textAlignment="Center">
+						<font fontName="VerdanaNegrilla" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{SINGLE_TITLE}+"  "+$F{NUM_DEUDOR}+":  "+$F{DEUDOR}.toUpperCase()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<pageHeader>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="495" height="15" forecolor="#000000" backcolor="#999999"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="VerdanaZ" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanai.ttf"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TITLE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="0" y="0" width="495" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="VerdanaNormal" size="9" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU} + " No. "+$F{DOC_DEU}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="13" width="495" height="13" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DIRECCION DE NOTIFICACION"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="0" y="26" width="495" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="VerdanaNormal" size="9" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DIR_DEU}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="39" width="495" height="13" forecolor="#000000">
+					<printWhenExpression><![CDATA[$F{MUNI_DEU}!= null ]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MUNI_DEU}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="52" width="495" height="13" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{TEL_DEU}!= null ? "TELEFONO: "+$F{TEL_DEU} :"")+($F{CEL_DEU}!= null ? " CELULAR: "+$F{CEL_DEU} :"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="65" width="495" height="13" isRemoveLineWhenBlank="true" forecolor="#000000">
+					<printWhenExpression><![CDATA[!$F{MAIL_DEU}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MAIL_DEU}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="79" width="495" height="1"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
