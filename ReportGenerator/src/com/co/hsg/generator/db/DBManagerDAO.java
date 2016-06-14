@@ -171,7 +171,7 @@ import com.co.hsg.generator.util.Util;
 				data = report.getInquilinos();
 				break;
 		}
-		if (infoInLine != null  || tipo.equals(DinamycField.INFO_GENERAL) ) {
+		if (infoInLine != null && !"".equals(infoInLine) ) {
 		
 			String[] arrayFields = infoInLine.split(SEPARADOR);
 			for (int i = 0; i < arrayFields.length; i++) {
@@ -186,13 +186,13 @@ import com.co.hsg.generator.util.Util;
 						drf.setDOC_DEU(arrayFields[i]);
 						drf.setNUM_DEUDOR(String.valueOf(i+1));
 						drf.setARRENDATARIO_INFO(drf.getNUM_DEUDOR()+":  "+drf.getDEUDOR().toUpperCase());
+						drf.setARRENDATARIO_INFO2(drf.getTIPO_DOC_DEU()+" No. "+drf.getDOC_DEU());
 						break;
 					case NOMBRE:
 						drf.setDEUDOR(arrayFields[i]);
 						break;
 					case TIPODOC:
 						drf.setTIPO_DOC_DEU(arrayFields[i]);
-						drf.setARRENDATARIO_INFO2(drf.getTIPO_DOC_DEU()+" No. "+drf.getDOC_DEU());
 						break;
 					case TELEFONO:
 						drf.setTEL_DEU(arrayFields[i]);
