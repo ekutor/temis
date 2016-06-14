@@ -170,17 +170,7 @@ public String getDOC_REP_LEGAL_INQ() {
 }
 
 public void setDOC_REP_LEGAL_INQ(String dOC_REP_LEGAL_INQ) {
-	try{
-		DOC_REP_LEGAL_INQ = Util.validateNull(dOC_REP_LEGAL_INQ);
-		if(DOC_REP_LEGAL_INQ != null && DOC_REP_LEGAL_INQ.contains(",")){
-			String[] values = DOC_REP_LEGAL_INQ.split(",");
-			DOC_REP_LEGAL_INQ =  Util.validateNull(values[0]);
-			setREP_LEGAL_INQ(values[1]);
-		}
-	}catch(Exception e ){
-		DOC_REP_LEGAL_INQ = null;
-		setREP_LEGAL_INQ(null);
-	}
+	DOC_REP_LEGAL_INQ = Util.validateNull(dOC_REP_LEGAL_INQ);
 }
 
 

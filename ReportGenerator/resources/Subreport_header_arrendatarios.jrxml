@@ -38,7 +38,7 @@
 					<textElement textAlignment="Center">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA["ARRENDATARIO  "+$F{NUM_DEUDOR}+":  "+$F{DEUDOR}.toUpperCase()]]></textFieldExpression>
+					<textFieldExpression><![CDATA["ARRENDATARIO "+$F{ARRENDATARIO_INFO}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -62,7 +62,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="VerdanaNormal" size="9" isBold="false" pdfFontName="Times-Bold"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU} + " No. "+$F{DOC_DEU}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ARRENDATARIO_INFO2}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="13" width="495" height="13" forecolor="#000000"/>

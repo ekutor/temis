@@ -99,7 +99,8 @@ import com.co.hsg.generator.util.Util;
            report.setTEL_ARR1(getDinamycField(rs.getString("tel_inquilino_c"),DinamycField.TELEFONO,TypeField.INQUILINOS));
            report.setCEL_ARR1(getDinamycField(rs.getString("celular_inquilino_c"),DinamycField.CELULAR,TypeField.INQUILINOS));
 
-           report.setDOC_REP_LEGAL_INQ(getDinamycField(rs.getString("rep_legal_inq_c"),DinamycField.INFO_GENERAL,TypeField.INQUILINOS));
+           report.setDOC_REP_LEGAL_INQ(getDinamycField(rs.getString("rep_legal_doc_inq_c"),DinamycField.REP_LEGAL_DOC,TypeField.INQUILINOS));
+           report.setREP_LEGAL_INQ(getDinamycField(rs.getString("rep_legal_inq_c"),DinamycField.REP_LEGAL,TypeField.INQUILINOS));
            
            report.setDEUDOR1(getDinamycField(rs.getString("nombre_deudor_solidario1_c"),DinamycField.NOMBRE,TypeField.DEUDORES));
            report.setDOC_DEU1(getDinamycField(rs.getString("documento_deudor_solidario1_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
@@ -110,15 +111,6 @@ import com.co.hsg.generator.util.Util;
            report.setTEL_DEU1(getDinamycField(rs.getString("telefono_deudor_solidario1_c"),DinamycField.TELEFONO,TypeField.DEUDORES));
            report.setCEL_DEU1(getDinamycField(rs.getString("celular_deudor_solidario1_c"),DinamycField.CELULAR,TypeField.DEUDORES));
            
- 
-          /* report.setDEUDOR2(rs.getString("nombre_deudor_solidario2_c"));
-           report.setDOC_DEU2(rs.getString("documento_deudor_solidario2_c"));
-           report.setTIPO_DOC_DEU2(rs.getString("tipodoc_deudor_solidario2_c"));
-           report.setMAIL_DEU2(rs.getString("email_deudor_solidario2_c"));
-           report.setMUNI_DEU2(rs.getString("municipio_deudor_solidario2_c"));
-           report.setDIR_DEU2(rs.getString("direccion_deudor_solidario2_c"));
-           report.setTEL_DEU2(rs.getString("telefono_deudor_solidario2_c"));
-           report.setCEL_DEU2(rs.getString("celular_deudor_solidario2_c"));*/
  
            break;
          case CONTRATO_ADMON_COMERCIAL:
@@ -179,7 +171,8 @@ import com.co.hsg.generator.util.Util;
 				data = report.getInquilinos();
 				break;
 		}
-		if (infoInLine != null) {
+		if (infoInLine != null  || tipo.equals(DinamycField.INFO_GENERAL) ) {
+		
 			String[] arrayFields = infoInLine.split(SEPARADOR);
 			for (int i = 0; i < arrayFields.length; i++) {
 				DinamycReportField drf = new DinamycReportField();
@@ -192,12 +185,14 @@ import com.co.hsg.generator.util.Util;
 					case NUMDOC:
 						drf.setDOC_DEU(arrayFields[i]);
 						drf.setNUM_DEUDOR(String.valueOf(i+1));
+						drf.setARRENDATARIO_INFO(drf.getNUM_DEUDOR()+":  "+drf.getDEUDOR().toUpperCase());
 						break;
 					case NOMBRE:
 						drf.setDEUDOR(arrayFields[i]);
 						break;
 					case TIPODOC:
 						drf.setTIPO_DOC_DEU(arrayFields[i]);
+						drf.setARRENDATARIO_INFO2(drf.getTIPO_DOC_DEU()+" No. "+drf.getDOC_DEU());
 						break;
 					case TELEFONO:
 						drf.setTEL_DEU(arrayFields[i]);
@@ -217,10 +212,14 @@ import com.co.hsg.generator.util.Util;
 					case CELULAR:
 						drf.setCEL_DEU(arrayFields[i]);
 						break;
-					case INFO_GENERAL:
-						if(){
-							
-						}
+					case REP_LEGAL_DOC:
+						drf.setREP_LEGAL_DOC(arrayFields[i]);
+						
+						break;
+					case REP_LEGAL:
+						drf.setREP_LEGAL_EMPRESA(arrayFields[i]);
+						drf.setARRENDATARIO_INFO(drf.getNUM_DEUDOR()+":  "+drf.getREP_LEGAL_EMPRESA().toUpperCase() + " NIT "+drf.getREP_LEGAL_DOC());
+						drf.setARRENDATARIO_INFO2("REPRESENTANTE LEGAL: "+drf.getDEUDOR().toUpperCase()+" "+drf.getTIPO_DOC_DEU()+" No. "+drf.getDOC_DEU());
 						break;
 				}
 				
