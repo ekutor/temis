@@ -13,6 +13,9 @@ private String TEL_DEU;
 private String CEL_DEU;
 private String MAIL_DEU;
 private String MUNI_DEU;
+private String REP_LEGAL_EMPRESA;
+private String REP_LEGAL_DOC;
+private String ARRENDATARIO_INFO,ARRENDATARIO_INFO2;
 
 public String getNUM_DEUDOR() {
 	return NUM_DEUDOR;
@@ -73,6 +76,31 @@ public String getDIR_DEU2() {
 }
 public void setDIR_DEU2(String dIR_DEU2) {
 	DIR_DEU2 = dIR_DEU2;
+}
+
+public String getREP_LEGAL_EMPRESA() {
+	return REP_LEGAL_EMPRESA;
+}
+public void setREP_LEGAL_EMPRESA(String rEP_LEGAL_EMPRESA) {
+	REP_LEGAL_EMPRESA = rEP_LEGAL_EMPRESA;
+}
+public String getREP_LEGAL_DOC() {
+	return REP_LEGAL_DOC;
+}
+public void setREP_LEGAL_DOC(String rEP_LEGAL_DOC) {
+	REP_LEGAL_DOC = rEP_LEGAL_DOC;
+}
+public String getARRENDATARIO_INFO() {
+	return ARRENDATARIO_INFO;
+}
+public void setARRENDATARIO_INFO(String aRRENDATARIO_INFO) {
+	ARRENDATARIO_INFO = aRRENDATARIO_INFO;
+}
+public String getARRENDATARIO_INFO2() {
+	return ARRENDATARIO_INFO2;
+}
+public void setARRENDATARIO_INFO2(String aRRENDATARIO_INFO2) {
+	ARRENDATARIO_INFO2 = aRRENDATARIO_INFO2;
 }
 
 

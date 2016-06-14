@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<log4j:configuration>
+
+	<appender name="PersonalAppenderError" class="org.apache.log4j.RollingFileAppender">
+	    <param name="file" value="/var/www/vhosts/portadainmobiliaria.iatech.com.co/httpdocs/crm/custom/modules/AOS_Contracts/logs/error.log"/>
+	    <param name="MaxFileSize" value="100KB"/>
+	    <param name="MaxBackupIndex" value="1"/>
+
+	    <layout class="org.apache.log4j.PatternLayout">
+	      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} - %m%n"/>
+	    </layout>
+  	</appender>
+	<appender name="PersonalAppenderTrace" class="org.apache.log4j.RollingFileAppender">
+	    <param name="file" value="/var/www/vhosts/portadainmobiliaria.iatech.com.co/httpdocs/crm/custom/modules/AOS_Contracts/logs/trace.log"/>
+	    <param name="MaxFileSize" value="1000KB"/>
+	    <param name="MaxBackupIndex" value="1"/>
+
+	    <layout class="org.apache.log4j.PatternLayout">
+	      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss}- %m%n"/>
+	    </layout>
+  	</appender>
+	
+	<appender name="PersonalAppenderDebug" class="org.apache.log4j.RollingFileAppender">
+	    <param name="file" value="/var/www/vhosts/portadainmobiliaria.iatech.com.co/httpdocs/crm/custom/modules/AOS_Contracts/logs/debug.log"/>
+	    <param name="MaxFileSize" value="100KB"/>
+	    <param name="MaxBackupIndex" value="1"/>
+
+	    <layout class="org.apache.log4j.PatternLayout">
+	      <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} - %m%n"/>
+	    </layout>
+  	</appender>
+
+	<logger name="LoggerError" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="PersonalAppenderError"/>
+	</logger>
+	<logger name="LoggerTrace" additivity="false">
+		<level value="TRACE"/>
+		<appender-ref ref="PersonalAppenderTrace"/>
+	</logger>
+	<logger name="LoggerDebug" additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="PersonalAppenderDebug"/>
+	</logger>
+
+</log4j:configuration>

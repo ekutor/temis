@@ -98,8 +98,9 @@ import com.co.hsg.generator.util.Util;
            report.setMAIL_ARR1(getDinamycField(rs.getString("email_inquilino_c"),DinamycField.MAIL,TypeField.INQUILINOS));
            report.setTEL_ARR1(getDinamycField(rs.getString("tel_inquilino_c"),DinamycField.TELEFONO,TypeField.INQUILINOS));
            report.setCEL_ARR1(getDinamycField(rs.getString("celular_inquilino_c"),DinamycField.CELULAR,TypeField.INQUILINOS));
-           
 
+           report.setDOC_REP_LEGAL_INQ(getDinamycField(rs.getString("rep_legal_inq_c"),DinamycField.INFO_GENERAL,TypeField.INQUILINOS));
+           
            report.setDEUDOR1(getDinamycField(rs.getString("nombre_deudor_solidario1_c"),DinamycField.NOMBRE,TypeField.DEUDORES));
            report.setDOC_DEU1(getDinamycField(rs.getString("documento_deudor_solidario1_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
            report.setTIPO_DOC_DEU1(getDinamycField(rs.getString("tipodoc_deudor_solidario1_c"),DinamycField.TIPODOC,TypeField.DEUDORES));
@@ -215,6 +216,11 @@ import com.co.hsg.generator.util.Util;
 						break;
 					case CELULAR:
 						drf.setCEL_DEU(arrayFields[i]);
+						break;
+					case INFO_GENERAL:
+						if(){
+							
+						}
 						break;
 				}
 				

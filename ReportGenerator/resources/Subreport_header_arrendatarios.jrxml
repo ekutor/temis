@@ -27,6 +27,8 @@
 	<field name="NUM_DEUDOR" class="java.lang.String"/>
 	<field name="DIR_DEU" class="java.lang.String"/>
 	<field name="DIR_DEU2" class="java.lang.String"/>
+	<field name="ARRENDATARIO_INFO" class="java.lang.String"/>
+	<field name="ARRENDATARIO_INFO2" class="java.lang.String"/>
 	<group name="groupDeudores">
 		<groupExpression><![CDATA[$F{DEUDOR}]]></groupExpression>
 		<groupHeader>

@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="30" bottomMargin="20">
 	<property name="ireport.zoom" value="1.100000000000001"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="410"/>
+	<property name="ireport.y" value="144"/>
 	<style name="Title" fontName="Verdana" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Verdana" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Verdana" fontSize="12" isBold="true"/>

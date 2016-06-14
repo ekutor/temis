@@ -69,7 +69,7 @@ private String TITULAR_CUENTA;
 private String TIPO_DOC_TITULAR;
 private String DOC_TITULAR;
 private String COMISION, COM_LETRAS, COMISION_DIA, COMISION_DIA_LETRAS;
-private String REP_LEGAL, DOC_REP_LEGAL;
+private String REP_LEGAL_INQ, DOC_REP_LEGAL_INQ;
 private String DESTINACION_COMERCIAL, TIPO_URB,PORC_AUMENTO,PORC_AUMENTO_LETRAS;
 
 public String getCOMISION() {
@@ -147,13 +147,6 @@ public void setDESTINACION_COMERCIAL(String dESTINACION_COMERCIAL) {
 	DESTINACION_COMERCIAL = Util.validateNull(dESTINACION_COMERCIAL);
 }
 
-public String getDOC_REP_LEGAL() {
-	return DOC_REP_LEGAL;
-}
-
-public void setDOC_REP_LEGAL(String dOC_REP_LEGAL) {
-	DOC_REP_LEGAL = Util.validateNull(dOC_REP_LEGAL);
-}
 
 public String getCOM_LETRAS() {
 	return COM_LETRAS;
@@ -164,13 +157,32 @@ public void setCOM_LETRAS(String cOM_LETRAS) {
 }
 
 
-public String getREP_LEGAL() {
-	return REP_LEGAL;
+public String getREP_LEGAL_INQ() {
+	return REP_LEGAL_INQ;
 }
 
-public void setREP_LEGAL(String rEP_LEGAL) {
-	REP_LEGAL = Util.validateNull(rEP_LEGAL);
+public void setREP_LEGAL_INQ(String rEP_LEGAL_INQ) {
+	REP_LEGAL_INQ = Util.validateNull(rEP_LEGAL_INQ);
 }
+
+public String getDOC_REP_LEGAL_INQ() {
+	return DOC_REP_LEGAL_INQ;
+}
+
+public void setDOC_REP_LEGAL_INQ(String dOC_REP_LEGAL_INQ) {
+	try{
+		DOC_REP_LEGAL_INQ = Util.validateNull(dOC_REP_LEGAL_INQ);
+		if(DOC_REP_LEGAL_INQ != null && DOC_REP_LEGAL_INQ.contains(",")){
+			String[] values = DOC_REP_LEGAL_INQ.split(",");
+			DOC_REP_LEGAL_INQ =  Util.validateNull(values[0]);
+			setREP_LEGAL_INQ(values[1]);
+		}
+	}catch(Exception e ){
+		DOC_REP_LEGAL_INQ = null;
+		setREP_LEGAL_INQ(null);
+	}
+}
+
 
 
 private List<DinamycReportField> Deudores  = new ArrayList<DinamycReportField>();
