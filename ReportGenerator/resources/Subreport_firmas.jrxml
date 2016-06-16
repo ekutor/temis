@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport1" language="groovy" pageWidth="495" pageHeight="100" columnWidth="495" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CONTRATO_ARRENDAMIENTO_VIVIENDA_subreport1" language="groovy" pageWidth="495" pageHeight="135" columnWidth="495" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty">
 	<property name="template.type" value="columnar"/>
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -29,6 +29,8 @@
 	<field name="MAIL_DEU" class="java.lang.String"/>
 	<field name="NUM_DEUDOR" class="java.lang.String"/>
 	<field name="DIR_DEU" class="java.lang.String"/>
+	<field name="REP_LEGAL_EMPRESA" class="java.lang.String"/>
+	<field name="REP_LEGAL_DOC" class="java.lang.String"/>
 	<group name="groupDeudores">
 		<groupExpression><![CDATA[$F{DEUDOR}]]></groupExpression>
 		<groupHeader>
@@ -51,7 +53,7 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="100" splitType="Stretch">
+		<band height="135" splitType="Stretch">
 			<rectangle>
 				<reportElement mode="Opaque" x="383" y="0" width="70" height="70"/>
 			</rectangle>
@@ -72,6 +74,33 @@
 			<line>
 				<reportElement x="0" y="69" width="197" height="1"/>
 			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="96" width="330" height="13" isRemoveLineWhenBlank="true" forecolor="#000000">
+					<printWhenExpression><![CDATA[$F{REP_LEGAL_EMPRESA}!= null  && !$F{REP_LEGAL_EMPRESA}.isEmpty() && !$F{REP_LEGAL_EMPRESA}.equals( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="VerdanaNegrilla" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REP_LEGAL_EMPRESA}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="0" y="109" width="330" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{REP_LEGAL_EMPRESA}!= null  && !$F{REP_LEGAL_EMPRESA}.isEmpty() && !$F{REP_LEGAL_EMPRESA}.equals( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="VerdanaNormal" size="9" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nit  No. "+$F{REP_LEGAL_DOC}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" x="0" y="122" width="330" height="13" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{REP_LEGAL_EMPRESA}!= null  && !$F{REP_LEGAL_EMPRESA}.isEmpty() && !$F{REP_LEGAL_EMPRESA}.equals( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="VerdanaNormal" size="9" isBold="false" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Representante Legal"]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
