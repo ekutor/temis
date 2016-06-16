@@ -1,7 +1,7 @@
 function Alerts2() {
 }
 
-  function add_new_field(fieldname,row_value) {
+  function add_new_field(fieldname,row_value, placeH) {
 		var all_id_Array = [];
 		$('.'+fieldname).each(function() {
 			var arr = this.id.split('___');
@@ -23,8 +23,11 @@ function Alerts2() {
 			dfstart = '<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>';
 			dfend = '</td></tr>';
 		}
+		if(placeH != ''){
+			placeH = placeH+" "+ (new_row_id+1);
+		}
 		var buttonRemove = '<button id="add_new_' + fieldname + '_' + new_row_id + '" onclick="remove_field('+ "'" + fieldname+ "'" +',' + new_row_id + ')" type="button"><img alt="Remove" src="themes/default/images/id-ff-remove-nobg.png"></button>';
-		var field_row = '<input class="'+fieldname+'" onblur="update_field_values('+ "'" + fieldname+ "'" +');" id="'+fieldname+'___' + new_row_id + '" type="text" title="" value="' + row_value + '" maxlength="255" size="30" name="'+fieldname+'_' + new_row_id + '">';
+		var field_row = '<input class="'+fieldname+'" onblur="update_field_values('+ "'" + fieldname+ "'" +');" id="'+fieldname+'___' + new_row_id + '" type="text" title="" placeholder="'+ placeH + '" value="' + row_value + '" maxlength="255" size="30" name="'+fieldname+'_' + new_row_id + '">';
 		var html = dfstart + field_row + '  ' + buttonRemove + dfend;
 		if (new_row_id == 0) {
 			if($("#add_new_"+fieldname).parent().parent().length!=0){
@@ -90,6 +93,32 @@ function Alerts2() {
 			}
 		});
 		$("#"+fieldname).val(updated_values);
+	}
+	
+	function update_values(fieldname) {
+		var count = 0;
+		var updated_values = '';
+		
+		updated_values = $("#nit_"+fieldname).val();
+		updated_values += "," + $("#empresa_"+fieldname).val();
+		
+		$("#"+fieldname).val(updated_values);
+	}
+	
+	function addLegalHiddenFields( fieldname, field1, field2 ) {
+		
+		var checked = document.getElementById("check_"+fieldname).checked;
+	
+		if(checked){
+			$("#add_new_"+field1).parent().parent().show();
+			$("#add_new_"+field1).parent().parent().next('tr').show();
+		}else{
+			$("#add_new_"+field1).parent().parent().hide();		
+			$("#add_new_"+field1).parent().parent().next('tr').hide();
+			$("#"+field1).val('');
+			$("#"+field2).val('');
+		}
+
 	}
 
 

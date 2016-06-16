@@ -104,33 +104,27 @@ EOQ;
 		$fieldName = "tiene_rep_legal_inquilino_c";
 		$field1 = "rep_legal_inq_c";
 		$field2 = "rep_legal_doc_inq_c";
+		$fieldValue = "rep_legal_inq_c___0";
 		   $javascript= <<<EOQ
                 <script language='javascript'>
                     YAHOO.util.Event.onDOMReady(function(){
 			
-					 if($("#$fieldName").length!=0){ 
-										 
 						var checkButton = '<input type="checkbox" id="check_$fieldName" onclick="addLegalHiddenFields(\'$fieldName\',\'$field1\', \'$field2\');" />';
 						$("#$fieldName").hide();
 					
 						$("#$fieldName").after(checkButton);
-						
-						var saved_value = $("#$field1").val();
-						var split_all = saved_value.split(",");
-				
-						if (split_all.length > 1) {
-							$("#check_$fieldName").prop('checked', true);
+						$("#$fieldValue").show();
+						var saved_value = $("#$fieldValue").val();
+			
+						if (saved_value.length > 1) {
 							
-							split_all.forEach(function(entry) {
-								add_new_field(field1,entry,'Empresa');
-							});
+							$("#check_$fieldName").prop('checked', true);
 						  
 						} 
 						
 				
 						addLegalHiddenFields('$fieldName','$field1','$field2');
 						
-                    }
 			
 				
 				$("#$fieldName").append('<font color="red" id="remove_font">*</font>');
