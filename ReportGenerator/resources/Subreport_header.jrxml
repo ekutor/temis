@@ -28,6 +28,8 @@
 	<field name="MAIL_DEU" class="java.lang.String"/>
 	<field name="NUM_DEUDOR" class="java.lang.String"/>
 	<field name="DIR_DEU" class="java.lang.String"/>
+	<field name="ARRENDATARIO_INFO" class="java.lang.String"/>
+	<field name="ARRENDATARIO_INFO2" class="java.lang.String"/>
 	<group name="groupDeudores">
 		<groupExpression><![CDATA[$F{DEUDOR}]]></groupExpression>
 		<groupHeader>
@@ -37,7 +39,7 @@
 					<textElement textAlignment="Center">
 						<font fontName="VerdanaNegrilla" size="9" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{SINGLE_TITLE}+"  "+$F{NUM_DEUDOR}+":  "+$F{DEUDOR}.toUpperCase()]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$P{SINGLE_TITLE}+"  "+$F{ARRENDATARIO_INFO}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -64,7 +66,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="VerdanaNormal" size="9" isBold="false" pdfFontName="Times-Bold"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{TIPO_DOC_DEU} + " No. "+$F{DOC_DEU}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ARRENDATARIO_INFO2}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="13" width="495" height="13" forecolor="#000000"/>
@@ -83,7 +85,7 @@
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="0" y="39" width="495" height="13" forecolor="#000000">
-					<printWhenExpression><![CDATA[$F{MUNI_DEU}!= null ]]></printWhenExpression>
+					<printWhenExpression><![CDATA[$F{MUNI_DEU}!= null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="VerdanaNegrilla" size="9" isBold="false" isItalic="false" pdfFontName="/var/www/html/crm_suite/custom/modules/AOS_Contracts/fonts/verdanab.ttf"/>

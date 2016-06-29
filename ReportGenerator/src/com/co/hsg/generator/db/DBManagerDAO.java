@@ -111,6 +111,9 @@ import com.co.hsg.generator.util.Util;
            report.setTEL_DEU1(getDinamycField(rs.getString("telefono_deudor_solidario1_c"),DinamycField.TELEFONO,TypeField.DEUDORES));
            report.setCEL_DEU1(getDinamycField(rs.getString("celular_deudor_solidario1_c"),DinamycField.CELULAR,TypeField.DEUDORES));
            
+           report.setDOC_REP_LEGAL_DEUDOR(getDinamycField(rs.getString("rep_legal_doc_deudor_c"),DinamycField.REP_LEGAL_DOC,TypeField.DEUDORES));
+           report.setREP_LEGAL_DEUDOR(getDinamycField(rs.getString("rep_legal_deudor_c"),DinamycField.REP_LEGAL,TypeField.DEUDORES));
+           
  
            break;
          case CONTRATO_ADMON_COMERCIAL:
