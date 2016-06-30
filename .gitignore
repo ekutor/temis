@@ -3,3 +3,6 @@ ReportGenerator/ReportGenerator_18042016.jar
 ReportGenerator/logs/debug.log
 ReportGenerator/logs/error.log
 ReportGenerator/logs/trace.log
+ReportGenerator/resources/backup
+ReportGenerator/resources/backup - copia
+ReportGenerator/resources/backup20628.sql

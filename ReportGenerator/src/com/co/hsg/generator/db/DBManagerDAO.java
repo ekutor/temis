@@ -103,8 +103,8 @@ import com.co.hsg.generator.util.Util;
            report.setREP_LEGAL_INQ(getDinamycField(rs.getString("rep_legal_inq_c"),DinamycField.REP_LEGAL,TypeField.INQUILINOS));
            
            report.setDEUDOR1(getDinamycField(rs.getString("nombre_deudor_solidario1_c"),DinamycField.NOMBRE,TypeField.DEUDORES));
-           report.setDOC_DEU1(getDinamycField(rs.getString("documento_deudor_solidario1_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
            report.setTIPO_DOC_DEU1(getDinamycField(rs.getString("tipodoc_deudor_solidario1_c"),DinamycField.TIPODOC,TypeField.DEUDORES));
+           report.setDOC_DEU1(getDinamycField(rs.getString("documento_deudor_solidario1_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
            report.setMAIL_DEU1(getDinamycField(rs.getString("email_deudor_solidario1_c"),DinamycField.MAIL,TypeField.DEUDORES));
            report.setMUNI_DEU1(getDinamycField(rs.getString("municipio_deudor_solidario1_c"),DinamycField.MUNICIPIO,TypeField.DEUDORES));
            report.setDIR_DEU1(getDinamycField(rs.getString("direccion_deudor_solidario1_c"),DinamycField.DIRECCION,TypeField.DEUDORES));
@@ -135,8 +135,8 @@ import com.co.hsg.generator.util.Util;
            //consignantes
                
            report.setDEUDOR1(getDinamycField(rs.getString("nombre_consignante_c"),DinamycField.NOMBRE,TypeField.DEUDORES));
-           report.setDOC_DEU1(getDinamycField(rs.getString("ced_consignante_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
            report.setTIPO_DOC_DEU1(getDinamycField(rs.getString("tipo_doc_consignante_c"),DinamycField.TIPODOC,TypeField.DEUDORES));
+           report.setDOC_DEU1(getDinamycField(rs.getString("ced_consignante_c"),DinamycField.NUMDOC,TypeField.DEUDORES));
            report.setMAIL_DEU1(getDinamycField(rs.getString("mail_con_c"),DinamycField.MAIL,TypeField.DEUDORES));
            report.setMUNI_DEU1(getDinamycField(rs.getString("municipio_consignante_c"),DinamycField.MUNICIPIO,TypeField.DEUDORES));
            report.setDIR_DEU1(getDinamycField(rs.getString("direccion_notificacion2_c"),DinamycField.DIRECCION,TypeField.DEUDORES));
