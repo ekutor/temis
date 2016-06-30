@@ -114,6 +114,7 @@ import com.co.hsg.generator.util.Util;
            report.setDOC_REP_LEGAL_DEUDOR(getDinamycField(rs.getString("rep_legal_doc_deudor_c"),DinamycField.REP_LEGAL_DOC,TypeField.DEUDORES));
            report.setREP_LEGAL_DEUDOR(getDinamycField(rs.getString("rep_legal_deudor_c"),DinamycField.REP_LEGAL,TypeField.DEUDORES));
            
+           generateInfoDeudores();
  
            break;
          case CONTRATO_ADMON_COMERCIAL:
@@ -164,6 +165,47 @@ import com.co.hsg.generator.util.Util;
      return null;
    }
  
+	private void generateInfoDeudores() {
+		StringBuilder sb = new StringBuilder();
+		if( report.getDEUDOR1() != null){
+			String[] deudores = report.getDEUDOR1().split(SEPARADOR);
+			for(int i=0; i<deudores.length ; i++){
+				String aux = getData("",report.getREP_LEGAL_DEUDOR(), i);
+				if(aux != null && !"".equals(aux)){
+					sb.append(deudores[i]);
+					sb.append(" quien actua en calidad de representante legal de la empresa ");
+					sb.append(aux);
+					sb.append(" identificada con NIT número ");
+					sb.append(getData("", report.getDOC_REP_LEGAL_DEUDOR(), i));
+					
+				}else{
+					sb.append(deudores[i]);
+				}
+				sb.append(" ");
+				sb.append(getData(" DIRECCION: ",report.getDIR_DEU1(), i));
+				sb.append(getData(" TEL: ",report.getTEL_DEU1(), i));
+				sb.append(getData(" CEL: ",report.getCEL_DEU1(), i));
+				sb.append(getData(" MAIL: ",report.getMAIL_DEU1(), i));
+				if(i+1 < deudores.length)
+					sb.append(",");
+			}
+			report.setINFO_DEUDORES(sb.toString());
+		}
+	}
+
+	private String getData(String appendValue, String infoSplit, int pos) {
+		String resp  = "";
+		try{
+			String[] values = infoSplit.split(SEPARADOR);
+			if(pos < values.length){
+				resp = appendValue + values[pos];
+			}
+		}catch(Exception e){
+			
+		}
+		return resp;
+	}
+
 	private String getDinamycField(String infoInLine, DinamycField tipo, TypeField type) {
 		List<DinamycReportField> data = null;
 		switch(type){

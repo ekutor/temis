@@ -72,6 +72,7 @@ private String COMISION, COM_LETRAS, COMISION_DIA, COMISION_DIA_LETRAS;
 private String REP_LEGAL_INQ, DOC_REP_LEGAL_INQ;
 private String REP_LEGAL_DEUDOR, DOC_REP_LEGAL_DEUDOR;
 private String DESTINACION_COMERCIAL, TIPO_URB,PORC_AUMENTO,PORC_AUMENTO_LETRAS;
+private String INFO_DEUDORES;
 
 public String getCOMISION() {
 	return COMISION;
@@ -188,6 +189,14 @@ public String getDOC_REP_LEGAL_DEUDOR() {
 
 public void setDOC_REP_LEGAL_DEUDOR(String dOC_REP_LEGAL_DEUDOR) {
 	DOC_REP_LEGAL_DEUDOR = Util.validateNull(dOC_REP_LEGAL_DEUDOR);
+}
+
+public String getINFO_DEUDORES() {
+	return INFO_DEUDORES;
+}
+
+public void setINFO_DEUDORES(String iNFO_DEUDORES) {
+	INFO_DEUDORES = Util.validateNull(iNFO_DEUDORES);
 }
 
 
