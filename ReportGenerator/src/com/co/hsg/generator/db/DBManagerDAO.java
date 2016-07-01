@@ -148,6 +148,8 @@ import com.co.hsg.generator.util.Util;
            report.setTEL_DEU1(getDinamycField(rs.getString("telefono_c"),DinamycField.TELEFONO,TypeField.DEUDORES));
            report.setCEL_DEU1(getDinamycField(rs.getString("celular_consignante_c"),DinamycField.CELULAR,TypeField.DEUDORES));
            
+           report.setDOC_REP_LEGAL_DEUDOR(getDinamycField(rs.getString("rep_legal_doc_prop_c"),DinamycField.REP_LEGAL_DOC,TypeField.DEUDORES));
+           report.setREP_LEGAL_DEUDOR(getDinamycField(rs.getString("rep_legal_prop_c"),DinamycField.REP_LEGAL,TypeField.DEUDORES));
  
            report.setBANCO(rs.getString("banco_c"));
            report.setNUM_CUENTA(rs.getString("no_cuenta_c"));
