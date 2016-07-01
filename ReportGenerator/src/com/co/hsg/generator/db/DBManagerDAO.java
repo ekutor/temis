@@ -132,6 +132,10 @@ import com.co.hsg.generator.util.Util;
            report.setMAIL_ARR1(getDinamycField(rs.getString("mail_c"),DinamycField.MAIL,TypeField.INQUILINOS));
            report.setTEL_ARR1(getDinamycField(rs.getString("telefono_1_c"),DinamycField.TELEFONO,TypeField.INQUILINOS));
            report.setCEL_ARR1(getDinamycField(rs.getString("celular_c"),DinamycField.CELULAR,TypeField.INQUILINOS));
+           
+           report.setDOC_REP_LEGAL_INQ(getDinamycField(rs.getString("rep_legal_doc_prop_c"),DinamycField.REP_LEGAL_DOC,TypeField.INQUILINOS));
+           report.setREP_LEGAL_INQ(getDinamycField(rs.getString("rep_legal_prop_c"),DinamycField.REP_LEGAL,TypeField.INQUILINOS));
+           
           
            //consignantes
                
