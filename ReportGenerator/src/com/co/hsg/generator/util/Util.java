@@ -27,7 +27,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
    public static String fechaInicial;
    public static String fechaFinal;
    private static final String[] unidades = { "", "uno", "dos", "tres", 
-     "cuarto", "cinco", "seis", "siete", "ocho", "nueve", "diez", 
+     "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", 
      "once", "doce", "trece", "catorce", "quince", "dieciseis", 
      "diecisiete", "dieciocho", "diecinueve" };
  
